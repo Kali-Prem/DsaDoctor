@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 - Page Not Found | DSA Doctor</title>
+    <link rel="icon" href="logo/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="logo/favicon-16x16.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-main: #0b0f19;
+        --card-bg: rgba(17, 24, 39, 0.75);
+        --accent: #00f5ff;
+        --accent-purple: #7928ca;
+        --text: #f3f4f6;
+        --text-muted: #9ca3af;
+        --border: rgba(255, 255, 255, 0.1);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: radial-gradient(circle at 50% 20%, #151e36 0%, var(--bg-main) 100%);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        text-align: center;
+      }
+      .container {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 48px 36px;
+        max-width: 520px;
+        width: 100%;
+        backdrop-filter: blur(16px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      }
+      .badge-404 {
+        display: inline-block;
+        padding: 6px 16px;
+        border-radius: 999px;
+        background: rgba(0, 245, 255, 0.1);
+        color: var(--accent);
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        margin-bottom: 20px;
+        border: 1px solid rgba(0, 245, 255, 0.3);
+      }
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #00f5ff 0%, #2563eb 50%, #7928ca 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.1;
+        margin-bottom: 16px;
+      }
+      p {
+        color: var(--text-muted);
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin-bottom: 32px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 28px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #00f5ff, #2563eb);
+        color: #000;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        box-shadow: 0 4px 15px rgba(0, 245, 255, 0.3);
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 245, 255, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="badge-404">ERROR 404</div>
+      <h1>Page Not Found</h1>
+      <p>The page or dataset you are looking for does not exist or may have been relocated.</p>
+      <a href="./" class="btn">← Return to DSA Doctor</a>
+    </div>
+  </body>
+</html>
