@@ -1811,11 +1811,495 @@
           padding: 0 7px;
         }
       }
+
+      /* =========================================================
+         ADVANCED INTERACTIVE SUITE STYLES
+         ========================================================= */
+
+      /* STICKY NAV SCROLLSPY ACTIVE PILL */
+      .nav-pill.active-nav {
+        border-color: var(--blue) !important;
+        color: var(--blue) !important;
+        background: rgba(21, 84, 232, 0.14) !important;
+        box-shadow: 0 0 16px var(--blue-glow) !important;
+      }
+      body.dark-mode .nav-pill.active-nav {
+        background: rgba(59, 130, 246, 0.25) !important;
+        border-color: var(--blue) !important;
+        color: #93c5fd !important;
+      }
+
+      /* INTERACTIVE DRY-RUN VISUALIZER */
+      .visualizer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 24px;
+        margin-top: 20px;
+      }
+
+      .viz-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .viz-problem-tabs {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .viz-tab-btn {
+        padding: 8px 16px;
+        border-radius: var(--radius-pill);
+        background: var(--surface);
+        border: 1px solid var(--line);
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .viz-tab-btn:hover {
+        border-color: var(--blue);
+      }
+
+      .viz-tab-btn.active {
+        background: var(--blue);
+        color: #fff;
+        border-color: var(--blue);
+        box-shadow: 0 4px 14px var(--blue-glow);
+      }
+
+      .viz-stage {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 32px 20px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        position: relative;
+        overflow-x: auto;
+      }
+
+      .viz-array-wrap {
+        display: flex;
+        gap: 12px;
+        align-items: flex-end;
+        padding-top: 36px;
+        position: relative;
+        min-height: 110px;
+      }
+
+      .viz-cell {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+      }
+
+      .viz-box {
+        width: 58px;
+        height: 58px;
+        border-radius: 14px;
+        border: 2px solid var(--line);
+        background: var(--surface-2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--ink);
+        font-family: "JetBrains Mono", monospace;
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+      }
+
+      .viz-box.active-left {
+        border-color: var(--blue);
+        background: var(--blue-light);
+        color: var(--blue);
+        transform: scale(1.08);
+        box-shadow: 0 0 16px var(--blue-glow);
+      }
+
+      .viz-box.active-right {
+        border-color: var(--amber);
+        background: var(--amber-bg);
+        color: var(--amber);
+        transform: scale(1.08);
+        box-shadow: 0 0 16px rgba(245, 158, 11, 0.3);
+      }
+
+      .viz-box.active-match {
+        border-color: var(--green);
+        background: var(--green-bg);
+        color: var(--green);
+        transform: scale(1.15);
+        box-shadow: 0 0 24px rgba(16, 185, 129, 0.5);
+      }
+
+      .viz-box.active-window {
+        border-color: var(--purple);
+        background: var(--purple-bg);
+        color: var(--purple);
+      }
+
+      .viz-idx {
+        font-size: 11.5px;
+        font-weight: 700;
+        color: var(--muted);
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .viz-pointer-label {
+        position: absolute;
+        top: -30px;
+        font-size: 11.5px;
+        font-weight: 800;
+        padding: 3px 8px;
+        border-radius: 6px;
+        white-space: nowrap;
+        transition: all 0.25s ease;
+      }
+
+      .viz-pointer-left {
+        background: var(--blue);
+        color: #fff;
+      }
+
+      .viz-pointer-right {
+        background: var(--amber);
+        color: #fff;
+      }
+
+      .viz-status-card {
+        width: 100%;
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 16px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .viz-calculation {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--blue);
+      }
+
+      .viz-explain {
+        font-size: 14px;
+        color: var(--ink-secondary);
+        font-weight: 600;
+        line-height: 1.5;
+        flex: 1;
+        min-width: 240px;
+      }
+
+      .viz-controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .viz-btn {
+        padding: 9px 18px;
+        border-radius: var(--radius-pill);
+        border: 1px solid var(--line);
+        background: var(--surface);
+        color: var(--ink);
+        font-size: 13.5px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+      }
+
+      .viz-btn:hover:not(:disabled) {
+        border-color: var(--blue);
+        background: var(--blue-light);
+        color: var(--blue);
+        transform: translateY(-2px);
+      }
+
+      .viz-btn:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+
+      .viz-btn-primary {
+        background: var(--blue);
+        color: #fff;
+        border-color: var(--blue);
+        box-shadow: 0 4px 14px var(--blue-glow);
+      }
+
+      .viz-btn-primary:hover:not(:disabled) {
+        background: var(--blue-hover);
+        color: #fff;
+      }
+
+      /* PATTERN FINDER WIZARD */
+      .wizard-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 24px;
+      }
+
+      @media (max-width: 900px) {
+        .wizard-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .wizard-step-col {
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .wizard-col-title {
+        font-size: 14.5px;
+        font-weight: 800;
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .wizard-chips-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .wiz-chip {
+        padding: 10px 14px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--line);
+        background: var(--surface);
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 600;
+        text-align: left;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .wiz-chip:hover {
+        border-color: var(--blue);
+        transform: translateX(3px);
+      }
+
+      .wiz-chip.active {
+        background: var(--blue-light);
+        border-color: var(--blue);
+        color: var(--blue);
+        font-weight: 800;
+        box-shadow: 0 2px 10px var(--blue-glow);
+      }
+
+      .wiz-chip.active::after {
+        content: "✓";
+        font-weight: 900;
+      }
+
+      .wizard-result-box {
+        background: var(--surface-2);
+        border: 2px solid var(--blue);
+        border-radius: var(--radius);
+        padding: 26px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .wizard-result-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+      }
+
+      .wizard-matched-pattern {
+        font-size: 24px;
+        font-weight: 800;
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .wizard-intuition-text {
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--ink-secondary);
+        font-weight: 500;
+        margin-bottom: 18px;
+      }
+
+      .wizard-specs-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+
+      .wizard-spec-pill {
+        padding: 6px 14px;
+        border-radius: var(--radius-pill);
+        background: var(--surface);
+        border: 1px solid var(--line);
+        font-size: 12.5px;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      /* MULTI-LANGUAGE SWITCHER */
+      .lang-pills {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 3px;
+        border-radius: var(--radius-pill);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .lang-pill {
+        padding: 4px 10px;
+        border-radius: var(--radius-pill);
+        background: transparent;
+        border: none;
+        color: #94a3b8;
+        font-size: 11.5px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: inherit;
+      }
+
+      .lang-pill:hover {
+        color: #fff;
+      }
+
+      .lang-pill.active {
+        background: var(--blue);
+        color: #fff;
+        box-shadow: 0 2px 8px rgba(21, 84, 232, 0.4);
+      }
+
+      /* FLOATING KEYBOARD SHORTCUTS BADGE */
+      #keyboardShortcutBadge {
+        position: fixed;
+        bottom: 28px;
+        left: 28px;
+        background: rgba(15, 23, 42, 0.88);
+        color: #cbd5e1;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        padding: 7px 16px;
+        border-radius: var(--radius-pill);
+        font-size: 12px;
+        font-weight: 700;
+        backdrop-filter: blur(12px);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        z-index: 99;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+      }
+
+      #keyboardShortcutBadge:hover {
+        background: var(--blue);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 768px) {
+        #keyboardShortcutBadge {
+          display: none;
+        }
+      }
+
+      /* PRINT & PDF EXPORT STYLES */
+      @media print {
+        #scrollProgressBar,
+        .topbar,
+        .sticky-nav,
+        .theme-toggle,
+        .btn-github,
+        #backToTopBtn,
+        #keyboardShortcutBadge,
+        .copy-btn,
+        .lang-pills,
+        .viz-controls,
+        .kw-controls,
+        .site-footer {
+          display: none !important;
+        }
+
+        body {
+          background: #fff !important;
+          color: #000 !important;
+        }
+
+        .main-container {
+          padding: 0 !important;
+          gap: 20px !important;
+        }
+
+        .card {
+          box-shadow: none !important;
+          border: 1px solid #ccc !important;
+          page-break-inside: avoid;
+          padding: 20px !important;
+          margin-bottom: 20px !important;
+        }
+
+        .hero-title {
+          -webkit-text-fill-color: initial !important;
+          color: #000 !important;
+        }
+      }
     </style>
   </head>
   <body>
     <!-- PROGRESS BAR -->
     <div id="scrollProgressBar"></div>
+    <!-- CELEBRATORY CONFETTI CANVAS -->
+    <canvas id="confettiCanvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999;"></canvas>
 
     <div class="app-shell">
       <!-- TOPBAR -->
@@ -1871,7 +2355,9 @@
         <div class="nav-pills">
           <a href="#golden-rules" class="nav-pill">🌟 5 Golden Rules</a>
           <a href="#seven-steps" class="nav-pill">🪜 7-Step Blueprint</a>
+          <a href="#dry-run-visualizer" class="nav-pill">🔬 Live Dry-Run Trace</a>
           <a href="#complexity-radar" class="nav-pill">⏱️ Complexity Radar</a>
+          <a href="#pattern-wizard" class="nav-pill">🧭 Pattern Wizard</a>
           <a href="#keyword-cheat" class="nav-pill">🔑 Keyword Cheat-Sheet</a>
           <a href="#core-patterns" class="nav-pill">🧱 10 Core Patterns</a>
           <a href="#thinking-ladder" class="nav-pill">🪜 Thinking Ladder</a>
@@ -1886,27 +2372,33 @@
         <section class="card card-rainbow">
           <div class="hero-grid">
             <div>
-              <span class="hero-tag">✨ 100% Practical • Hinglish + Java</span>
+              <span class="hero-tag">✨ 100% Practical • Hinglish + Multi-Language</span>
               <h1 class="hero-title">Master DSA Logic Building Step by Step</h1>
               <p class="hero-desc">
                 Zyada log DSA me <strong>code</strong> nahi, <strong>logic</strong> me atakte hain. 
-                Ye master guide aapko sikhati hai: problem padhte hi pattern kaise pehchanein, haath se test case trace karke rule kaise nikalein, brute force se optimal complexity tak bina TLE kaise pahuchein, aur 10 core patterns ke ready Java templates.
+                Ye master guide aapko sikhati hai: problem padhte hi pattern kaise pehchanein, haath se test case trace karke rule kaise nikalein, brute force se optimal complexity tak bina TLE kaise pahuchein, aur 10 core patterns ke ready Java, C++, aur Python templates.
               </p>
               <div class="hero-badges-row">
                 <span class="hero-badge">🌟 5 Golden Rules</span>
                 <span class="hero-badge">🪜 7-Step Sequence</span>
-                <span class="hero-badge">⏱️ Dynamic Complexity Radar</span>
-                <span class="hero-badge">🔑 18 Searchable Patterns</span>
-                <span class="hero-badge">🧱 10 Java Templates</span>
-                <span class="hero-badge">💡 8 Deep Dives</span>
+                <span class="hero-badge">🔬 Live Dry-Run Trace</span>
+                <span class="hero-badge">⏱️ Complexity Radar</span>
+                <span class="hero-badge">🧭 Pattern Finder Wizard</span>
+                <span class="hero-badge">🧱 10 Multi-Lang Templates</span>
               </div>
               <div class="hero-cta-wrap" style="display: flex; gap: 12px; flex-wrap: wrap;">
                 <a href="#seven-steps" class="btn-must-solve" style="font-size: 14.5px; height: 42px;">
                   🚀 Start 7-Step Framework
                 </a>
-                <a href="#worked-examples" class="btn-nav" style="font-size: 14.5px; height: 42px;">
-                  💡 Explore 8 Worked Examples
+                <a href="#pattern-wizard" class="btn-nav" style="font-size: 14.5px; height: 42px; border-color: var(--blue); color: var(--blue);">
+                  🧭 Pattern Finder Wizard
                 </a>
+                <a href="#dry-run-visualizer" class="btn-nav" style="font-size: 14.5px; height: 42px;">
+                  🔬 Live Dry-Run Trace
+                </a>
+                <button onclick="window.print()" class="btn-nav" style="font-size: 14.5px; height: 42px; cursor: pointer;" title="Print or save as PDF cheatsheet">
+                  🖨️ Print Cheatsheet
+                </button>
               </div>
             </div>
 
@@ -2028,6 +2520,47 @@
           </div>
         </section>
 
+        <!-- INTERACTIVE LIVE DRY-RUN VISUALIZER -->
+        <section class="card" id="dry-run-visualizer" style="border: 2px solid var(--blue); position: relative;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+            <span class="section-badge" style="background: linear-gradient(135deg, #1554e8, #7928ca); color: #fff;">🔬 Interactive Step 3 Simulator</span>
+            <span style="font-size: 12.5px; font-weight: 700; color: var(--blue);">Paper Trace Simulation</span>
+          </div>
+          <h2 class="section-title">🔬 Live Algorithm Dry-Run Trace Visualizer</h2>
+          <p class="section-desc">
+            Step 3 (<em>"Solve on Paper First"</em>) ko live dekhein: Array ke pointers aur variables haath se kaise step-by-step trace hote hain aur redundant checks kaise eliminate hote hain:
+          </p>
+
+          <div class="visualizer-container">
+            <div class="viz-header">
+              <div class="viz-problem-tabs" id="vizProblemTabs">
+                <button class="viz-tab-btn active" data-viz="twosum">↔️ Two Pointers (Two Sum Sorted)</button>
+                <button class="viz-tab-btn" data-viz="window">🪟 Sliding Window (Max Sum K=3)</button>
+                <button class="viz-tab-btn" data-viz="kadane">⚡ Kadane's (Max Subarray)</button>
+              </div>
+              <span id="vizTargetHint" style="font-size: 13px; font-weight: 800; color: var(--blue);">Target: 9</span>
+            </div>
+
+            <div class="viz-stage">
+              <div class="viz-array-wrap" id="vizArrayContainer">
+                <!-- Dynamically rendered visual cells -->
+              </div>
+
+              <div class="viz-status-card">
+                <div class="viz-calculation" id="vizCalcDisplay">nums[L] + nums[R] = 2 + 15 = 17</div>
+                <div class="viz-explain" id="vizExplanationText">17 is greater than Target 9. Decrement right pointer (R--).</div>
+              </div>
+
+              <div class="viz-controls">
+                <button class="viz-btn" id="vizPrevBtn" onclick="vizStep(-1)">◀ Previous</button>
+                <button class="viz-btn viz-btn-primary" id="vizNextBtn" onclick="vizStep(1)">Next Step ▶</button>
+                <button class="viz-btn" id="vizPlayBtn" onclick="vizTogglePlay()">▶️ Auto Play</button>
+                <button class="viz-btn" id="vizResetBtn" onclick="vizReset()">↺ Reset</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- CHAPTER 3: COMPLEXITY RADAR -->
         <section class="card" id="complexity-radar">
           <span class="section-badge">Chapter 03</span>
@@ -2061,6 +2594,59 @@
           </div>
         </section>
 
+        <!-- CHAPTER 3.5: PATTERN FINDER WIZARD -->
+        <section class="card" id="pattern-wizard" style="border: 2px solid var(--blue); position: relative;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+            <span class="section-badge" style="background: linear-gradient(135deg, #1554e8, #06b6d4); color: #fff;">🧭 Problem Diagnostic Tool</span>
+            <span style="font-size: 12.5px; font-weight: 700; color: var(--blue);">Instant Algorithm Matcher</span>
+          </div>
+          <h2 class="section-title">🧭 DSA Pattern Finder Wizard</h2>
+          <p class="section-desc">
+            Interview question dekh kar blank ho rahe ho? Apne unseen question ke 3 features select karo — wizard turant optimal pattern, target complexity, aur concrete reasoning bata dega:
+          </p>
+
+          <div class="wizard-grid">
+            <div class="wizard-step-col">
+              <span class="wizard-col-title">1️⃣ Input Type Kya Hai?</span>
+              <div class="wizard-chips-group" id="wizInputGroup">
+                <button class="wiz-chip active" data-wiz-input="array">Array / String</button>
+                <button class="wiz-chip" data-wiz-input="sorted">Sorted Array</button>
+                <button class="wiz-chip" data-wiz-input="matrix">2D Grid / Matrix</button>
+                <button class="wiz-chip" data-wiz-input="tree">Binary Tree / Graph</button>
+                <button class="wiz-chip" data-wiz-input="choices">Subset / Combinations</button>
+                <button class="wiz-chip" data-wiz-input="stream">Stream / Top K Elements</button>
+              </div>
+            </div>
+
+            <div class="wizard-step-col">
+              <span class="wizard-col-title">2️⃣ Target Condition Kya Hai?</span>
+              <div class="wizard-chips-group" id="wizGoalGroup">
+                <button class="wiz-chip active" data-wiz-goal="contiguous">Contiguous Subarray / Window</button>
+                <button class="wiz-chip" data-wiz-goal="target-pair">Pair / Triplet with Target Sum</button>
+                <button class="wiz-chip" data-wiz-goal="min-max">Min/Max Answer (Monotonic T/F)</button>
+                <button class="wiz-chip" data-wiz-goal="next-greater">Next Greater / Smaller Element</button>
+                <button class="wiz-chip" data-wiz-goal="shortest-path">Shortest Path / Flood Fill</button>
+                <button class="wiz-chip" data-wiz-goal="dp-overlap">Min Cost / Total Ways (Overlap DP)</button>
+                <button class="wiz-chip" data-wiz-goal="all-subsets">All Subsets / Permutations</button>
+              </div>
+            </div>
+
+            <div class="wizard-step-col">
+              <span class="wizard-col-title">3️⃣ Constraint Size (N)</span>
+              <div class="wizard-chips-group" id="wizConstraintGroup">
+                <button class="wiz-chip" data-wiz-n="small">N ≤ 20 (Backtracking/Exponential)</button>
+                <button class="wiz-chip" data-wiz-n="medium">N ≤ 5,000 (O(N²) DP/Nested Loops)</button>
+                <button class="wiz-chip active" data-wiz-n="large">N ≤ 10⁵ (O(N) / O(N log N) Linear)</button>
+                <button class="wiz-chip" data-wiz-n="huge">N ≥ 10⁹ (O(log N) Binary Search)</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="wizard-result-box" id="wizResultBox">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </section>
+
         <!-- CHAPTER 4: KEYWORD CHEAT SHEET -->
         <section class="card" id="keyword-cheat">
           <span class="section-badge">Chapter 04</span>
@@ -2091,9 +2677,9 @@
         <!-- CHAPTER 5: 10 CORE PATTERNS WITH CODE -->
         <section class="card" id="core-patterns">
           <span class="section-badge">Chapter 05</span>
-          <h2 class="section-title">🧱 10 Core Pattern Templates (Production Java)</h2>
+          <h2 class="section-title">🧱 10 Core Pattern Templates <span style="font-size: 0.65em; font-weight: 700; color: var(--blue); vertical-align: middle;">(Java • C++ • Python)</span></h2>
           <p class="section-desc">
-            Har pattern ka trigger point, mental model aur copy-paste ready production Java template:
+            Har pattern ka trigger point, mental model aur copy-paste ready production templates (Java, C++, Python):
           </p>
 
           <div class="patterns-nav" id="patternTabs">
@@ -2174,7 +2760,7 @@
           <span class="section-badge">Chapter 07</span>
           <h2 class="section-title">💡 8 Deep-Dive Worked Examples (Step by Step)</h2>
           <p class="section-desc">
-            Top tech interviews me puche gaye 8 classic problems ka test case se optimized Java code tak complete walkthrough:
+            Top tech interviews me puche gaye 8 classic problems ka test case se optimized multi-language code (Java, C++, Python) tak complete walkthrough:
           </p>
 
           <div class="examples-nav" id="exampleChips">
@@ -2239,9 +2825,19 @@
               <label class="check-item"><input type="checkbox" onchange="updateChecklist()" /> <span>8. Even vs Odd lengths handled</span></label>
               <label class="check-item"><input type="checkbox" onchange="updateChecklist()" /> <span>9. Subarray length 1 equals Target</span></label>
             </div>
+
+            <div id="checklistCongrats" style="display: none; margin-top: 20px; padding: 20px 24px; border-radius: var(--radius); background: var(--green-bg); border: 2px solid var(--green); text-align: center;">
+              <h3 style="margin: 0 0 6px; color: var(--green); font-size: 19px; font-weight: 800;">🎉 100% Edge Cases Verified!</h3>
+              <p style="margin: 0; color: var(--ink); font-size: 14.5px; font-weight: 600;">Shabash! Aapka solution standard corner cases (null, single element, overflow, duplicates) ke liye battle-tested aur interview submission ready hai!</p>
+            </div>
           </div>
         </section>
       </main>
+
+      <!-- FLOATING KEYBOARD SHORTCUTS HINT BADGE -->
+      <div id="keyboardShortcutBadge" onclick="showKeyboardHelp()" title="Keyboard shortcuts: [/] Search • [W] Wizard • [D] Theme">
+        <span>⌨️</span> <span>Hotkeys: <strong>/</strong> Search • <strong>W</strong> Wizard • <strong>D</strong> Theme</span>
+      </div>
 
       <!-- FLOATING BACK TO TOP BUTTON -->
       <button id="backToTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to top">
@@ -2261,10 +2857,29 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
+
       // 1. DATA FROM PLAYBOOK
-      const patterns = [{"id": "two-pointers", "name": "Two Pointers", "icon": "\u2194\ufe0f", "cue": "Sorted array, pair/triplet sum, reverse in-place, partition", "intuition": "Dono ends (ya same direction) se pointers move karke search space ko O(n\u00b2) se O(n) karte hain. Agar sum chhota hai to left aage, bada hai to right peeche.", "code": "// 1. Opposite Ends (Sorted Pair Sum)\nint l = 0, r = arr.length - 1;\nwhile (l < r) {\n    int sum = arr[l] + arr[r];\n    if (sum == target) return new int[]{l, r};\n    else if (sum < target) l++;\n    else r--;\n}\n\n// 2. Same Direction (Remove Duplicates / Fast-Slow)\nint slow = 0;\nfor (int fast = 0; fast < arr.length; fast++) {\n    if (arr[fast] != arr[slow]) {\n        slow++;\n        arr[slow] = arr[fast];\n    }\n}"}, {"id": "sliding-window", "name": "Sliding Window", "icon": "\ud83e\ude9f", "cue": "Contiguous subarray / substring with condition (max sum, longest distinct, min length)", "intuition": "Window ko right pointer se expand karo jab tak valid ho. Jaise hi invalid ho, left pointer se shrink karo jab tak valid na ban jaye. Har element max 2 baar visit hota hai -> O(n) time.", "code": "// Dynamic Window (e.g. Longest Substring Without Repeating)\nint l = 0, best = 0;\nMap<Character, Integer> counts = new HashMap<>();\n\nfor (int r = 0; r < s.length(); r++) {\n    char ch = s.charAt(r);\n    counts.put(ch, counts.getOrDefault(ch, 0) + 1);\n    \n    // Condition break hui to shrink window\n    while (counts.get(ch) > 1) {\n        char leftChar = s.charAt(l);\n        counts.put(leftChar, counts.get(leftChar) - 1);\n        l++;\n    }\n    best = Math.max(best, r - l + 1);\n}\nreturn best;"}, {"id": "prefix-sum", "name": "Prefix Sum + HashMap", "icon": "\u2795", "cue": "Subarray sum equals K, multiple range sum queries, count subarrays", "intuition": "Subarray [i..j] ka sum = prefix[j] - prefix[i-1]. Agar prefix[j] - K pehle kisi index pe dekha gaya hai, to valid subarray mil gaya! O(n) me calculate hota hai.", "code": "public int subarraySum(int[] nums, int k) {\n    int count = 0, currentPrefixSum = 0;\n    // Map stores: prefixSum -> frequency\n    Map<Integer, Integer> map = new HashMap<>();\n    map.put(0, 1); // Base case: prefix sum 0 has occurred once\n    \n    for (int num : nums) {\n        currentPrefixSum += num;\n        // Check if (currentPrefixSum - k) previously seen\n        if (map.containsKey(currentPrefixSum - k)) {\n            count += map.get(currentPrefixSum - k);\n        }\n        map.put(currentPrefixSum, map.getOrDefault(currentPrefixSum, 0) + 1);\n    }\n    return count;\n}"}, {"id": "binary-search", "name": "Binary Search (On Answer)", "icon": "\ud83c\udfaf", "cue": "Sorted array lookup, minimum/maximum value satisfying a condition (Monotonic function)", "intuition": "Agar condition f(x) monotonic hai (False, False... True, True), to answer space [low, high] me mid check karo. Agar feasible hai to left me search karo, warna right me.", "code": "// Template: Binary Search on Answer\nint lo = minAnswer, hi = maxAnswer, ans = -1;\nwhile (lo <= hi) {\n    int mid = lo + (hi - lo) / 2;\n    if (isValid(mid, data)) {\n        ans = mid;         // Record potential answer\n        hi = mid - 1;      // Minimize: search smaller half\n    } else {\n        lo = mid + 1;      // Infeasible: search larger half\n    }\n}\nreturn ans;"}, {"id": "monotonic-stack", "name": "Monotonic Stack", "icon": "\ud83e\udd5e", "cue": "Next Greater Element, Previous Smaller, Histogram Largest Area, Stock Span", "intuition": "Stack me elements ko hamesha increasing ya decreasing order me rakho. Naya element aate hi jo condition tod rahe hain unhe pop karke answer record karo.", "code": "// Next Greater Element (Right side)\nint n = arr.length;\nint[] nge = new int[n];\nArrays.fill(nge, -1);\nDeque<Integer> stack = new ArrayDeque<>(); // stores indices\n\nfor (int i = 0; i < n; i++) {\n    while (!stack.isEmpty() && arr[i] > arr[stack.peek()]) {\n        int poppedIdx = stack.pop();\n        nge[poppedIdx] = arr[i];\n    }\n    stack.push(i);\n}\nreturn nge;"}, {"id": "fast-slow", "name": "Fast & Slow Pointers", "icon": "\ud83d\udc22\ud83d\udc07", "cue": "Linked List cycle detection, find middle node, happy number, find duplicate number", "intuition": "Slow pointer 1 step chalta hai, Fast pointer 2 steps. Agar cycle hai to fast pointer slow ko lap karke pakad lega. Space hamesha O(1) rehta hai.", "code": "// Floyd's Cycle Detection\nListNode slow = head, fast = head;\nwhile (fast != null && fast.next != null) {\n    slow = slow.next;\n    fast = fast.next.next;\n    if (slow == fast) return true; // Cycle detected!\n}\nreturn false;"}, {"id": "backtracking", "name": "Backtracking", "icon": "\ud83d\udd04", "cue": "Generate all subsets, permutations, combinations, solve Sudoku, N-Queens", "intuition": "Choice lo -> Recurse karo -> Choice undo (backtrack) karo. Base case pe path ko result me copy karo.", "code": "void backtrack(List<List<Integer>> res, List<Integer> path, int[] nums, int start) {\n    res.add(new ArrayList<>(path)); // Har state valid subset hai\n    \n    for (int i = start; i < nums.length; i++) {\n        path.add(nums[i]);                  // 1. Choose\n        backtrack(res, path, nums, i + 1);  // 2. Explore\n        path.remove(path.size() - 1);       // 3. Un-choose (Backtrack)\n    }\n}"}, {"id": "dp-tabulation", "name": "Dynamic Programming", "icon": "\ud83d\udcca", "cue": "Count total ways, min/max cost, knapsack, longest common subsequence, overlapping subproblems", "intuition": "State define karo dp[i], base case initialize karo, transitions likho: dp[i] = Math.min(dp[i], dp[i - coin] + 1). Space ko 2 variables se optimize kar sakte hain.", "code": "// Coin Change (Bottom-up Tabulation)\npublic int coinChange(int[] coins, int amount) {\n    int[] dp = new int[amount + 1];\n    Arrays.fill(dp, amount + 1); // Sentinel value (Infinity)\n    dp[0] = 0;                   // Base case: 0 amount needs 0 coins\n    \n    for (int i = 1; i <= amount; i++) {\n        for (int coin : coins) {\n            if (i - coin >= 0) {\n                dp[i] = Math.min(dp[i], dp[i - coin] + 1);\n            }\n        }\n    }\n    return dp[amount] > amount ? -1 : dp[amount];\n}"}, {"id": "bfs-dfs", "name": "BFS & DFS (Grid & Graphs)", "icon": "\ud83c\udf10", "cue": "Shortest path in unweighted graph, number of islands, connected components, level order", "intuition": "BFS uses Queue (level by level, shortest distance). DFS uses Recursion/Stack (deep dive, component sink/flood fill). Visited array ya in-place marking ('0') use karo.", "code": "// DFS Grid Sink (Number of Islands)\nvoid dfs(char[][] grid, int r, int c) {\n    if (r < 0 || r >= grid.length || c < 0 || c >= grid[0].length || grid[r][c] != '1') return;\n    grid[r][c] = '0'; // Mark visited (sink island)\n    dfs(grid, r + 1, c);\n    dfs(grid, r - 1, c);\n    dfs(grid, r, c + 1);\n    dfs(grid, r, c - 1);\n}"}, {"id": "top-k-heap", "name": "Top 'K' Elements (Heap)", "icon": "\ud83c\udfd4\ufe0f", "cue": "Find Kth largest, top K frequent words/numbers, merge K sorted lists", "intuition": "Kth largest ke liye MIN-HEAP of size K maintain karo. Jab size > K ho jaye to top (smallest) pop karo. Loop ke end me top pe exactly Kth largest bachega. O(n log k) time.", "code": "// Kth Largest Element using Min-Heap\npublic int findKthLargest(int[] nums, int k) {\n    PriorityQueue<Integer> minHeap = new PriorityQueue<>(); // Java default is Min-Heap\n    for (int num : nums) {\n        minHeap.offer(num);\n        if (minHeap.size() > k) {\n            minHeap.poll(); // Discard smallest, keep top K\n        }\n    }\n    return minHeap.peek();\n}"}];
+      const patterns = [{"id": "two-pointers", "name": "Two Pointers", "icon": "\u2194\ufe0f", "cue": "Sorted array, pair/triplet sum, reverse in-place, partition", "intuition": "Dono ends (ya same direction) se pointers move karke search space ko O(n\u00b2) se O(n) karte hain. Agar sum chhota hai to left aage, bada hai to right peeche.", "code": "// 1. Opposite Ends (Sorted Pair Sum)\nint l = 0, r = arr.length - 1;\nwhile (l < r) {\n    int sum = arr[l] + arr[r];\n    if (sum == target) return new int[]{l, r};\n    else if (sum < target) l++;\n    else r--;\n}\n\n// 2. Same Direction (Remove Duplicates)\nint slow = 0;\nfor (int fast = 0; fast < arr.length; fast++) {\n    if (arr[fast] != arr[slow]) {\n        slow++;\n        arr[slow] = arr[fast];\n    }\n}", "codeCpp": "// 1. Opposite Ends (Sorted Pair Sum)\nint l = 0, r = arr.size() - 1;\nwhile (l < r) {\n    int sum = arr[l] + arr[r];\n    if (sum == target) return {l, r};\n    else if (sum < target) l++;\n    else r--;\n}\n\n// 2. Same Direction (Remove Duplicates)\nint slow = 0;\nfor (int fast = 0; fast < arr.size(); fast++) {\n    if (arr[fast] != arr[slow]) {\n        arr[++slow] = arr[fast];\n    }\n}", "codePy": "# 1. Opposite Ends (Sorted Pair Sum)\nl, r = 0, len(arr) - 1\nwhile l < r:\n    total = arr[l] + arr[r]\n    if total == target:\n        return [l, r]\n    elif total < target:\n        l += 1\n    else:\n        r -= 1\n\n# 2. Same Direction (Remove Duplicates)\nslow = 0\nfor fast in range(len(arr)):\n    if arr[fast] != arr[slow]:\n        slow += 1\n        arr[slow] = arr[fast]"}, {"id": "sliding-window", "name": "Sliding Window", "icon": "\ud83e\ude9f", "cue": "Contiguous subarray / substring with condition (max sum, longest distinct, min length)", "intuition": "Window ko right pointer se expand karo jab tak valid ho. Jaise hi invalid ho, left pointer se shrink karo jab tak valid na ban jaye. Har element max 2 baar visit hota hai -> O(n) time.", "code": "// Dynamic Window (e.g. Longest Substring Without Repeating)\nint l = 0, best = 0;\nMap<Character, Integer> counts = new HashMap<>();\n\nfor (int r = 0; r < s.length(); r++) {\n    char ch = s.charAt(r);\n    counts.put(ch, counts.getOrDefault(ch, 0) + 1);\n    \n    // Condition break hui to shrink window\n    while (counts.get(ch) > 1) {\n        char leftChar = s.charAt(l);\n        counts.put(leftChar, counts.get(leftChar) - 1);\n        l++;\n    }\n    best = Math.max(best, r - l + 1);\n}\nreturn best;", "codeCpp": "// Dynamic Window (e.g. Longest Substring Without Repeating)\nint l = 0, best = 0;\nunordered_map<char, int> counts;\n\nfor (int r = 0; r < s.length(); r++) {\n    counts[s[r]]++;\n    \n    // Condition break hui to shrink window\n    while (counts[s[r]] > 1) {\n        counts[s[l]]--;\n        l++;\n    }\n    best = max(best, r - l + 1);\n}\nreturn best;", "codePy": "# Dynamic Window (e.g. Longest Substring Without Repeating)\nl, best = 0, 0\ncounts = {}\n\nfor r, ch in enumerate(s):\n    counts[ch] = counts.get(ch, 0) + 1\n    \n    # Condition break hui to shrink window\n    while counts[ch] > 1:\n        counts[s[l]] -= 1\n        l += 1\n    best = max(best, r - l + 1)\nreturn best"}, {"id": "prefix-sum", "name": "Prefix Sum + HashMap", "icon": "\u2795", "cue": "Subarray sum equals K, multiple range sum queries, count subarrays", "intuition": "Subarray [i..j] ka sum = prefix[j] - prefix[i-1]. Agar prefix[j] - K pehle kisi index pe dekha gaya hai, to valid subarray mil gaya! O(n) me calculate hota hai.", "code": "public int subarraySum(int[] nums, int k) {\n    int count = 0, currentPrefixSum = 0;\n    // Map stores: prefixSum -> frequency\n    Map<Integer, Integer> map = new HashMap<>();\n    map.put(0, 1); // Base case: prefix sum 0 has occurred once\n    \n    for (int num : nums) {\n        currentPrefixSum += num;\n        if (map.containsKey(currentPrefixSum - k)) {\n            count += map.get(currentPrefixSum - k);\n        }\n        map.put(currentPrefixSum, map.getOrDefault(currentPrefixSum, 0) + 1);\n    }\n    return count;\n}", "codeCpp": "int subarraySum(vector<int>& nums, int k) {\n    int count = 0, currentPrefixSum = 0;\n    unordered_map<int, int> prefixCounts;\n    prefixCounts[0] = 1;\n    \n    for (int num : nums) {\n        currentPrefixSum += num;\n        if (prefixCounts.count(currentPrefixSum - k)) {\n            count += prefixCounts[currentPrefixSum - k];\n        }\n        prefixCounts[currentPrefixSum]++;\n    }\n    return count;\n}", "codePy": "def subarraySum(nums: list[int], k: int) -> int:\n    count = current_prefix_sum = 0\n    prefix_counts = {0: 1}\n    \n    for num in nums:\n        current_prefix_sum += num\n        if (current_prefix_sum - k) in prefix_counts:\n            count += prefix_counts[current_prefix_sum - k]\n        prefix_counts[current_prefix_sum] = prefix_counts.get(current_prefix_sum, 0) + 1\n    return count"}, {"id": "binary-search", "name": "Binary Search (On Answer)", "icon": "\ud83c\udfaf", "cue": "Sorted array lookup, minimum/maximum value satisfying a condition (Monotonic function)", "intuition": "Agar condition f(x) monotonic hai (False, False... True, True), to answer space [low, high] me mid check karo. Agar feasible hai to left me search karo, warna right me.", "code": "// Template: Binary Search on Answer\nint lo = minAnswer, hi = maxAnswer, ans = -1;\nwhile (lo <= hi) {\n    int mid = lo + (hi - lo) / 2;\n    if (isValid(mid, data)) {\n        ans = mid;         // Record potential answer\n        hi = mid - 1;      // Minimize: search smaller half\n    } else {\n        lo = mid + 1;      // Infeasible: search larger half\n    }\n}\nreturn ans;", "codeCpp": "// Template: Binary Search on Answer\nint lo = minAnswer, hi = maxAnswer, ans = -1;\nwhile (lo <= hi) {\n    int mid = lo + (hi - lo) / 2;\n    if (isValid(mid, data)) {\n        ans = mid;\n        hi = mid - 1;      // Minimize: search smaller half\n    } else {\n        lo = mid + 1;      // Infeasible: search larger half\n    }\n}\nreturn ans;", "codePy": "# Template: Binary Search on Answer\nlo, hi, ans = min_answer, max_answer, -1\nwhile lo <= hi:\n    mid = (lo + hi) // 2\n    if is_valid(mid, data):\n        ans = mid\n        hi = mid - 1       # Minimize: search smaller half\n    else:\n        lo = mid + 1       # Infeasible: search larger half\nreturn ans"}, {"id": "monotonic-stack", "name": "Monotonic Stack", "icon": "\ud83e\udd5e", "cue": "Next Greater Element, Previous Smaller, Histogram Largest Area, Stock Span", "intuition": "Stack me elements ko hamesha increasing ya decreasing order me rakho. Naya element aate hi jo condition tod rahe hain unhe pop karke answer record karo.", "code": "// Next Greater Element (Right side)\nint n = arr.length;\nint[] nge = new int[n];\nArrays.fill(nge, -1);\nDeque<Integer> stack = new ArrayDeque<>(); // stores indices\n\nfor (int i = 0; i < n; i++) {\n    while (!stack.isEmpty() && arr[i] > arr[stack.peek()]) {\n        int poppedIdx = stack.pop();\n        nge[poppedIdx] = arr[i];\n    }\n    stack.push(i);\n}\nreturn nge;", "codeCpp": "// Next Greater Element (Right side)\nint n = arr.size();\nvector<int> nge(n, -1);\nstack<int> st; // stores indices\n\nfor (int i = 0; i < n; i++) {\n    while (!st.empty() && arr[i] > arr[st.top()]) {\n        int poppedIdx = st.top(); st.pop();\n        nge[poppedIdx] = arr[i];\n    }\n    st.push(i);\n}\nreturn nge;", "codePy": "# Next Greater Element (Right side)\nn = len(arr)\nnge = [-1] * n\nstack = []  # stores indices\n\nfor i in range(n):\n    while stack and arr[i] > arr[stack[-1]]:\n        popped_idx = stack.pop()\n        nge[popped_idx] = arr[i]\n    stack.append(i)\nreturn nge"}, {"id": "fast-slow", "name": "Fast & Slow Pointers", "icon": "\ud83d\udc22\ud83d\udc07", "cue": "Linked List cycle detection, find middle node, happy number, find duplicate number", "intuition": "Slow pointer 1 step chalta hai, Fast pointer 2 steps. Agar cycle hai to fast pointer slow ko lap karke pakad lega. Space hamesha O(1) rehta hai.", "code": "// Floyd's Cycle Detection\nListNode slow = head, fast = head;\nwhile (fast != null && fast.next != null) {\n    slow = slow.next;\n    fast = fast.next.next;\n    if (slow == fast) return true; // Cycle detected!\n}\nreturn false;", "codeCpp": "// Floyd's Cycle Detection\nListNode *slow = head, *fast = head;\nwhile (fast != nullptr && fast->next != nullptr) {\n    slow = slow->next;\n    fast = fast->next->next;\n    if (slow == fast) return true; // Cycle detected!\n}\nreturn false;", "codePy": "# Floyd's Cycle Detection\nslow = fast = head\nwhile fast and fast.next:\n    slow = slow.next\n    fast = fast.next.next\n    if slow == fast:\n        return True  # Cycle detected!\nreturn False"}, {"id": "backtracking", "name": "Backtracking", "icon": "\ud83d\udd04", "cue": "Generate all subsets, permutations, combinations, solve Sudoku, N-Queens", "intuition": "Choice lo -> Recurse karo -> Choice undo (backtrack) karo. Base case pe path ko result me copy karo.", "code": "void backtrack(List<List<Integer>> res, List<Integer> path, int[] nums, int start) {\n    res.add(new ArrayList<>(path)); // Har state valid subset hai\n    \n    for (int i = start; i < nums.length; i++) {\n        path.add(nums[i]);                  // 1. Choose\n        backtrack(res, path, nums, i + 1);  // 2. Explore\n        path.remove(path.size() - 1);       // 3. Un-choose (Backtrack)\n    }\n}", "codeCpp": "void backtrack(vector<vector<int>>& res, vector<int>& path, const vector<int>& nums, int start) {\n    res.push_back(path); // Har state valid subset hai\n    for (int i = start; i < nums.size(); i++) {\n        path.push_back(nums[i]);            // 1. Choose\n        backtrack(res, path, nums, i + 1);  // 2. Explore\n        path.pop_back();                    // 3. Un-choose (Backtrack)\n    }\n}", "codePy": "def backtrack(res, path, nums, start):\n    res.append(list(path))  # Har state valid subset hai\n    for i in range(start, len(nums)):\n        path.append(nums[i])          # 1. Choose\n        backtrack(res, path, nums, i + 1)  # 2. Explore\n        path.pop()                    # 3. Un-choose (Backtrack)"}, {"id": "dp-tabulation", "name": "Dynamic Programming", "icon": "\ud83d\udcca", "cue": "Count total ways, min/max cost, knapsack, longest common subsequence, overlapping subproblems", "intuition": "State define karo dp[i], base case initialize karo, transitions likho: dp[i] = Math.min(dp[i], dp[i - coin] + 1). Space ko 2 variables se optimize kar sakte hain.", "code": "// Coin Change (Bottom-up Tabulation)\npublic int coinChange(int[] coins, int amount) {\n    int[] dp = new int[amount + 1];\n    Arrays.fill(dp, amount + 1); // Sentinel value (Infinity)\n    dp[0] = 0;                   // Base case: 0 amount needs 0 coins\n    \n    for (int i = 1; i <= amount; i++) {\n        for (int coin : coins) {\n            if (i - coin >= 0) {\n                dp[i] = Math.min(dp[i], dp[i - coin] + 1);\n            }\n        }\n    }\n    return dp[amount] > amount ? -1 : dp[amount];\n}", "codeCpp": "// Coin Change (Bottom-up Tabulation)\nint coinChange(vector<int>& coins, int amount) {\n    vector<int> dp(amount + 1, amount + 1);\n    dp[0] = 0;\n    for (int i = 1; i <= amount; i++) {\n        for (int coin : coins) {\n            if (i - coin >= 0) {\n                dp[i] = min(dp[i], dp[i - coin] + 1);\n            }\n        }\n    }\n    return dp[amount] > amount ? -1 : dp[amount];\n}", "codePy": "# Coin Change (Bottom-up Tabulation)\ndef coinChange(coins: list[int], amount: int) -> int:\n    dp = [amount + 1] * (amount + 1)\n    dp[0] = 0\n    for i in range(1, amount + 1):\n        for coin in coins:\n            if i - coin >= 0:\n                dp[i] = min(dp[i], dp[i - coin] + 1)\n    return -1 if dp[amount] > amount else dp[amount]"}, {"id": "bfs-dfs", "name": "BFS & DFS (Grid & Graphs)", "icon": "\ud83c\udf10", "cue": "Shortest path in unweighted graph, number of islands, connected components, level order", "intuition": "BFS uses Queue (level by level, shortest distance). DFS uses Recursion/Stack (deep dive, component sink/flood fill). Visited array ya in-place marking ('0') use karo.", "code": "// DFS Grid Sink (Number of Islands)\nvoid dfs(char[][] grid, int r, int c) {\n    if (r < 0 || r >= grid.length || c < 0 || c >= grid[0].length || grid[r][c] != '1') return;\n    grid[r][c] = '0'; // Mark visited (sink island)\n    dfs(grid, r + 1, c);\n    dfs(grid, r - 1, c);\n    dfs(grid, r, c + 1);\n    dfs(grid, r, c - 1);\n}", "codeCpp": "// DFS Grid Sink (Number of Islands)\nvoid dfs(vector<vector<char>>& grid, int r, int c) {\n    if (r < 0 || r >= grid.size() || c < 0 || c >= grid[0].size() || grid[r][c] != '1') return;\n    grid[r][c] = '0'; // Mark visited (sink island)\n    dfs(grid, r + 1, c);\n    dfs(grid, r - 1, c);\n    dfs(grid, r, c + 1);\n    dfs(grid, r, c - 1);\n}", "codePy": "# DFS Grid Sink (Number of Islands)\ndef dfs(grid: list[list[str]], r: int, c: int):\n    if r < 0 or r >= len(grid) or c < 0 or c >= len(grid[0]) or grid[r][c] != '1':\n        return\n    grid[r][c] = '0'  # Mark visited (sink island)\n    dfs(grid, r + 1, c)\n    dfs(grid, r - 1, c)\n    dfs(grid, r, c + 1)\n    dfs(grid, r, c - 1)"}, {"id": "top-k-heap", "name": "Top 'K' Elements (Heap)", "icon": "\ud83c\udfd4\ufe0f", "cue": "Find Kth largest, top K frequent words/numbers, merge K sorted lists", "intuition": "Kth largest ke liye MIN-HEAP of size K maintain karo. Jab size > K ho jaye to top (smallest) pop karo. Loop ke end me top pe exactly Kth largest bachega. O(n log k) time.", "code": "// Kth Largest Element using Min-Heap\npublic int findKthLargest(int[] nums, int k) {\n    PriorityQueue<Integer> minHeap = new PriorityQueue<>(); // Java default is Min-Heap\n    for (int num : nums) {\n        minHeap.offer(num);\n        if (minHeap.size() > k) {\n            minHeap.poll(); // Discard smallest, keep top K\n        }\n    }\n    return minHeap.peek();\n}", "codeCpp": "// Kth Largest Element using Min-Heap\nint findKthLargest(vector<int>& nums, int k) {\n    priority_queue<int, vector<int>, greater<int>> minHeap;\n    for (int num : nums) {\n        minHeap.push(num);\n        if (minHeap.size() > k) {\n            minHeap.pop(); // Discard smallest, keep top K\n        }\n    }\n    return minHeap.top();\n}", "codePy": "# Kth Largest Element using Min-Heap\nimport heapq\n\ndef findKthLargest(nums: list[int], k: int) -> int:\n    min_heap = []\n    for num in nums:\n        heapq.heappush(min_heap, num)\n        if len(min_heap) > k:\n            heapq.heappop(min_heap)  # Discard smallest, keep top K\n    return min_heap[0]"}];
       const keywords = [{"kw": "Sorted array, pair / triplet sum", "tech": "Two Pointers, Binary Search", "why": "Sorted data eliminates half the search space with left/right pointers.", "ex": "Two Sum II, 3Sum", "cat": "arrays"}, {"kw": "Subarray / substring, contiguous, max/min len", "tech": "Sliding Window", "why": "Expand right, shrink left when condition breaks. O(n) total moves.", "ex": "Longest Substring Without Repeating", "cat": "arrays"}, {"kw": "Subarray sum equals K, count subarrays", "tech": "Prefix Sum + HashMap", "why": "Sum(i..j) = Prefix[j] - Prefix[i-1]. Constant time lookup.", "ex": "Subarray Sum Equals K", "cat": "arrays"}, {"kw": "Duplicate check, frequency count, pair lookup", "tech": "HashMap / HashSet", "why": "O(1) average lookup transforms O(n\u00b2) pair search to O(n).", "ex": "Two Sum, Contains Duplicate", "cat": "arrays"}, {"kw": "Minimum X satisfying condition / Monotonic", "tech": "Binary Search on Answer", "why": "If valid(mid) is monotonic (F, F, T, T), binary search finds boundary.", "ex": "Koko Eating Bananas, Capacity To Ship", "cat": "search"}, {"kw": "Bracket matching, Next Greater Element, undo", "tech": "Stack / Monotonic Stack", "why": "LIFO structure processes nested items and maintains monotonic order.", "ex": "Valid Parentheses, Daily Temperatures", "cat": "arrays"}, {"kw": "Top K largest / smallest, running stream median", "tech": "Heap / PriorityQueue", "why": "Maintain size K heap to avoid sorting all N elements.", "ex": "Kth Largest Element, Top K Frequent", "cat": "search"}, {"kw": "Linked list cycle, middle node", "tech": "Fast & Slow Pointers", "why": "Floyd's algorithm detects loop in O(n) time with O(1) space.", "ex": "Linked List Cycle, Middle of Linked List", "cat": "other"}, {"kw": "Tree traversal, height, max path sum", "tech": "DFS, Tree Recursion", "why": "Divide problem into left subtree and right subtree recursively.", "ex": "Max Depth of Binary Tree, Diameter", "cat": "graphs"}, {"kw": "Shortest path, min steps, level-order", "tech": "BFS (Queue)", "why": "BFS guarantees shortest path in unweighted graphs level by level.", "ex": "Word Ladder, Rotting Oranges", "cat": "graphs"}, {"kw": "Connected components, islands, clusters", "tech": "DFS / BFS / Union-Find", "why": "Flood fill sinks visited nodes or joins disjoint sets.", "ex": "Number of Islands, Max Area of Island", "cat": "graphs"}, {"kw": "Prerequisites, task dependency ordering", "tech": "Topological Sort (Kahn's)", "why": "Process in-degree 0 nodes via Queue to detect DAG cycles.", "ex": "Course Schedule I & II", "cat": "search"}, {"kw": "All subsets, permutations, combinations", "tech": "Backtracking", "why": "Explore decision tree: Choose -> Recurse -> Undo (Backtrack).", "ex": "Subsets, Permutations, Combination Sum", "cat": "dp"}, {"kw": "Locally best choice, interval scheduling", "tech": "Greedy (Sort first)", "why": "Local optimum yields global optimum when greedy-choice holds.", "ex": "Merge Intervals, Non-overlapping Intervals", "cat": "search"}, {"kw": "Count ways, min cost, max profit, knapsack", "tech": "Dynamic Programming", "why": "Memoize overlapping subproblems to prevent exponential explosion.", "ex": "Climbing Stairs, Coin Change, House Robber", "cat": "dp"}, {"kw": "Prefix match, dictionary search, autocomplete", "tech": "Trie (Prefix Tree)", "why": "Prefix tree stores characters on edges for O(word length) lookups.", "ex": "Implement Trie, Word Search II", "cat": "graphs"}, {"kw": "Bit operations, single non-duplicate, power of 2", "tech": "Bit Manipulation", "why": "XOR cancels duplicates (a ^ a = 0) and n & (n-1) drops lowest set bit.", "ex": "Single Number, Number of 1 Bits", "cat": "other"}, {"kw": "Intervals merge or overlap check", "tech": "Sort by Start Time + Loop", "why": "Once sorted, only adjacent intervals can overlap.", "ex": "Merge Intervals, Meeting Rooms II", "cat": "search"}];
-      const examples = [{"num": "13.1", "title": "Product of Array Except Self", "tags": "Arrays \u2022 Prefix/Suffix \u2022 In-Place", "target": "O(n) Time \u2022 O(1) Extra Space", "problem": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all elements of nums except nums[i]. Do it WITHOUT division and in O(n) time.", "human": "Har index i ke liye hume chahiye: (Left elements ka product) * (Right elements ka product). Jaise [1, 2, 3, 4] me index 2 (value 3) ke liye: (1 * 2) * (4) = 8.", "brute": "Har index pe jao, aur poori array me loop chala kar baki sabko multiply karo. Time: O(n\u00b2). TLE on n = 10\u2075.", "waste": "Har index i ke liye left product aur right product scratch se bar bar recalculate hota hai. Prefix aur suffix calculation overlap kar rahi hai!", "optimal": "1. Pehle pass me left to right jao aur answer[i] me prefix product bhar do.\n2. Doosre pass me right to left jao ek running suffix product variable leke aur multiply karte jao.\nExtra arrays ki zaroorat nahi -> O(1) extra space!", "code": "public int[] productExceptSelf(int[] nums) {\n    int n = nums.length;\n    int[] ans = new int[n];\n    \n    // Pass 1: Prefix products\n    ans[0] = 1;\n    for (int i = 1; i < n; i++) {\n        ans[i] = ans[i - 1] * nums[i - 1];\n    }\n    \n    // Pass 2: Multiply running suffix product\n    int right = 1;\n    for (int i = n - 1; i >= 0; i--) {\n        ans[i] = ans[i] * right;\n        right *= nums[i];\n    }\n    return ans;\n}", "edges": "Array has 0s (single 0 vs multiple 0s), negative numbers, minimum length 2."}, {"num": "13.2", "title": "Subarray Sum Equals K", "tags": "Arrays \u2022 Prefix Sum \u2022 HashMap", "target": "O(n) Time \u2022 O(n) Space", "problem": "Given an array of integers nums and an integer k, return the total number of continuous subarrays whose sum equals to k.", "human": "Agar start se ab tak ka total sum CurrentSum hai, aur hume sum k chahiye, to hume bas ye dekhna hai ki kya pehle kisi point pe (CurrentSum - k) sum dekha gaya tha? Agar haan, to un dono ke beech ka subarray exactly k hoga!", "brute": "Do nested loops: i = 0 to n, j = i to n, sum calculate karo. Time: O(n\u00b2).", "waste": "Har subarray ka sum bar bar recalculate hota hai. Sliding window negative numbers ki wajah se nahi chal sakti!", "optimal": "Prefix sum maintain karo aur ek HashMap me har prefix sum ki frequency store karo. Har step pe map.getOrDefault(currentPrefix - k, 0) ko answer me add karo.", "code": "public int subarraySum(int[] nums, int k) {\n    int count = 0, currentPrefixSum = 0;\n    Map<Integer, Integer> map = new HashMap<>();\n    map.put(0, 1); // Base: prefix sum 0 occurs once before array starts\n    \n    for (int num : nums) {\n        currentPrefixSum += num;\n        if (map.containsKey(currentPrefixSum - k)) {\n            count += map.get(currentPrefixSum - k);\n        }\n        map.put(currentPrefixSum, map.getOrDefault(currentPrefixSum, 0) + 1);\n    }\n    return count;\n}", "edges": "Negative numbers present, k = 0, array with all 0s, single element equals k."}, {"num": "13.3", "title": "Container With Most Water", "tags": "Two Pointers \u2022 Greedy", "target": "O(n) Time \u2022 O(1) Space", "problem": "Given an array of heights, find two lines that together with the x-axis form a container containing the most water. Return maximum water area.", "human": "Area = (right - left) * min(height[left], height[right]). Width sabse badi tab hoti hai jab pointers dono extreme ends pe hon. Chhoti height bottleneck hoti hai!", "brute": "Har pair (i, j) check karo: O(n\u00b2).", "waste": "Agar left wall chhoti hai, to right wall ko andar laane se width hamesha kam hogi aur height left wall se badi nahi ho sakti. Isliye chhoti wall ko move karna hi faydemand hai!", "optimal": "Left = 0, Right = n-1. Area calculate karo aur max update karo. Jo wall chhoti hai sirf uske pointer ko aage badhao (left++ ya right--).", "code": "public int maxArea(int[] h) {\n    int l = 0, r = h.length - 1, max = 0;\n    while (l < r) {\n        int width = r - l;\n        int currentHeight = Math.min(h[l], h[r]);\n        max = Math.max(max, width * currentHeight);\n        \n        // Move shorter bar: only it has chance to find taller replacement\n        if (h[l] < h[r]) l++;\n        else r--;\n    }\n    return max;\n}", "edges": "All bars equal height, strictly increasing or decreasing heights, minimum 2 bars."}, {"num": "13.4", "title": "Merge Intervals", "tags": "Intervals \u2022 Sorting \u2022 Greedy", "target": "O(n log n) Time \u2022 O(n) Space", "problem": "Given an array of intervals where intervals[i] = [start_i, end_i], merge all overlapping intervals and return non-overlapping intervals.", "human": "Agar appointments chronological order (start time) me arranged hon, to agla interval sirf pichhle interval ke end time se compare karna padega!", "brute": "Bina sort kiye har interval ko baki sabse compare karo aur merge karo -> O(n\u00b2) complex overlapping.", "waste": "Unsorted data me koi bhi interval kisi se bhi overlap kar sakta hai.", "optimal": "Intervals ko start time ke basis pe sort karo: Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0])). Ab ek pass me agar current.start <= prev.end, to prev.end = max(prev.end, current.end).", "code": "public int[][] merge(int[][] intervals) {\n    if (intervals.length <= 1) return intervals;\n    \n    // Step 1: Sort by start time\n    Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));\n    List<int[]> merged = new ArrayList<>();\n    \n    int[] current = intervals[0];\n    merged.add(current);\n    \n    for (int[] next : intervals) {\n        if (next[0] <= current[1]) {\n            // Overlap: extend end boundary\n            current[1] = Math.max(current[1], next[1]);\n        } else {\n            // No overlap: add new interval\n            current = next;\n            merged.add(current);\n        }\n    }\n    return merged.toArray(new int[merged.size()][]);\n}", "edges": "Completely contained intervals [1, 5] and [2, 3], touch-points [1, 4] and [4, 6], already non-overlapping."}, {"num": "13.5", "title": "Koko Eating Bananas", "tags": "Binary Search on Answer \u2022 Monotonicity", "target": "O(n log(max pile)) Time \u2022 O(1) Space", "problem": "Koko loves bananas. There are n piles. Guards come in h hours. Find the minimum integer eating speed k such that she can eat all bananas within h hours.", "human": "Speed k kitni ho sakti hai? Minimum 1 banana/hour, maximum max(piles). Agar speed k pe wo time me kha leti hai, to speed k+1 pe bhi zaroor kha legi! Monotonic property mil gayi!", "brute": "Speed k = 1 se shuru karke linear check karo: 1, 2, 3... Time: O(n * max(piles)).", "waste": "Linear check karne se jab range 10\u2079 hoti hai to TLE ho jata hai. Range sorted hai isliye Binary Search lag sakta hai!", "optimal": "low = 1, high = max(piles). mid = speed. Check karo ki total hours <= h hai kya. Agar haan, to ans = mid aur high = mid - 1. Warna low = mid + 1.", "code": "public int minEatingSpeed(int[] piles, int h) {\n    int lo = 1, hi = 0;\n    for (int p : piles) hi = Math.max(hi, p);\n    \n    int ans = hi;\n    while (lo <= hi) {\n        int mid = lo + (hi - lo) / 2;\n        long hours = 0;\n        for (int p : piles) {\n            hours += (p + mid - 1) / mid; // Ceil division without float\n        }\n        if (hours <= h) {\n            ans = mid;\n            hi = mid - 1; // Try slower speed\n        } else {\n            lo = mid + 1; // Must eat faster\n        }\n    }\n    return ans;\n}", "edges": "Integer overflow in total hours sum (use long), h == piles.length (k must be max(piles))."}, {"num": "13.6", "title": "Coin Change", "tags": "Dynamic Programming \u2022 Tabulation", "target": "O(amount * coins.length) Time \u2022 O(amount) Space", "problem": "Given coins of different denominations and an integer amount, return the fewest number of coins that you need to make up that amount. If not possible, return -1.", "human": "Amount X banane ka best tareeka = min(1 + min_coins(X - c)) for all coins c.", "brute": "Simple recursion har coin choose karke: O(coins^amount). Exponential TLE!", "waste": "Subproblems bar bar recompute ho rahe hain (e.g. amount 5 banane ke tareeqe alag-alag branches me duplicate calculate hote hain).", "optimal": "dp[i] = minimum coins to make amount i. dp[0] = 0. dp[i] = min(dp[i], dp[i - c] + 1). Bottom up loop chalao 1 to amount.", "code": "public int coinChange(int[] coins, int amount) {\n    int[] dp = new int[amount + 1];\n    Arrays.fill(dp, amount + 1); // Sentinel value\n    dp[0] = 0;\n    \n    for (int i = 1; i <= amount; i++) {\n        for (int coin : coins) {\n            if (i - coin >= 0) {\n                dp[i] = Math.min(dp[i], dp[i - coin] + 1);\n            }\n        }\n    }\n    return dp[amount] > amount ? -1 : dp[amount];\n}", "edges": "amount = 0 (returns 0), no combination possible (returns -1), coin value larger than amount."}, {"num": "13.7", "title": "Number of Islands", "tags": "2D Grid \u2022 DFS \u2022 Graph Traversal", "target": "O(Rows * Cols) Time \u2022 O(Rows * Cols) Space", "problem": "Given an m x n 2D binary grid which represents a map of '1's (land) and '0's (water), return the number of islands.", "human": "Grid me travel karo. Jaise hi koi '1' mile, count++ karo aur uske saath connected saari land ko visit karke '0' (water) me dubo do (sink), taaki dobara count na ho!", "brute": "Without sinking, checking connectivity needs disjoint set matrix queries: O(R * C * alpha(V)).", "waste": "Separate visited matrix extra space leta hai.", "optimal": "In-place DFS flood-fill. Jab bhi grid[r][c] == '1', usko '0' bana do aur 4 directions (up, down, left, right) me DFS call karo.", "code": "public int numIslands(char[][] grid) {\n    if (grid == null || grid.length == 0) return 0;\n    int count = 0;\n    int rows = grid.length, cols = grid[0].length;\n    \n    for (int r = 0; r < rows; r++) {\n        for (int c = 0; c < cols; c++) {\n            if (grid[r][c] == '1') {\n                count++;\n                sinkDfs(grid, r, c);\n            }\n        }\n    }\n    return count;\n}\n\nprivate void sinkDfs(char[][] grid, int r, int c) {\n    if (r < 0 || r >= grid.length || c < 0 || c >= grid[0].length || grid[r][c] != '1') return;\n    grid[r][c] = '0'; // Sink current cell\n    sinkDfs(grid, r + 1, c);\n    sinkDfs(grid, r - 1, c);\n    sinkDfs(grid, r, c + 1);\n    sinkDfs(grid, r, c - 1);\n}", "edges": "Grid with all 0s (returns 0), grid with all 1s (returns 1), 1x1 grid."}, {"num": "13.8", "title": "Subsets (Powerset)", "tags": "Backtracking \u2022 Recursion \u2022 Combinatorics", "target": "O(n * 2\u207f) Time \u2022 O(n) Recursion Space", "problem": "Given an integer array nums of unique elements, return all possible subsets (the power set). The solution set must not contain duplicate subsets.", "human": "Har element ke paas 2 options hain: ya to subset me aao, ya mat aao. Total 2\u207f subsets banenge.", "brute": "Generating subsets iteratively can be messy with manual index shifting.", "waste": "Constructing new lists at every step creates garbage collection overhead.", "optimal": "Backtracking template: Add current path to result -> loop over remaining -> path.add() -> recurse -> path.remove().", "code": "public List<List<Integer>> subsets(int[] nums) {\n    List<List<Integer>> result = new ArrayList<>();\n    backtrack(result, new ArrayList<>(), nums, 0);\n    return result;\n}\n\nprivate void backtrack(List<List<Integer>> res, List<Integer> path, int[] nums, int start) {\n    res.add(new ArrayList<>(path)); // Every prefix state is a valid subset\n    \n    for (int i = start; i < nums.length; i++) {\n        path.add(nums[i]);                  // 1. Choose\n        backtrack(res, path, nums, i + 1);  // 2. Explore\n        path.remove(path.size() - 1);       // 3. Backtrack\n    }\n}", "edges": "Empty array (returns [[]]), single element array [1] -> [[], [1]]."}];
+      const examples = [{"num": "13.1", "title": "Product of Array Except Self", "tags": "Arrays \u2022 Prefix/Suffix \u2022 In-Place", "target": "O(n) Time \u2022 O(1) Extra Space", "problem": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all elements of nums except nums[i]. Do it WITHOUT division and in O(n) time.", "human": "Har index i ke liye hume chahiye: (Left elements ka product) * (Right elements ka product). Jaise [1, 2, 3, 4] me index 2 (value 3) ke liye: (1 * 2) * (4) = 8.", "brute": "Har index pe jao, aur poori array me loop chala kar baki sabko multiply karo. Time: O(n\u00b2). TLE on n = 10\u2075.", "waste": "Har index i ke liye left product aur right product scratch se bar bar recalculate hota hai. Prefix aur suffix calculation overlap kar rahi hai!", "optimal": "1. Pehle pass me left to right jao aur answer[i] me prefix product bhar do.\n2. Doosre pass me right to left jao ek running suffix product variable leke aur multiply karte jao.\nExtra arrays ki zaroorat nahi -> O(1) extra space!", "code": "public int[] productExceptSelf(int[] nums) {\n    int n = nums.length;\n    int[] ans = new int[n];\n    \n    // Pass 1: Prefix products\n    ans[0] = 1;\n    for (int i = 1; i < n; i++) {\n        ans[i] = ans[i - 1] * nums[i - 1];\n    }\n    \n    // Pass 2: Multiply running suffix product\n    int right = 1;\n    for (int i = n - 1; i >= 0; i--) {\n        ans[i] = ans[i] * right;\n        right *= nums[i];\n    }\n    return ans;\n}", "edges": "Array has 0s (single 0 vs multiple 0s), negative numbers, minimum length 2.", "codeCpp": "vector<int> productExceptSelf(vector<int>& nums) {\n    int n = nums.size();\n    vector<int> ans(n, 1);\n    for (int i = 1; i < n; i++) ans[i] = ans[i - 1] * nums[i - 1];\n    int right = 1;\n    for (int i = n - 1; i >= 0; i--) {\n        ans[i] *= right;\n        right *= nums[i];\n    }\n    return ans;\n}", "codePy": "def productExceptSelf(nums: list[int]) -> list[int]:\n    n = len(nums)\n    ans = [1] * n\n    for i in range(1, n):\n        ans[i] = ans[i - 1] * nums[i - 1]\n    right = 1\n    for i in range(n - 1, -1, -1):\n        ans[i] *= right\n        right *= nums[i]\n    return ans"}, {"num": "13.2", "title": "Subarray Sum Equals K", "tags": "Arrays \u2022 Prefix Sum \u2022 HashMap", "target": "O(n) Time \u2022 O(n) Space", "problem": "Given an array of integers nums and an integer k, return the total number of continuous subarrays whose sum equals to k.", "human": "Agar start se ab tak ka total sum CurrentSum hai, aur hume sum k chahiye, to hume bas ye dekhna hai ki kya pehle kisi point pe (CurrentSum - k) sum dekha gaya tha? Agar haan, to un dono ke beech ka subarray exactly k hoga!", "brute": "Do nested loops: i = 0 to n, j = i to n, sum calculate karo. Time: O(n\u00b2).", "waste": "Har subarray ka sum bar bar recalculate hota hai. Sliding window negative numbers ki wajah se nahi chal sakti!", "optimal": "Prefix sum maintain karo aur ek HashMap me har prefix sum ki frequency store karo. Har step pe map.getOrDefault(currentPrefix - k, 0) ko answer me add karo.", "code": "public int subarraySum(int[] nums, int k) {\n    int count = 0, currentPrefixSum = 0;\n    Map<Integer, Integer> map = new HashMap<>();\n    map.put(0, 1); // Base: prefix sum 0 occurs once before array starts\n    \n    for (int num : nums) {\n        currentPrefixSum += num;\n        if (map.containsKey(currentPrefixSum - k)) {\n            count += map.get(currentPrefixSum - k);\n        }\n        map.put(currentPrefixSum, map.getOrDefault(currentPrefixSum, 0) + 1);\n    }\n    return count;\n}", "edges": "Negative numbers present, k = 0, array with all 0s, single element equals k.", "codeCpp": "int subarraySum(vector<int>& nums, int k) {\n    int count = 0, current = 0;\n    unordered_map<int, int> mp;\n    mp[0] = 1;\n    for (int num : nums) {\n        current += num;\n        if (mp.count(current - k)) count += mp[current - k];\n        mp[current]++;\n    }\n    return count;\n}", "codePy": "def subarraySum(nums: list[int], k: int) -> int:\n    count = current = 0\n    prefix = {0: 1}\n    for num in nums:\n        current += num\n        if (current - k) in prefix:\n            count += prefix[current - k]\n        prefix[current] = prefix.get(current, 0) + 1\n    return count"}, {"num": "13.3", "title": "Container With Most Water", "tags": "Two Pointers \u2022 Greedy", "target": "O(n) Time \u2022 O(1) Space", "problem": "Given an array of heights, find two lines that together with the x-axis form a container containing the most water. Return maximum water area.", "human": "Area = (right - left) * min(height[left], height[right]). Width sabse badi tab hoti hai jab pointers dono extreme ends pe hon. Chhoti height bottleneck hoti hai!", "brute": "Har pair (i, j) check karo: O(n\u00b2).", "waste": "Agar left wall chhoti hai, to right wall ko andar laane se width hamesha kam hogi aur height left wall se badi nahi ho sakti. Isliye chhoti wall ko move karna hi faydemand hai!", "optimal": "Left = 0, Right = n-1. Area calculate karo aur max update karo. Jo wall chhoti hai sirf uske pointer ko aage badhao (left++ ya right--).", "code": "public int maxArea(int[] h) {\n    int l = 0, r = h.length - 1, max = 0;\n    while (l < r) {\n        int width = r - l;\n        int currentHeight = Math.min(h[l], h[r]);\n        max = Math.max(max, width * currentHeight);\n        \n        // Move shorter bar: only it has chance to find taller replacement\n        if (h[l] < h[r]) l++;\n        else r--;\n    }\n    return max;\n}", "edges": "All bars equal height, strictly increasing or decreasing heights, minimum 2 bars.", "codeCpp": "int maxArea(vector<int>& h) {\n    int l = 0, r = h.size() - 1, maxA = 0;\n    while (l < r) {\n        maxA = max(maxA, (r - l) * min(h[l], h[r]));\n        if (h[l] < h[r]) l++;\n        else r--;\n    }\n    return maxA;\n}", "codePy": "def maxArea(h: list[int]) -> int:\n    l, r, max_area = 0, len(h) - 1, 0\n    while l < r:\n        max_area = max(max_area, (r - l) * min(h[l], h[r]))\n        if h[l] < h[r]:\n            l += 1\n        else:\n            r -= 1\n    return max_area"}, {"num": "13.4", "title": "Merge Intervals", "tags": "Intervals \u2022 Sorting \u2022 Greedy", "target": "O(n log n) Time \u2022 O(n) Space", "problem": "Given an array of intervals where intervals[i] = [start_i, end_i], merge all overlapping intervals and return non-overlapping intervals.", "human": "Agar appointments chronological order (start time) me arranged hon, to agla interval sirf pichhle interval ke end time se compare karna padega!", "brute": "Bina sort kiye har interval ko baki sabse compare karo aur merge karo -> O(n\u00b2) complex overlapping.", "waste": "Unsorted data me koi bhi interval kisi se bhi overlap kar sakta hai.", "optimal": "Intervals ko start time ke basis pe sort karo: Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0])). Ab ek pass me agar current.start <= prev.end, to prev.end = max(prev.end, current.end).", "code": "public int[][] merge(int[][] intervals) {\n    if (intervals.length <= 1) return intervals;\n    \n    // Step 1: Sort by start time\n    Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));\n    List<int[]> merged = new ArrayList<>();\n    \n    int[] current = intervals[0];\n    merged.add(current);\n    \n    for (int[] next : intervals) {\n        if (next[0] <= current[1]) {\n            // Overlap: extend end boundary\n            current[1] = Math.max(current[1], next[1]);\n        } else {\n            // No overlap: add new interval\n            current = next;\n            merged.add(current);\n        }\n    }\n    return merged.toArray(new int[merged.size()][]);\n}", "edges": "Completely contained intervals [1, 5] and [2, 3], touch-points [1, 4] and [4, 6], already non-overlapping.", "codeCpp": "vector<vector<int>> merge(vector<vector<int>>& intervals) {\n    if (intervals.empty()) return {};\n    sort(intervals.begin(), intervals.end());\n    vector<vector<int>> res;\n    res.push_back(intervals[0]);\n    for (int i = 1; i < intervals.size(); i++) {\n        if (intervals[i][0] <= res.back()[1]) {\n            res.back()[1] = max(res.back()[1], intervals[i][1]);\n        } else {\n            res.push_back(intervals[i]);\n        }\n    }\n    return res;\n}", "codePy": "def merge(intervals: list[list[int]]) -> list[list[int]]:\n    if not intervals:\n        return []\n    intervals.sort(key=lambda x: x[0])\n    merged = [intervals[0]]\n    for current in intervals[1:]:\n        if current[0] <= merged[-1][1]:\n            merged[-1][1] = max(merged[-1][1], current[1])\n        else:\n            merged.append(current)\n    return merged"}, {"num": "13.5", "title": "Koko Eating Bananas", "tags": "Binary Search on Answer \u2022 Monotonicity", "target": "O(n log(max pile)) Time \u2022 O(1) Space", "problem": "Koko loves bananas. There are n piles. Guards come in h hours. Find the minimum integer eating speed k such that she can eat all bananas within h hours.", "human": "Speed k kitni ho sakti hai? Minimum 1 banana/hour, maximum max(piles). Agar speed k pe wo time me kha leti hai, to speed k+1 pe bhi zaroor kha legi! Monotonic property mil gayi!", "brute": "Speed k = 1 se shuru karke linear check karo: 1, 2, 3... Time: O(n * max(piles)).", "waste": "Linear check karne se jab range 10\u2079 hoti hai to TLE ho jata hai. Range sorted hai isliye Binary Search lag sakta hai!", "optimal": "low = 1, high = max(piles). mid = speed. Check karo ki total hours <= h hai kya. Agar haan, to ans = mid aur high = mid - 1. Warna low = mid + 1.", "code": "public int minEatingSpeed(int[] piles, int h) {\n    int lo = 1, hi = 0;\n    for (int p : piles) hi = Math.max(hi, p);\n    \n    int ans = hi;\n    while (lo <= hi) {\n        int mid = lo + (hi - lo) / 2;\n        long hours = 0;\n        for (int p : piles) {\n            hours += (p + mid - 1) / mid; // Ceil division without float\n        }\n        if (hours <= h) {\n            ans = mid;\n            hi = mid - 1; // Try slower speed\n        } else {\n            lo = mid + 1; // Must eat faster\n        }\n    }\n    return ans;\n}", "edges": "Integer overflow in total hours sum (use long), h == piles.length (k must be max(piles)).", "codeCpp": "int minEatingSpeed(vector<int>& piles, int h) {\n    int lo = 1, hi = *max_element(piles.begin(), piles.end()), ans = hi;\n    while (lo <= hi) {\n        int mid = lo + (hi - lo) / 2;\n        long long hours = 0;\n        for (int p : piles) hours += (p + mid - 1) / mid;\n        if (hours <= h) {\n            ans = mid;\n            hi = mid - 1;\n        } else {\n            lo = mid + 1;\n        }\n    }\n    return ans;\n}", "codePy": "def minEatingSpeed(piles: list[int], h: int) -> int:\n    lo, hi = 1, max(piles)\n    ans = hi\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        hours = sum((p + mid - 1) // mid for p in piles)\n        if hours <= h:\n            ans = mid\n            hi = mid - 1\n        else:\n            lo = mid + 1\n    return ans"}, {"num": "13.6", "title": "Coin Change", "tags": "Dynamic Programming \u2022 Tabulation", "target": "O(amount * coins.length) Time \u2022 O(amount) Space", "problem": "Given coins of different denominations and an integer amount, return the fewest number of coins that you need to make up that amount. If not possible, return -1.", "human": "Amount X banane ka best tareeka = min(1 + min_coins(X - c)) for all coins c.", "brute": "Simple recursion har coin choose karke: O(coins^amount). Exponential TLE!", "waste": "Subproblems bar bar recompute ho rahe hain (e.g. amount 5 banane ke tareeqe alag-alag branches me duplicate calculate hote hain).", "optimal": "dp[i] = minimum coins to make amount i. dp[0] = 0. dp[i] = min(dp[i], dp[i - c] + 1). Bottom up loop chalao 1 to amount.", "code": "public int coinChange(int[] coins, int amount) {\n    int[] dp = new int[amount + 1];\n    Arrays.fill(dp, amount + 1); // Sentinel value\n    dp[0] = 0;\n    \n    for (int i = 1; i <= amount; i++) {\n        for (int coin : coins) {\n            if (i - coin >= 0) {\n                dp[i] = Math.min(dp[i], dp[i - coin] + 1);\n            }\n        }\n    }\n    return dp[amount] > amount ? -1 : dp[amount];\n}", "edges": "amount = 0 (returns 0), no combination possible (returns -1), coin value larger than amount.", "codeCpp": "int coinChange(vector<int>& coins, int amount) {\n    vector<int> dp(amount + 1, amount + 1);\n    dp[0] = 0;\n    for (int i = 1; i <= amount; i++) {\n        for (int c : coins) {\n            if (i - c >= 0) dp[i] = min(dp[i], dp[i - c] + 1);\n        }\n    }\n    return dp[amount] > amount ? -1 : dp[amount];\n}", "codePy": "def coinChange(coins: list[int], amount: int) -> int:\n    dp = [amount + 1] * (amount + 1)\n    dp[0] = 0\n    for i in range(1, amount + 1):\n        for c in coins:\n            if i - c >= 0:\n                dp[i] = min(dp[i], dp[i - c] + 1)\n    return -1 if dp[amount] > amount else dp[amount]"}, {"num": "13.7", "title": "Number of Islands", "tags": "2D Grid \u2022 DFS \u2022 Graph Traversal", "target": "O(Rows * Cols) Time \u2022 O(Rows * Cols) Space", "problem": "Given an m x n 2D binary grid which represents a map of '1's (land) and '0's (water), return the number of islands.", "human": "Grid me travel karo. Jaise hi koi '1' mile, count++ karo aur uske saath connected saari land ko visit karke '0' (water) me dubo do (sink), taaki dobara count na ho!", "brute": "Without sinking, checking connectivity needs disjoint set matrix queries: O(R * C * alpha(V)).", "waste": "Separate visited matrix extra space leta hai.", "optimal": "In-place DFS flood-fill. Jab bhi grid[r][c] == '1', usko '0' bana do aur 4 directions (up, down, left, right) me DFS call karo.", "code": "public int numIslands(char[][] grid) {\n    if (grid == null || grid.length == 0) return 0;\n    int count = 0;\n    int rows = grid.length, cols = grid[0].length;\n    \n    for (int r = 0; r < rows; r++) {\n        for (int c = 0; c < cols; c++) {\n            if (grid[r][c] == '1') {\n                count++;\n                sinkDfs(grid, r, c);\n            }\n        }\n    }\n    return count;\n}\n\nprivate void sinkDfs(char[][] grid, int r, int c) {\n    if (r < 0 || r >= grid.length || c < 0 || c >= grid[0].length || grid[r][c] != '1') return;\n    grid[r][c] = '0'; // Sink current cell\n    sinkDfs(grid, r + 1, c);\n    sinkDfs(grid, r - 1, c);\n    sinkDfs(grid, r, c + 1);\n    sinkDfs(grid, r, c - 1);\n}", "edges": "Grid with all 0s (returns 0), grid with all 1s (returns 1), 1x1 grid.", "codeCpp": "int numIslands(vector<vector<char>>& grid) {\n    if (grid.empty()) return 0;\n    int count = 0, m = grid.size(), n = grid[0].size();\n    function<void(int, int)> dfs = [&](int r, int c) {\n        if (r < 0 || r >= m || c < 0 || c >= n || grid[r][c] != '1') return;\n        grid[r][c] = '0';\n        dfs(r+1, c); dfs(r-1, c); dfs(r, c+1); dfs(r, c-1);\n    };\n    for (int r = 0; r < m; r++) {\n        for (int c = 0; c < n; c++) {\n            if (grid[r][c] == '1') { count++; dfs(r, c); }\n        }\n    }\n    return count;\n}", "codePy": "def numIslands(grid: list[list[str]]) -> int:\n    if not grid: return 0\n    m, n = len(grid), len(grid[0])\n    count = 0\n    def dfs(r, c):\n        if r < 0 or r >= m or c < 0 or c >= n or grid[r][c] != '1':\n            return\n        grid[r][c] = '0'\n        dfs(r+1, c); dfs(r-1, c); dfs(r, c+1); dfs(r, c-1)\n    for r in range(m):\n        for c in range(n):\n            if grid[r][c] == '1':\n                count += 1\n                dfs(r, c)\n    return count"}, {"num": "13.8", "title": "Subsets (Powerset)", "tags": "Backtracking \u2022 Recursion \u2022 Combinatorics", "target": "O(n * 2\u207f) Time \u2022 O(n) Recursion Space", "problem": "Given an integer array nums of unique elements, return all possible subsets (the power set). The solution set must not contain duplicate subsets.", "human": "Har element ke paas 2 options hain: ya to subset me aao, ya mat aao. Total 2\u207f subsets banenge.", "brute": "Generating subsets iteratively can be messy with manual index shifting.", "waste": "Constructing new lists at every step creates garbage collection overhead.", "optimal": "Backtracking template: Add current path to result -> loop over remaining -> path.add() -> recurse -> path.remove().", "code": "public List<List<Integer>> subsets(int[] nums) {\n    List<List<Integer>> result = new ArrayList<>();\n    backtrack(result, new ArrayList<>(), nums, 0);\n    return result;\n}\n\nprivate void backtrack(List<List<Integer>> res, List<Integer> path, int[] nums, int start) {\n    res.add(new ArrayList<>(path)); // Every prefix state is a valid subset\n    \n    for (int i = start; i < nums.length; i++) {\n        path.add(nums[i]);                  // 1. Choose\n        backtrack(res, path, nums, i + 1);  // 2. Explore\n        path.remove(path.size() - 1);       // 3. Backtrack\n    }\n}", "edges": "Empty array (returns [[]]), single element array [1] -> [[], [1]].", "codeCpp": "vector<vector<int>> subsets(vector<int>& nums) {\n    vector<vector<int>> res;\n    vector<int> path;\n    function<void(int)> backtrack = [&](int start) {\n        res.push_back(path);\n        for (int i = start; i < nums.size(); i++) {\n            path.push_back(nums[i]);\n            backtrack(i + 1);\n            path.pop_back();\n        }\n    };\n    backtrack(0);\n    return res;\n}", "codePy": "def subsets(nums: list[int]) -> list[list[int]]:\n    res = []\n    def backtrack(start, path):\n        res.append(list(path))\n        for i in range(start, len(nums)):\n            path.append(nums[i])\n            backtrack(i + 1, path)\n            path.pop()\n    backtrack(0, [])\n    return res"}];
+
+      // MULTI-LANGUAGE PREFERENCE
+      let currentLang = localStorage.getItem("dsa-playbook-lang") || "java";
+      function setLang(lang) {
+        currentLang = lang;
+        localStorage.setItem("dsa-playbook-lang", lang);
+        
+        // Update active pattern
+        const activePatternBtn = document.querySelector(".pattern-btn.active");
+        if (activePatternBtn) renderPattern(activePatternBtn.dataset.pid);
+        
+        // Update active example
+        const activeExBtn = document.querySelector(".example-btn.active");
+        const activeSubBtn = document.querySelector(".ex-subbtn.active");
+        if (activeExBtn && activeSubBtn) {
+          renderExSub(examples[parseInt(activeExBtn.dataset.idx, 10)], activeSubBtn.dataset.sub);
+        }
+      }
 
       // 2. SCROLL PROGRESS & BACK TO TOP
       window.addEventListener("scroll", () => {
@@ -2323,7 +2938,7 @@
         3: {
           title: "Step 3: Test Case Ko Haath Se Solve Karo (Pen & Paper)",
           time: "3 Minutes",
-          action: "Chhote input (3-4 elements) pe apne dimag ke steps record karo. Dekho ki aankhein kis element pe rukti hain aur kyu.",
+          action: "Chhote input (3-4 elements) pe apne dimag ke steps record karo. Dekho ki aankhein kis element pe rukti hain aur kyu. (Neeche live simulation dekhein!)",
           question: "Aapne valid answer dhoondne ke liye kaunse elements compare kiye?",
           trap: "Computer loops ke bare me sochna jabki manual logic hi clear na ho."
         },
@@ -2352,8 +2967,8 @@
           title: "Step 7: Edge Cases Check Karo & Optimal Code Likho",
           time: "5 Minutes",
           action: "Code likhte waqt 0-based indexing, boundary conditions (i == 0, i == n - 1), empty array aur integer overflow ka dhyan rakho.",
-          question: "Kya code off-by-one error se free hai?",
-          trap: "Code likh ke bina dry run kiye seedha Submit dabana."
+          question: "Empty array, single element, negative numbers, all duplicates check kiye?",
+          trap: "Corner case verify kiye bina bol dena 'I am done'."
         }
       };
 
@@ -2392,7 +3007,156 @@
         });
       });
 
+      // ==========================================
+      // 4.5 INTERACTIVE DRY-RUN VISUALIZER ENGINE
+      // ==========================================
+      const vizData = {
+        twosum: {
+          title: "Two Pointers (Sorted Two Sum)",
+          target: "Target = 9",
+          arr: [2, 7, 11, 15],
+          steps: [
+            { l: 0, r: 3, calc: "nums[0] + nums[3] = 2 + 15 = 17", explain: "17 > 9 (Sum target se bada hai). Array sorted hai, sum chhota karne ke liye Right pointer peeche karo (R--).", match: false },
+            { l: 0, r: 2, calc: "nums[0] + nums[2] = 2 + 11 = 13", explain: "13 > 9 (Abhi bhi bada hai). Right pointer ko ek step aur peeche karo (R--).", match: false },
+            { l: 0, r: 1, calc: "nums[0] + nums[1] = 2 + 7 = 9", explain: "🎯 MATCH FOUND! nums[0] + nums[1] = 9 == Target 9. Indices [0, 1] return karo! O(n) me bina nested loops ke solve ho gaya!", match: true }
+          ]
+        },
+        window: {
+          title: "Sliding Window (Max Sum Subarray K=3)",
+          target: "Window Size K = 3",
+          arr: [2, 1, 5, 1, 3, 2],
+          steps: [
+            { window: [0, 1, 2], calc: "Initial Window [2, 1, 5] -> Sum = 8", explain: "Pehli k=3 elements ka sum nikala: 2 + 1 + 5 = 8. Current Max Sum = 8.", match: false },
+            { window: [1, 2, 3], calc: "Slide Window: Sub 2, Add 1 -> Sum = 7", explain: "Left element 2 drop hua, right element 1 add hua: 8 - 2 + 1 = 7. Max still 8.", match: false },
+            { window: [2, 3, 4], calc: "Slide Window: Sub 1, Add 3 -> Sum = 9", explain: "🌟 Naya Max mila! 7 - 1 + 3 = 9. 9 > 8, so Current Max Sum update hoke 9 ban gaya!", match: true },
+            { window: [3, 4, 5], calc: "Slide Window: Sub 5, Add 2 -> Sum = 6", explain: "Element 5 drop hua, 2 add hua: 9 - 5 + 2 = 6. Overall Max Sum = 9!", match: false }
+          ]
+        },
+        kadane: {
+          title: "Kadane's Algorithm (Max Subarray Sum)",
+          target: "Max Contiguous Sum",
+          arr: [-2, 1, -3, 4, -1, 2, 1],
+          steps: [
+            { curr: 0, sum: -2, max: -2, explain: "Index 0 (val -2): Current sum = -2. Negative sum aage bojh banta hai, so reset to 0.", match: false },
+            { curr: 1, sum: 1, max: 1, explain: "Index 1 (val 1): Fresh start! Current sum = 1. Max sum update hua: 1.", match: false },
+            { curr: 2, sum: -2, max: 1, explain: "Index 2 (val -3): 1 + (-3) = -2. Negative sum drop karke reset to 0.", match: false },
+            { curr: 3, sum: 4, max: 4, explain: "Index 3 (val 4): Fresh start! Current sum = 4. Naya overall max = 4!", match: false },
+            { curr: 4, sum: 3, max: 4, explain: "Index 4 (val -1): 4 + (-1) = 3. Positive hai so keep extending.", match: false },
+            { curr: 5, sum: 5, max: 5, explain: "Index 5 (val 2): 3 + 2 = 5. Naya overall max = 5!", match: false },
+            { curr: 6, sum: 6, max: 6, explain: "🎯 Index 6 (val 1): 5 + 1 = 6. Maximum Subarray [4, -1, 2, 1] with Sum = 6 found in O(n)!", match: true }
+          ]
+        }
+      };
+
+      let currentVizKey = "twosum";
+      let currentVizStep = 0;
+      let vizTimer = null;
+
+      function renderViz() {
+        const v = vizData[currentVizKey];
+        const step = v.steps[currentVizStep];
+        document.getElementById("vizTargetHint").textContent = v.target;
+        document.getElementById("vizCalcDisplay").textContent = step.calc || (`Current Sum: ${step.sum} • Best Max: ${step.max}`);
+        document.getElementById("vizExplanationText").textContent = step.explain;
+
+        const container = document.getElementById("vizArrayContainer");
+        container.innerHTML = v.arr.map((val, idx) => {
+          let cls = "viz-box";
+          let label = "";
+
+          if (currentVizKey === "twosum") {
+            if (idx === step.l && idx === step.r) {
+              cls += " active-match";
+              label = '<span class="viz-pointer-label viz-pointer-left">L & R</span>';
+            } else if (idx === step.l) {
+              cls += step.match ? " active-match" : " active-left";
+              label = '<span class="viz-pointer-label viz-pointer-left">L ➔</span>';
+            } else if (idx === step.r) {
+              cls += step.match ? " active-match" : " active-right";
+              label = '<span class="viz-pointer-label viz-pointer-right">⬅ R</span>';
+            }
+          } else if (currentVizKey === "window") {
+            if (step.window.includes(idx)) {
+              cls += step.match ? " active-match" : " active-window";
+              if (idx === step.window[0]) label = '<span class="viz-pointer-label viz-pointer-left">L</span>';
+              if (idx === step.window[step.window.length - 1]) label = '<span class="viz-pointer-label viz-pointer-right">R</span>';
+            }
+          } else if (currentVizKey === "kadane") {
+            if (idx === step.curr) {
+              cls += step.match ? " active-match" : " active-left";
+              label = '<span class="viz-pointer-label viz-pointer-left">Curr</span>';
+            }
+          }
+
+          return `
+            <div class="viz-cell">
+              ${label}
+              <div class="${cls}">${val}</div>
+              <span class="viz-idx">i=${idx}</span>
+            </div>
+          `;
+        }).join("");
+
+        document.getElementById("vizPrevBtn").disabled = (currentVizStep === 0);
+        document.getElementById("vizNextBtn").disabled = (currentVizStep === v.steps.length - 1);
+      }
+
+      function vizStep(dir) {
+        const v = vizData[currentVizKey];
+        const next = currentVizStep + dir;
+        if (next >= 0 && next < v.steps.length) {
+          currentVizStep = next;
+          renderViz();
+        }
+      }
+
+      function vizTogglePlay() {
+        const btn = document.getElementById("vizPlayBtn");
+        if (vizTimer) {
+          clearInterval(vizTimer);
+          vizTimer = null;
+          btn.textContent = "▶️ Auto Play";
+        } else {
+          btn.textContent = "⏸️ Pause";
+          const v = vizData[currentVizKey];
+          vizTimer = setInterval(() => {
+            if (currentVizStep < v.steps.length - 1) {
+              currentVizStep++;
+              renderViz();
+            } else {
+              clearInterval(vizTimer);
+              vizTimer = null;
+              btn.textContent = "▶️ Auto Play";
+            }
+          }, 1600);
+        }
+      }
+
+      function vizReset() {
+        if (vizTimer) {
+          clearInterval(vizTimer);
+          vizTimer = null;
+          document.getElementById("vizPlayBtn").textContent = "▶️ Auto Play";
+        }
+        currentVizStep = 0;
+        renderViz();
+      }
+
+      document.getElementById("vizProblemTabs").addEventListener("click", (e) => {
+        const btn = e.target.closest(".viz-tab-btn");
+        if (btn) {
+          document.querySelectorAll(".viz-tab-btn").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          currentVizKey = btn.dataset.viz;
+          vizReset();
+        }
+      });
+
+      renderViz();
+
+      // ==========================================
       // 5. RADAR COMPLEXITY
+      // ==========================================
       const radarData = {
         10: {
           comp: "O(n!)",
@@ -2405,99 +3169,245 @@
           comp: "O(2ⁿ)",
           speed: "🔴 Exponential",
           meter: "85%",
-          desc: "Har element ke paas 2 choices hain (include / exclude). 2²⁰ ≈ 10⁶ operations.",
-          tech: "Subsets generation, Bitmask Dynamic Programming, Meet in the Middle"
+          desc: "Har element ke paas 2 choices (Include / Exclude). N=20 pe 2²⁰ ≈ 10⁶ operations ho sakte hain.",
+          tech: "Subsets, Powerset, 0/1 Knapsack (Recursion), Sudoku"
         },
         500: {
           comp: "O(n³)",
-          speed: "🟠 Cubic",
+          speed: "🟠 Cubic Time",
           meter: "70%",
-          desc: "3 nested loops aaram se chalenge (500³ ≈ 1.25 × 10⁸ operations).",
-          tech: "3 Nested Loops, Floyd-Warshall All-Pairs Shortest Path, 3D DP"
+          desc: "3 Nested loops allow hote hain. (500³ ≈ 1.25 × 10⁸ ops).",
+          tech: "Matrix Multiplication, Floyd-Warshall, 3Sum Brute Force"
         },
         5000: {
           comp: "O(n²)",
-          speed: "🟡 Quadratic",
+          speed: "🟡 Quadratic Time",
           meter: "55%",
-          desc: "2 nested loops chalenge (5,000² ≈ 2.5 × 10⁷ ops < 10⁸ ops).",
-          tech: "Nested Loops, 2D Dynamic Programming, Matrix Traversal"
+          desc: "2 Nested loops chal sakte hain. (5000² = 2.5 × 10⁷ ops). Is se bada input O(n²) pe TLE dega.",
+          tech: "2D Dynamic Programming, Bubble/Insertion Sort, Pair matching"
         },
         100000: {
-          comp: "O(n log n)",
+          comp: "O(n log n) or O(n)",
           speed: "🟢 Linearithmic (Interview Benchmark)",
-          meter: "30%",
-          desc: "N = 10⁵ sabse common interview constraint hai. O(N²) = 10¹⁰ ops (TLE)! Sirf O(N log N) chalega.",
+          meter: "35%",
+          desc: "N = 10⁵ sabse common interview constraint hai. O(N²) = 10¹⁰ ops (TLE)! Sirf O(N log N) ya O(N) chalega.",
           tech: "Sorting (Arrays.sort), PriorityQueue (Heap), Binary Search, Divide & Conquer"
         },
         1000000: {
           comp: "O(n)",
-          speed: "🟢 Linear (Lightning Fast)",
-          meter: "15%",
-          desc: "Array ko sirf 1 ya 2 baar scan karne ki permission hai. Single pass logic lagao.",
-          tech: "Two Pointers, Sliding Window, Prefix Sum, HashMap / HashSet, Monotonic Stack"
+          speed: "🟢 Linear Time",
+          meter: "20%",
+          desc: "Single loop ya linear scan allow hota hai (10⁶ ops). Nested loop sochna bhi mat.",
+          tech: "Two Pointers, Sliding Window, Prefix Sum + HashMap, Kadane's, Monotonic Stack"
         },
         1000000000: {
-          comp: "O(log n) ya O(1)",
-          speed: "⚡ Ultra Fast",
-          meter: "5%",
-          desc: "Pure array pe loop lagana impossible hai (10⁹ iterations TLE dega). Mathematical formula ya Binary Search lagao.",
-          tech: "Binary Search on Answer, Mathematical Formula, Bit Manipulation, Fast Exponentiation"
+          comp: "O(log n) or O(1)",
+          speed: "🚀 Blazing Fast (Logarithmic / Constant)",
+          meter: "8%",
+          desc: "Input 10⁹ (1 Billion) hai! O(n) loop bhi TLE dega. Search space ko har step pe half karna padega.",
+          tech: "Binary Search, Binary Search on Answer, Bit Manipulation, Math Formula O(1)"
         }
       };
 
       function renderRadar(nVal) {
-        const r = radarData[nVal];
-        const box = document.getElementById("calcResultBox");
-        box.innerHTML = `
+        const data = radarData[nVal] || radarData[100000];
+        const resBox = document.getElementById("calcResultBox");
+        resBox.innerHTML = `
           <div class="radar-header">
-            <span class="complexity-pill">${r.comp}</span>
-            <span class="speed-category-tag" style="background: var(--blue-light); color: var(--blue);">${r.speed}</span>
+            <div>
+              <span style="font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase;">Allowed Time Complexity</span>
+              <div class="complexity-pill">${data.comp}</div>
+            </div>
+            <span class="speed-category-tag" style="background: var(--blue-light); color: var(--blue);">${data.speed}</span>
           </div>
+
           <div>
             <div style="display: flex; justify-content: space-between; font-size: 12.5px; font-weight: 700; margin-bottom: 6px;">
               <span>Operation Load on CPU</span>
               <span>Threshold: 10⁸ ops / sec</span>
             </div>
             <div class="meter-track">
-              <div class="meter-fill" style="width: ${r.meter}"></div>
+              <div class="meter-fill" style="width: ${data.meter}"></div>
             </div>
           </div>
-          <p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--ink);">${r.desc}</p>
-          <div style="background: var(--surface); padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--line);">
-            <strong style="color: var(--blue); font-size: 12px; text-transform: uppercase;">Allowed Algorithm Patterns:</strong>
-            <p style="margin: 4px 0 0; font-size: 13.5px; font-weight: 700; color: var(--ink);">${r.tech}</p>
+
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--ink);">${data.desc}</p>
+
+          <div style="background: var(--surface); padding: 14px 18px; border-radius: var(--radius-sm); border: 1px solid var(--line);">
+            <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--blue); letter-spacing: 0.05em; display: block; margin-bottom: 4px;">Allowed Algorithm Patterns:</span>
+            <strong style="color: var(--ink); font-size: 14px;">${data.tech}</strong>
           </div>
         `;
       }
 
       renderRadar(100000);
 
-      document.querySelectorAll(".n-pill-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
+      document.getElementById("nPills").addEventListener("click", (e) => {
+        if (e.target.classList.contains("n-pill-btn")) {
           document.querySelectorAll(".n-pill-btn").forEach(b => b.classList.remove("active"));
-          btn.classList.add("active");
-          renderRadar(btn.dataset.n);
-        });
+          e.target.classList.add("active");
+          renderRadar(e.target.dataset.n);
+        }
       });
 
-      // 6. KEYWORDS FILTER & SEARCH
-      let activeCategory = "all";
+      // ==========================================
+      // 5.5 PATTERN FINDER WIZARD ENGINE
+      // ==========================================
+      const wizardRules = [
+        {
+          match: (i, g, n) => g === "contiguous",
+          pattern: "🪟 Sliding Window",
+          why: "Problem contiguous subarray ya substring me condition maang rahi hai. Window ko right pointer se expand karo aur condition tootne par left se shrink karo. Har element max 2 baar visit hota hai.",
+          time: "O(N) Time",
+          space: "O(K) ya O(1) Space",
+          classic: "LeetCode 3: Longest Substring Without Repeating • LeetCode 209: Min Size Subarray Sum",
+          jumpId: "sliding-window"
+        },
+        {
+          match: (i, g, n) => (i === "sorted" || g === "target-pair"),
+          pattern: "↔️ Two Pointers",
+          why: "Sorted array me pairs dhoondna ya extremes se shrink karna. Opposite ends (Left=0, Right=N-1) se pointer move karke O(N²) pair search ko O(N) me solve karo.",
+          time: "O(N) Time (or O(N log N) if sorting needed)",
+          space: "O(1) Auxiliary Space",
+          classic: "LeetCode 167: Two Sum II • LeetCode 11: Container With Most Water • LeetCode 15: 3Sum",
+          jumpId: "two-pointers"
+        },
+        {
+          match: (i, g, n) => g === "next-greater",
+          pattern: "🥞 Monotonic Stack",
+          why: "Nearest greater ya smaller element dhoondna hai. Monotonic decreasing stack me previous elements ka record rakho. Naya element condition todte hi sabka answer pop karke mil jata hai.",
+          time: "O(N) Time",
+          space: "O(N) Stack Space",
+          classic: "LeetCode 739: Daily Temperatures • LeetCode 84: Largest Rectangle in Histogram",
+          jumpId: "monotonic-stack"
+        },
+        {
+          match: (i, g, n) => (g === "min-max" || n === "huge"),
+          pattern: "🎯 Binary Search on Answer",
+          why: "Jab search space sorted ho ya condition monotonic ho (e.g., speed k pe valid hai to k+1 pe bhi zaroor valid hoga). Linear check O(N) TLE dega jabki Binary Search O(log(range)) me instant answer dega.",
+          time: "O(N log(Max - Min)) Time",
+          space: "O(1) Space",
+          classic: "LeetCode 875: Koko Eating Bananas • LeetCode 1011: Capacity To Ship Packages",
+          jumpId: "binary-search"
+        },
+        {
+          match: (i, g, n) => (g === "all-subsets" || n === "small"),
+          pattern: "🔄 Backtracking",
+          why: "Constraint N ≤ 20 hai aur saari possible combinations / permutations banani hain. Decision tree banao: 1. Choose -> 2. Explore (Recurse) -> 3. Un-choose (Backtrack).",
+          time: "O(2ⁿ) or O(N!) Time",
+          space: "O(N) Recursion Stack",
+          classic: "LeetCode 78: Subsets • LeetCode 46: Permutations • LeetCode 39: Combination Sum",
+          jumpId: "backtracking"
+        },
+        {
+          match: (i, g, n) => (g === "dp-overlap" || n === "medium"),
+          pattern: "📊 Dynamic Programming (Tabulation / Memo)",
+          why: "Optimal substructure aur overlapping subproblems hain (e.g. min coins, total ways, knapsack). Recursion me same states duplicate calculate hoti hain; DP table bana ke O(1) me reuse karo.",
+          time: "O(N * Target) Time",
+          space: "O(N) or O(Target) Space",
+          classic: "LeetCode 322: Coin Change • LeetCode 70: Climbing Stairs • LeetCode 198: House Robber",
+          jumpId: "dp-tabulation"
+        },
+        {
+          match: (i, g, n) => (g === "shortest-path" || i === "matrix" || i === "tree"),
+          pattern: "🌐 BFS & DFS (Graph / Grid)",
+          why: "Unweighted graph / 2D grid me shortest path ke liye BFS (Queue level-order). Connected components, islands, aur tree traversals ke liye DFS (Recursion flood fill).",
+          time: "O(V + E) or O(R * C) Time",
+          space: "O(V) or O(R * C) Space",
+          classic: "LeetCode 200: Number of Islands • LeetCode 994: Rotting Oranges • LeetCode 102: Level Order",
+          jumpId: "bfs-dfs"
+        },
+        {
+          match: (i, g, n) => i === "stream",
+          pattern: "🏔️ Top K Elements (Min/Max Heap)",
+          why: "Streaming data me se Kth largest ya Top K frequent chahiye. Poora array sort karne ki jagah size K ka heap maintain karo. Top element hamesha Kth extreme hoga.",
+          time: "O(N log K) Time",
+          space: "O(K) Space",
+          classic: "LeetCode 215: Kth Largest Element • LeetCode 347: Top K Frequent Elements",
+          jumpId: "top-k-heap"
+        }
+      ];
 
+      const wizState = { input: "array", goal: "contiguous", n: "large" };
+
+      function renderWizard() {
+        const matched = wizardRules.find(r => r.match(wizState.input, wizState.goal, wizState.n)) || wizardRules[0];
+        const resBox = document.getElementById("wizResultBox");
+        resBox.innerHTML = `
+          <div class="wizard-result-header">
+            <div>
+              <span class="wizard-result-badge">Direct Hit Pattern Match</span>
+              <div class="wizard-matched-pattern">${matched.pattern}</div>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <a href="#core-patterns" onclick="jumpToPattern('${matched.jumpId}')" class="btn-must-solve" style="font-size: 13px; height: 36px;">
+                📋 Open Pattern Template
+              </a>
+            </div>
+          </div>
+
+          <p class="wizard-intuition-text">
+            💡 <strong>Why this is optimal:</strong> ${matched.why}
+          </p>
+
+          <div class="wizard-specs-row">
+            <span class="wizard-spec-pill">⏱️ ${matched.time}</span>
+            <span class="wizard-spec-pill">💾 ${matched.space}</span>
+            <span class="wizard-spec-pill" style="border-color: var(--blue); color: var(--blue);">🔥 ${matched.classic}</span>
+          </div>
+        `;
+      }
+
+      function jumpToPattern(pid) {
+        const tab = document.querySelector(`.pattern-btn[data-pid='${pid}']`);
+        if (tab) tab.click();
+      }
+
+      function bindWizardGroup(groupId, stateKey) {
+        const group = document.getElementById(groupId);
+        if (group) {
+          group.addEventListener("click", (e) => {
+            const chip = e.target.closest(".wiz-chip");
+            if (chip) {
+              group.querySelectorAll(".wiz-chip").forEach(c => c.classList.remove("active"));
+              chip.classList.add("active");
+              wizState[stateKey] = chip.dataset[`wiz${stateKey.charAt(0).toUpperCase() + stateKey.slice(1)}`];
+              renderWizard();
+            }
+          });
+        }
+      }
+
+      bindWizardGroup("wizInputGroup", "input");
+      bindWizardGroup("wizGoalGroup", "goal");
+      bindWizardGroup("wizConstraintGroup", "n");
+      renderWizard();
+
+      // ==========================================
+      // 6. KEYWORD CHEAT SHEET SEARCH & FILTER
+      // ==========================================
       function renderKeywords() {
-        const query = document.getElementById("kwSearch").value.toLowerCase().trim();
+        const searchVal = document.getElementById("kwSearch").value.toLowerCase().trim();
+        const activeCat = document.querySelector(".cat-pill.active").dataset.cat;
         const grid = document.getElementById("kwGrid");
 
         const filtered = keywords.filter(k => {
-          const matchesCat = activeCategory === "all" || k.cat === activeCategory;
-          const matchesQuery = !query || 
-            k.kw.toLowerCase().includes(query) || 
-            k.tech.toLowerCase().includes(query) || 
-            k.ex.toLowerCase().includes(query);
-          return matchesCat && matchesQuery;
+          const matchCat = (activeCat === "all" || k.cat === activeCat);
+          const matchText = (k.kw.toLowerCase().includes(searchVal) ||
+                             k.tech.toLowerCase().includes(searchVal) ||
+                             k.why.toLowerCase().includes(searchVal) ||
+                             k.ex.toLowerCase().includes(searchVal));
+          return matchCat && matchText;
         });
 
-        if (!filtered.length) {
-          grid.innerHTML = '<div style="grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); font-weight: 600;">Koi matching pattern nahi mila. Try typing "subarray", "cycle", "shortest", "heap"...</div>';
+        if (filtered.length === 0) {
+          grid.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 40px; background: var(--surface-2); border-radius: var(--radius); border: 1px dashed var(--line);">
+              <span style="font-size: 36px; display: block; margin-bottom: 8px;">🔍</span>
+              <h3 style="margin: 0 0 6px;">Koi pattern match nahi mila</h3>
+              <p style="margin: 0; color: var(--muted); font-size: 14px;">Alag keyword type karein ya category filter "All" select karein.</p>
+            </div>
+          `;
           return;
         }
 
@@ -2519,12 +3429,13 @@
         pill.addEventListener("click", () => {
           document.querySelectorAll(".cat-pill").forEach(p => p.classList.remove("active"));
           pill.classList.add("active");
-          activeCategory = pill.dataset.cat;
           renderKeywords();
         });
       });
 
-      // 7. PATTERNS WITH CODE
+      // ==========================================
+      // 7. PATTERNS WITH CODE (MULTI-LANG)
+      // ==========================================
       function renderPatternsNav() {
         const nav = document.getElementById("patternTabs");
         nav.innerHTML = patterns.map((p, idx) => `
@@ -2534,9 +3445,18 @@
         `).join("");
       }
 
+      function getPatternCode(p) {
+        if (currentLang === "cpp" && p.codeCpp) return p.codeCpp;
+        if (currentLang === "py" && p.codePy) return p.codePy;
+        return p.code;
+      }
+
       function renderPattern(pid) {
         const p = patterns.find(item => item.id === pid) || patterns[0];
         const display = document.getElementById("patternContent");
+        const codeText = getPatternCode(p);
+        const langLabel = currentLang === "cpp" ? "C++ 20" : (currentLang === "py" ? "Python 3" : "Java 17");
+
         display.innerHTML = `
           <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
             <div>
@@ -2556,10 +3476,14 @@
                 <span class="code-dot" style="background: #ffbd2e;"></span>
                 <span class="code-dot" style="background: #27c93f;"></span>
               </div>
-              <span>Java Template • ${p.name}</span>
+              <div class="lang-pills">
+                <button class="lang-pill ${currentLang === 'java' ? 'active' : ''}" onclick="setLang('java')">☕ Java</button>
+                <button class="lang-pill ${currentLang === 'cpp' ? 'active' : ''}" onclick="setLang('cpp')">⚡ C++</button>
+                <button class="lang-pill ${currentLang === 'py' ? 'active' : ''}" onclick="setLang('py')">🐍 Python</button>
+              </div>
               <button class="copy-btn" onclick="copyCode(this)">📋 Copy Template</button>
             </div>
-            <pre><code>${escapeHtml(p.code)}</code></pre>
+            <pre><code>${escapeHtml(codeText)}</code></pre>
           </div>
         `;
       }
@@ -2576,7 +3500,9 @@
         }
       });
 
-      // 8. WORKED EXAMPLES
+      // ==========================================
+      // 8. WORKED EXAMPLES (MULTI-LANG)
+      // ==========================================
       function renderExampleChips() {
         const chips = document.getElementById("exampleChips");
         chips.innerHTML = examples.map((ex, idx) => `
@@ -2590,15 +3516,16 @@
         const ex = examples[idx];
         const display = document.getElementById("exampleDisplay");
         display.innerHTML = `
-          <div class="radar-result-card" style="padding: 28px;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+          <div class="pattern-display-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
               <div>
-                <h3 style="margin: 0 0 6px; font-size: 24px; font-weight: 800; color: var(--ink);">
-                  ${ex.num} ${ex.title}
-                </h3>
-                <span style="font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: var(--radius-pill); background: var(--blue-light); color: var(--blue); border: 1px solid var(--line);">${ex.tags}</span>
+                <span style="font-size: 12.5px; font-weight: 800; color: var(--purple); text-transform: uppercase; letter-spacing: 0.05em;">Problem ${ex.num}</span>
+                <h3 style="margin: 4px 0 0; font-size: 22px; font-weight: 800; color: var(--ink);">${ex.title}</h3>
               </div>
-              <span style="font-size: 13.5px; font-weight: 800; padding: 6px 16px; border-radius: var(--radius-pill); background: var(--green-bg); color: var(--green); border: 1px solid var(--green);">${ex.target}</span>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <span style="padding: 6px 14px; border-radius: var(--radius-pill); background: var(--surface-3); font-size: 13px; font-weight: 700; color: var(--ink);">${ex.tags}</span>
+                <span style="padding: 6px 14px; border-radius: var(--radius-pill); background: var(--green-bg); font-size: 13px; font-weight: 800; color: var(--green);">${ex.target}</span>
+              </div>
             </div>
 
             <div class="ex-subnav" id="exSubtabs">
@@ -2606,7 +3533,7 @@
               <button class="ex-subbtn" data-sub="human">🧠 Human Intuition</button>
               <button class="ex-subbtn" data-sub="brute">🔨 Brute Force</button>
               <button class="ex-subbtn" data-sub="waste">🔍 Waste Analysis</button>
-              <button class="ex-subbtn" data-sub="optimal">⚡ Optimal Java Code</button>
+              <button class="ex-subbtn" data-sub="optimal">⚡ Optimal Implementation</button>
               <button class="ex-subbtn" data-sub="edges">⚠️ Edge Cases</button>
             </div>
 
@@ -2616,6 +3543,12 @@
           </div>
         `;
         renderExSub(ex, "problem");
+      }
+
+      function getExampleCode(ex) {
+        if (currentLang === "cpp" && ex.codeCpp) return ex.codeCpp;
+        if (currentLang === "py" && ex.codePy) return ex.codePy;
+        return ex.code;
       }
 
       function renderExSub(ex, sub) {
@@ -2641,8 +3574,9 @@
             <p style="margin: 0; font-size: 15px; line-height: 1.7; color: var(--ink);">${ex.waste}</p>
           `;
         } else if (sub === "optimal") {
+          const codeText = getExampleCode(ex);
           container.innerHTML = `
-            <h4 style="margin: 0 0 10px; font-size: 16px; color: var(--green); font-weight: 800;">Optimal Logic & Production Java Implementation</h4>
+            <h4 style="margin: 0 0 10px; font-size: 16px; color: var(--green); font-weight: 800;">Optimal Logic & Production Implementation</h4>
             <p style="margin: 0 0 14px; font-size: 14.5px; line-height: 1.6; color: var(--ink); white-space: pre-line;">${ex.optimal}</p>
             <div class="code-container">
               <div class="code-header">
@@ -2651,10 +3585,14 @@
                   <span class="code-dot" style="background: #ffbd2e;"></span>
                   <span class="code-dot" style="background: #27c93f;"></span>
                 </div>
-                <span>Java • ${ex.title}</span>
+                <div class="lang-pills">
+                  <button class="lang-pill ${currentLang === 'java' ? 'active' : ''}" onclick="setLang('java')">☕ Java</button>
+                  <button class="lang-pill ${currentLang === 'cpp' ? 'active' : ''}" onclick="setLang('cpp')">⚡ C++</button>
+                  <button class="lang-pill ${currentLang === 'py' ? 'active' : ''}" onclick="setLang('py')">🐍 Python</button>
+                </div>
                 <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
               </div>
-              <pre><code>${escapeHtml(ex.code)}</code></pre>
+              <pre><code>${escapeHtml(codeText)}</code></pre>
             </div>
           `;
         } else if (sub === "edges") {
@@ -2687,7 +3625,9 @@
         }
       });
 
-      // 9. CHECKLIST PROGRESS
+      // ==========================================
+      // 9. CHECKLIST PROGRESS & CELEBRATION
+      // ==========================================
       function updateChecklist() {
         const total = document.querySelectorAll("#checklistGrid input[type='checkbox']").length;
         const checked = document.querySelectorAll("#checklistGrid input[type='checkbox']:checked").length;
@@ -2696,15 +3636,144 @@
         document.getElementById("checkProgressBar").style.width = pct + "%";
         document.getElementById("checkProgressText").textContent = `${checked} / ${total} Checked (${pct}%)`;
         
+        const congrats = document.getElementById("checklistCongrats");
         if (pct === 100) {
           document.getElementById("checkProgressText").textContent = "🎉 100% Ready to Submit!";
           document.getElementById("checkProgressText").style.color = "var(--green)";
+          if (congrats) congrats.style.display = "block";
+          fireConfetti();
         } else {
           document.getElementById("checkProgressText").style.color = "var(--blue)";
+          if (congrats) congrats.style.display = "none";
         }
       }
 
-      // 10. UTILITIES
+      // CONFETTI CANNON ANIMATION
+      function fireConfetti() {
+        const canvas = document.getElementById("confettiCanvas");
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const colors = ["#1554e8", "#06b6d4", "#10b981", "#f59e0b", "#8b5cf6", "#ff7a18"];
+        const pieces = [];
+        for (let i = 0; i < 90; i++) {
+          pieces.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * -canvas.height,
+            size: Math.random() * 8 + 6,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            speedY: Math.random() * 5 + 3,
+            speedX: Math.random() * 4 - 2,
+            rotation: Math.random() * 360,
+            rotationSpeed: Math.random() * 6 - 3
+          });
+        }
+
+        let frames = 0;
+        function update() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          pieces.forEach(p => {
+            p.y += p.speedY;
+            p.x += p.speedX;
+            p.rotation += p.rotationSpeed;
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate((p.rotation * Math.PI) / 180);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+            ctx.restore();
+          });
+
+          frames++;
+          if (frames < 140) {
+            requestAnimationFrame(update);
+          } else {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+          }
+        }
+        requestAnimationFrame(update);
+      }
+
+      // ==========================================
+      // 10. SCROLL-SPY STICKY NAVIGATION HIGHLIGHT
+      // ==========================================
+      const sections = [
+        "golden-rules",
+        "seven-steps",
+        "dry-run-visualizer",
+        "complexity-radar",
+        "pattern-wizard",
+        "keyword-cheat",
+        "core-patterns",
+        "thinking-ladder",
+        "worked-examples",
+        "emergency-guide"
+      ];
+
+      const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            document.querySelectorAll(".nav-pill").forEach(pill => {
+              if (pill.getAttribute("href") === `#${id}`) {
+                pill.classList.add("active-nav");
+                pill.scrollIntoView({ behavior: "smooth", inline: "nearest", block: "nearest" });
+              } else {
+                pill.classList.remove("active-nav");
+              }
+            });
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: 0
+      });
+
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) navObserver.observe(el);
+      });
+
+      // ==========================================
+      // 11. KEYBOARD SHORTCUTS
+      // ==========================================
+      document.addEventListener("keydown", (e) => {
+        if (["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
+          if (e.key === "Escape") document.activeElement.blur();
+          return;
+        }
+
+        if (e.key === "/") {
+          e.preventDefault();
+          const s = document.getElementById("kwSearch");
+          if (s) {
+            s.focus();
+            s.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        } else if (e.key === "w" || e.key === "W") {
+          const wiz = document.getElementById("pattern-wizard");
+          if (wiz) wiz.scrollIntoView({ behavior: "smooth" });
+        } else if (e.key === "d" || e.key === "D") {
+          if (themeToggle) themeToggle.click();
+        } else if (e.key >= "1" && e.key <= "7") {
+          const stepBtn = document.querySelector(`.pipeline-step[data-step="${e.key}"]`);
+          if (stepBtn) {
+            stepBtn.click();
+            stepBtn.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        }
+      });
+
+      function showKeyboardHelp() {
+        alert("⌨️ DSA Logic Playbook Keyboard Shortcuts:\n\n[/] Focus Pattern Search\n[W] Jump to Pattern Finder Wizard\n[D] Toggle Dark / Light Mode\n[1 - 7] Select 7-Step Sequence Steps\n[Esc] Clear search / Unfocus");
+      }
+
+      // ==========================================
+      // 12. UTILITIES
+      // ==========================================
       function escapeHtml(str) {
         return str
           .replace(/&/g, "&amp;")
