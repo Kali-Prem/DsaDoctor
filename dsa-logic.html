@@ -42,9 +42,9 @@
         --surface: #ffffff;
         --surface-2: #f0f6ff;
         --surface-3: #e5effe;
-        --ink: #0f172a;
-        --ink-secondary: #334155;
-        --muted: #64748b;
+        --ink: #090d16;
+        --ink-secondary: #1e293b;
+        --muted: #334155;
         --line: #cbdff8;
         --line-strong: #94bbf0;
         
@@ -80,8 +80,8 @@
         --surface-2: #1e293b;
         --surface-3: #283548;
         --ink: #f8fafc;
-        --ink-secondary: #cbd5e1;
-        --muted: #94a3b8;
+        --ink-secondary: #e2e8f0;
+        --muted: #cbd5e1;
         --line: #334155;
         --line-strong: #475569;
         
@@ -124,6 +124,9 @@
           system-ui,
           sans-serif;
         line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
         transition: background 250ms ease, color 250ms ease;
         position: relative;
         overflow-x: hidden;
@@ -338,18 +341,18 @@
         box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
       }
 
-      /* STICKY QUICK CHAPTER PILLS */
+      /* STICKY QUICK CHAPTER PILLS - FLOATING GLASS BUTTONS */
       .sticky-nav {
-        background: var(--surface);
-        border-bottom: 1px solid var(--line);
-        padding: 10px 24px;
+        background: transparent;
+        border-bottom: none;
+        padding: 12px 24px;
         overflow-x: auto;
         white-space: nowrap;
         scrollbar-width: none;
         position: sticky;
         top: 63px;
         z-index: 90;
-        backdrop-filter: blur(12px);
+        pointer-events: none;
       }
 
       .sticky-nav::-webkit-scrollbar {
@@ -360,30 +363,64 @@
         max-width: 1440px;
         margin: 0 auto;
         display: flex;
-        gap: 8px;
+        gap: 10px;
+        align-items: center;
       }
 
       .nav-pill {
-        padding: 7px 15px;
+        padding: 8px 18px;
         border-radius: var(--radius-pill);
-        background: var(--surface-2);
-        color: var(--ink-secondary);
+        background: rgba(255, 255, 255, 0.68);
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.85);
+        color: var(--ink);
         text-decoration: none;
-        font-size: 13px;
+        font-size: 13.5px;
         font-weight: 700;
-        border: 1px solid var(--line);
-        transition: all 0.2s ease;
+        letter-spacing: 0.01em;
+        box-shadow:
+          0 6px 20px rgba(21, 84, 232, 0.08),
+          0 1px 3px rgba(0, 0, 0, 0.04),
+          inset 0 1px 1px rgba(255, 255, 255, 0.95);
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         flex: 0 0 auto;
         display: inline-flex;
         align-items: center;
-        gap: 6px;
+        gap: 7px;
+        pointer-events: auto;
+      }
+
+      body.dark-mode .nav-pill {
+        background: rgba(15, 23, 42, 0.68);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: var(--ink);
+        box-shadow:
+          0 8px 24px rgba(0, 0, 0, 0.45),
+          inset 0 1px 1px rgba(255, 255, 255, 0.12);
       }
 
       .nav-pill:hover {
-        background: var(--blue-light);
+        transform: translateY(-2px) scale(1.02);
+        background: rgba(255, 255, 255, 0.92);
         border-color: var(--blue);
         color: var(--blue);
-        transform: translateY(-1px);
+        box-shadow:
+          0 10px 28px rgba(21, 84, 232, 0.2),
+          inset 0 1px 1px rgba(255, 255, 255, 1);
+      }
+
+      body.dark-mode .nav-pill:hover {
+        background: rgba(30, 41, 59, 0.85);
+        border-color: var(--blue);
+        color: var(--blue);
+        box-shadow:
+          0 12px 30px rgba(0, 0, 0, 0.55),
+          0 0 20px var(--blue-glow);
+      }
+
+      .nav-pill:active {
+        transform: scale(0.97);
       }
 
       /* MAIN LAYOUT */
@@ -469,8 +506,9 @@
 
       .hero-desc {
         font-size: 16.5px;
-        line-height: 1.65;
-        color: var(--muted);
+        line-height: 1.7;
+        color: var(--ink-secondary);
+        font-weight: 500;
         margin: 0 0 24px;
       }
 
@@ -584,8 +622,9 @@
       .section-desc {
         margin: 0 0 28px;
         color: var(--muted);
-        font-size: 15.5px;
-        line-height: 1.6;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.65;
         max-width: 880px;
       }
 
@@ -637,8 +676,9 @@
 
       .rule-card p {
         margin: 0 0 18px;
-        font-size: 14px;
+        font-size: 14.5px;
         color: var(--muted);
+        font-weight: 500;
         line-height: 1.6;
         flex: 1;
       }
@@ -714,6 +754,7 @@
       .step-sub {
         font-size: 12px;
         color: var(--muted);
+        font-weight: 600;
       }
 
       .step-display-box {
@@ -754,8 +795,9 @@
 
       .detail-card p {
         margin: 0;
-        font-size: 14px;
-        line-height: 1.6;
+        font-size: 14.5px;
+        font-weight: 500;
+        line-height: 1.65;
         color: var(--ink);
       }
 
@@ -947,9 +989,10 @@
       }
 
       .kw-why {
-        font-size: 13.5px;
+        font-size: 14px;
         color: var(--muted);
-        line-height: 1.5;
+        font-weight: 500;
+        line-height: 1.55;
         flex: 1;
       }
 
@@ -1374,7 +1417,7 @@
 
               <div class="video-card">
                 <h4 style="margin: 0; font-size: 15px; font-weight: 800;">🎬 Watch Full Video Walkthrough</h4>
-                <p style="margin: 0; font-size: 13px; color: var(--muted);">Step-by-step logic building explained in full HD video format.</p>
+                <p style="margin: 0; font-size: 13.5px; color: var(--ink-secondary); font-weight: 500;">Step-by-step logic building explained in full HD video format.</p>
                 <a href="https://youtu.be/G3lIEr2OTxk" target="_blank" rel="noopener noreferrer" class="video-btn">
                   <span>▶️</span> Watch on YouTube in Full HD
                 </a>
@@ -1996,7 +2039,7 @@
               <span style="font-size: 13.5px; font-weight: 700; color: var(--blue);">🎯 Identification Cue: ${p.cue}</span>
             </div>
           </div>
-          <p style="margin: 0 0 16px; font-size: 14.5px; color: var(--muted); line-height: 1.6;">
+          <p style="margin: 0 0 16px; font-size: 15px; color: var(--ink-secondary); font-weight: 500; line-height: 1.65;">
             💡 <strong>Mental Model & Intuition:</strong> ${p.intuition}
           </p>
           <div class="code-container">
