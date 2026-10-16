@@ -3712,6 +3712,8 @@
         "emergency-guide"
       ];
 
+      const navContainer = document.querySelector(".sticky-nav");
+
       const navObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -3719,7 +3721,16 @@
             document.querySelectorAll(".nav-pill").forEach(pill => {
               if (pill.getAttribute("href") === `#${id}`) {
                 pill.classList.add("active-nav");
-                pill.scrollIntoView({ behavior: "smooth", inline: "nearest", block: "nearest" });
+                // Safely scroll only the horizontal sticky-nav bar container, NEVER call pill.scrollIntoView() which scrolls window!
+                if (navContainer && navContainer.scrollWidth > navContainer.clientWidth) {
+                  const pLeft = pill.offsetLeft;
+                  const pWidth = pill.offsetWidth;
+                  const cWidth = navContainer.clientWidth;
+                  navContainer.scrollTo({
+                    left: pLeft - (cWidth / 2) + (pWidth / 2),
+                    behavior: "smooth"
+                  });
+                }
               } else {
                 pill.classList.remove("active-nav");
               }
@@ -3728,7 +3739,7 @@
         });
       }, {
         root: null,
-        rootMargin: "-20% 0px -60% 0px",
+        rootMargin: "-15% 0px -70% 0px",
         threshold: 0
       });
 
