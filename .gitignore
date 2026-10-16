@@ -1,0 +1,15 @@
+# Dependencies & Build
+node_modules/
+dist/
+build/
+
+# Temporary & Scratch files
+scratch/
+*.log
+
+# System & IDE files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

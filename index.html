@@ -1,0 +1,2800 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-H8Y0CBNCZ7"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-H8Y0CBNCZ7");
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DSA Doctor | Company-Wise Interview Questions</title>
+    <meta
+      name="description"
+      content="Practice company-wise DSA questions, roadmaps, interview preparation, and coding resources for software engineering internships and placements."
+    />
+    <!-- <link rel="icon" href="assets/dsa-doctor-logo.svg" type="image/svg+xml" /> -->
+    <link rel="icon" href="/logo/favicon.ico" sizes="any" />
+    <link rel="icon" href="/logo/favicon-48x48.png" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/logo/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/logo/favicon-16x16.png"
+    />
+    <link rel="apple-touch-icon" href="/logo/apple-touch-icon.png" />
+    <link rel="manifest" href="/logo/site.webmanifest" />
+
+    <!-- ====Organisation Schema========= -->
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "DSA Doctor",
+        "url": "https://dsadoctor.com",
+        "logo": "https://dsadoctor.com/logo.png",
+        "founder": {
+          "@type": "Person",
+          "name": "Prem Kumar",
+          "url": "https://www.linkedin.com/in/kali-prem/",
+          "sameAs": [
+            "https://github.com/Kali-Prem",
+            "https://www.linkedin.com/in/kali-prem/"
+          ]
+        }
+      }
+    </script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Style -->
+
+    <style>
+      /* =========================================================
+         1. DESIGN TOKENS (CALM, PREMIUM GLASS UI)
+         ========================================================= */
+      :root {
+        --base-bg: #f5f7fb;
+        --glass-bg: rgba(255, 255, 255, 0.55);
+        --glass-border: rgba(255, 255, 255, 0.6);
+        --glass-border-subtle: rgba(255, 255, 255, 0.35);
+        --blur: 20px;
+        --radius-lg: 24px;
+        --radius-md: 16px;
+        --radius-sm: 10px;
+        --radius-pill: 999px;
+        --shadow: 0 8px 32px rgba(31, 38, 135, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+        --shadow-hover: 0 14px 40px rgba(31, 38, 135, 0.12), 0 2px 4px rgba(0, 0, 0, 0.05);
+
+        /* Single primary accent: Indigo */
+        --accent: #6366f1;
+        --accent-hover: #4f46e5;
+        --accent-light: rgba(99, 102, 241, 0.08);
+        --accent-border: rgba(99, 102, 241, 0.3);
+
+        /* Semantic colors (badges & stat indicators) */
+        --easy: #10b981;
+        --easy-bg: rgba(16, 185, 129, 0.1);
+        --easy-border: rgba(16, 185, 129, 0.2);
+
+        --medium: #f59e0b;
+        --medium-bg: rgba(245, 158, 11, 0.1);
+        --medium-border: rgba(245, 158, 11, 0.2);
+
+        --hard: #ef4444;
+        --hard-bg: rgba(239, 68, 68, 0.1);
+        --hard-border: rgba(239, 68, 68, 0.2);
+
+        --visible: #6366f1;
+        --visible-bg: rgba(99, 102, 241, 0.08);
+
+        /* Typography & Contrast */
+        --ink: #0f172a;
+        --ink-secondary: #334155;
+        --muted: #64748b;
+        --line: rgba(0, 0, 0, 0.06);
+
+        /* Spacing scale: 4, 8, 12, 16, 24, 32 */
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-6: 24px;
+        --space-8: 32px;
+
+        /* Card Inset Highlight */
+        --card-inset: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        --row-bg: rgba(255, 255, 255, 0.7);
+        --row-hover-bg: rgba(99, 102, 241, 0.05);
+
+        --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      body.dark-mode {
+        --base-bg: #0b1020;
+        --glass-bg: rgba(255, 255, 255, 0.06);
+        --glass-border: rgba(255, 255, 255, 0.12);
+        --glass-border-subtle: rgba(255, 255, 255, 0.08);
+        --shadow: 0 12px 36px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
+        --shadow-hover: 0 16px 44px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.35);
+
+        --accent: #818cf8;
+        --accent-hover: #a5b4fc;
+        --accent-light: rgba(129, 140, 248, 0.15);
+        --accent-border: rgba(129, 140, 248, 0.35);
+
+        --easy: #34d399;
+        --easy-bg: rgba(52, 211, 153, 0.15);
+        --easy-border: rgba(52, 211, 153, 0.3);
+
+        --medium: #fbbf24;
+        --medium-bg: rgba(251, 191, 36, 0.15);
+        --medium-border: rgba(251, 191, 36, 0.3);
+
+        --hard: #f87171;
+        --hard-bg: rgba(248, 113, 113, 0.15);
+        --hard-border: rgba(248, 113, 113, 0.3);
+
+        --visible: #818cf8;
+        --visible-bg: rgba(129, 140, 248, 0.12);
+
+        --ink: #f8fafc;
+        --ink-secondary: #cbd5e1;
+        --muted: #94a3b8;
+        --line: rgba(255, 255, 255, 0.08);
+
+        --card-inset: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        --row-bg: rgba(15, 23, 42, 0.65);
+        --row-hover-bg: rgba(99, 102, 241, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: var(--base-bg);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.5;
+        font-size: 14px;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .app-shell {
+        min-height: 100vh;
+        position: relative;
+      }
+
+      /* Noise overlay (opacity 0.03) */
+      .noise-overlay {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      /* Background Orbs (400-600px, blur 80-120px, opacity 0.35-0.5, slowly floating 20-30s) */
+      .glass-orb {
+        position: fixed;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 0;
+        filter: blur(100px);
+        will-change: transform;
+        animation: orbDrift 26s ease-in-out infinite alternate;
+      }
+
+      .glass-orb-1 {
+        width: 540px;
+        height: 540px;
+        top: -80px;
+        left: 12%;
+        background: radial-gradient(circle, rgba(99, 102, 241, 0.45) 0%, rgba(99, 102, 241, 0.15) 50%, transparent 70%);
+        animation-duration: 24s;
+      }
+
+      .glass-orb-2 {
+        width: 480px;
+        height: 480px;
+        top: 25%;
+        right: -60px;
+        background: radial-gradient(circle, rgba(6, 182, 212, 0.40) 0%, rgba(6, 182, 212, 0.12) 50%, transparent 70%);
+        animation-duration: 28s;
+        animation-delay: -7s;
+      }
+
+      .glass-orb-3 {
+        width: 520px;
+        height: 520px;
+        bottom: 12%;
+        left: -60px;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.42) 0%, rgba(139, 92, 246, 0.14) 50%, transparent 70%);
+        animation-duration: 22s;
+        animation-delay: -14s;
+      }
+
+      .glass-orb-4 {
+        width: 440px;
+        height: 440px;
+        bottom: 4%;
+        right: 18%;
+        background: radial-gradient(circle, rgba(251, 146, 60, 0.35) 0%, rgba(251, 146, 60, 0.10) 50%, transparent 70%);
+        animation-duration: 26s;
+        animation-delay: -10s;
+      }
+
+      body.dark-mode .glass-orb {
+        filter: blur(120px);
+      }
+      body.dark-mode .glass-orb-1 {
+        background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, transparent 70%);
+      }
+      body.dark-mode .glass-orb-2 {
+        background: radial-gradient(circle, rgba(6, 182, 212, 0.18) 0%, transparent 70%);
+      }
+      body.dark-mode .glass-orb-3 {
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.20) 0%, transparent 70%);
+      }
+      body.dark-mode .glass-orb-4 {
+        background: radial-gradient(circle, rgba(251, 146, 60, 0.16) 0%, transparent 70%);
+      }
+
+      @keyframes orbDrift {
+        0% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(35px, 25px) scale(1.06); }
+        100% { transform: translate(-30px, -20px) scale(0.96); }
+      }
+
+      /* Custom Subtle Scrollbars */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(148, 163, 184, 0.35);
+        border-radius: 999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(148, 163, 184, 0.55);
+      }
+
+      /* =========================================================
+         2. HEADER (STICKY GLASS BAR, 64px)
+         ========================================================= */
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        height: 64px;
+        background: var(--glass-bg);
+        backdrop-filter: blur(var(--blur)) saturate(150%);
+        -webkit-backdrop-filter: blur(var(--blur)) saturate(150%);
+        border-bottom: 1px solid var(--glass-border);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        display: flex;
+        align-items: center;
+      }
+
+      .topbar-inner {
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 24px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-width: 0;
+      }
+
+      .brand-mark {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+
+      .brand-mark img {
+        height: 30px;
+        width: auto;
+      }
+
+      .brand p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 520px;
+      }
+
+      .topbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+
+      /* =========================================================
+         3. BUTTONS (Apple visionOS / Linear / Vercel restraint)
+         ========================================================= */
+      button,
+      .must-solve-btn,
+      .github-link,
+      .clear-button,
+      .must-primary,
+      .must-secondary,
+      .must-back-link,
+      .must-reset {
+        font-family: inherit;
+        cursor: pointer;
+        transition: color var(--transition), background-color var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      }
+
+      button:focus-visible,
+      .must-solve-btn:focus-visible,
+      .github-link:focus-visible,
+      .clear-button:focus-visible,
+      .must-primary:focus-visible,
+      .must-secondary:focus-visible,
+      .must-back-link:focus-visible,
+      .must-reset:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px var(--base-bg), 0 0 0 4px var(--accent);
+      }
+
+      button:active,
+      .must-solve-btn:active,
+      .github-link:active,
+      .clear-button:active,
+      .must-primary:active,
+      .must-secondary:active,
+      .must-back-link:active,
+      .must-reset:active {
+        transform: scale(0.97);
+      }
+
+      /* "Must Solve": solid soft gradient (rose to orange) with small shadow, no big red glow */
+      .must-solve-btn {
+        height: 40px;
+        padding: 0 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border-radius: var(--radius-pill);
+        background: linear-gradient(135deg, #f43f5e 0%, #fb923c 100%);
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        border: none;
+        box-shadow: 0 4px 14px rgba(244, 63, 94, 0.25);
+        white-space: nowrap;
+      }
+
+      .must-solve-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 18px rgba(244, 63, 94, 0.35);
+        filter: brightness(1.04);
+      }
+
+      /* "GitHub Profile": dark pill (#111827) with white text, glass border */
+      .github-link {
+        height: 40px;
+        padding: 0 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border-radius: var(--radius-pill);
+        background: #111827;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        white-space: nowrap;
+      }
+
+      .github-link svg {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+      }
+
+      .github-link:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      body.dark-mode .github-link {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--glass-border);
+      }
+
+      /* Theme toggle: small circular glass button, no neon glow */
+      .theme-toggle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--glass-bg);
+        backdrop-filter: blur(var(--blur));
+        -webkit-backdrop-filter: blur(var(--blur));
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow);
+        color: var(--ink);
+        font-size: 16px;
+        padding: 0;
+      }
+
+      .theme-toggle:hover {
+        transform: translateY(-1px);
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: var(--shadow-hover);
+        filter: brightness(1.05);
+      }
+
+      /* =========================================================
+         4. MAIN CONTENT & SECTION SPACING (24px gap)
+         ========================================================= */
+      main {
+        position: relative;
+        z-index: 2;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 32px 24px 64px;
+      }
+
+      .company-mode-content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      /* Headings Scale: Section titles 18px / weight 600 */
+      .toolbar h3,
+      .popular-strip-header h3,
+      .table-title h3,
+      .roadmap-head h3,
+      .must-section-head h3,
+      .must-info-card h3 {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+        margin: 0;
+      }
+
+      /* =========================================================
+         5. FILTERS CARD (Equal 44px inputs, 14px radius, clean icons)
+         ========================================================= */
+      .toolbar {
+        padding: 24px;
+        border-radius: var(--radius-lg);
+        background: var(--glass-bg);
+        backdrop-filter: blur(var(--blur)) saturate(150%);
+        -webkit-backdrop-filter: blur(var(--blur)) saturate(150%);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow), var(--card-inset);
+      }
+
+      .controls {
+        display: grid;
+        grid-template-columns: 1.3fr 0.95fr 0.85fr 0.9fr 0.9fr 1.2fr;
+        gap: 16px;
+        margin-top: 16px;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .toolbar input,
+      .toolbar select,
+      input,
+      select {
+        height: 44px;
+        min-height: 44px;
+        border-radius: 14px;
+        background-color: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(var(--blur));
+        -webkit-backdrop-filter: blur(var(--blur));
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+        color: var(--ink);
+        padding: 0 16px;
+        font-family: inherit;
+        font-size: 13.5px;
+        font-weight: 500;
+        outline: none;
+        width: 100%;
+        transition: border-color var(--transition), box-shadow var(--transition);
+      }
+
+      body.dark-mode .toolbar input,
+      body.dark-mode .toolbar select,
+      body.dark-mode input,
+      body.dark-mode select {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-color: var(--glass-border);
+        color: var(--ink);
+      }
+
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+        background-size: 15px;
+        padding-right: 38px;
+        cursor: pointer;
+      }
+
+      input[type="search"] {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: left 14px center;
+        background-size: 16px;
+        padding-left: 40px;
+      }
+
+      .toolbar input:hover,
+      .toolbar select:hover,
+      input:hover,
+      select:hover {
+        border-color: rgba(99, 102, 241, 0.4);
+      }
+
+      .toolbar input:focus,
+      .toolbar select:focus,
+      input:focus,
+      select:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+      }
+
+      /* =========================================================
+         6. POPULAR COMPANIES (Glass pills, 40px height, edge fade)
+         ========================================================= */
+      .popular-strip {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 16px 24px;
+        border-radius: var(--radius-lg);
+        background: var(--glass-bg);
+        backdrop-filter: blur(var(--blur)) saturate(150%);
+        -webkit-backdrop-filter: blur(var(--blur)) saturate(150%);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow), var(--card-inset);
+        overflow: hidden;
+      }
+
+      .popular-strip-header {
+        flex: 0 0 auto;
+        min-width: 170px;
+      }
+
+      .popular-strip-header p {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 12.5px;
+      }
+
+      .popular-strip .quick-list {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        overflow-x: auto;
+        padding: 4px 8px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+      }
+
+      .popular-strip .quick-list::-webkit-scrollbar {
+        display: none;
+      }
+
+      .popular-strip .quick-company {
+        height: 40px;
+        min-height: 40px;
+        min-width: max-content;
+        padding: 0 16px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: var(--radius-pill);
+        background: var(--glass-bg);
+        backdrop-filter: blur(var(--blur));
+        -webkit-backdrop-filter: blur(var(--blur));
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        color: var(--ink);
+        font-size: 13.5px;
+        font-weight: 500;
+        cursor: pointer;
+        white-space: nowrap;
+        user-select: none;
+        transition: color var(--transition), background-color var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      }
+
+      .popular-strip .quick-company:hover {
+        transform: translateY(-2px);
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: var(--shadow);
+        color: var(--accent);
+      }
+
+      .popular-strip .quick-company.active,
+      .popular-strip .quick-company.glass-active {
+        background: var(--accent-light) !important;
+        border-color: var(--accent) !important;
+        color: var(--accent) !important;
+        font-weight: 600;
+        box-shadow: 0 0 0 1px var(--accent), var(--shadow) !important;
+      }
+
+      .popular-strip .company-logo {
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+        object-fit: contain;
+      }
+
+      .popular-strip .company-logo-fallback {
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+        background: rgba(99, 102, 241, 0.15);
+        color: var(--accent);
+        font-size: 11px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* =========================================================
+         7. STAT CARDS (Soft tints, 32px tabular numbers, accent bar)
+         ========================================================= */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .stats-grid .stat {
+        position: relative;
+        padding: 18px 20px;
+        border-radius: var(--radius-md);
+        background: var(--glass-bg);
+        backdrop-filter: blur(var(--blur)) saturate(150%);
+        -webkit-backdrop-filter: blur(var(--blur)) saturate(150%);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow), var(--card-inset);
+        text-align: left;
+        transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .stats-grid .stat:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover), var(--card-inset);
+      }
+
+      .stats-grid .stat span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+
+      .stats-grid .stat strong {
+        display: block;
+        margin-top: 10px;
+        font-size: 32px;
+        line-height: 1;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+      }
+
+      /* 1. Roadmap Card (Primary CTA) */
+      #roadmapCard {
+        cursor: pointer;
+        background: rgba(99, 102, 241, 0.08);
+        border-color: rgba(99, 102, 241, 0.35);
+        border-left: 3px solid var(--accent);
+      }
+      #roadmapCard strong {
+        font-size: 22px;
+        color: var(--accent);
+        font-weight: 700;
+      }
+      #roadmapCard:hover {
+        background: rgba(99, 102, 241, 0.12);
+        border-color: var(--accent);
+      }
+      #roadmapCard.active {
+        background: rgba(99, 102, 241, 0.16);
+        border-color: var(--accent);
+        box-shadow: 0 0 0 1px var(--accent), var(--shadow-hover);
+      }
+
+      /* 2. Visible Stat */
+      .stats-grid .stat:nth-child(2) {
+        background: rgba(99, 102, 241, 0.05);
+        border-left: 3px solid #6366f1;
+      }
+
+      /* 3. Easy Stat */
+      .stats-grid .stat:nth-child(3) {
+        background: rgba(16, 185, 129, 0.05);
+        border-left: 3px solid #10b981;
+      }
+
+      /* 4. Medium Stat */
+      .stats-grid .stat:nth-child(4) {
+        background: rgba(245, 158, 11, 0.05);
+        border-left: 3px solid #f59e0b;
+      }
+
+      /* 5. Hard Stat */
+      .stats-grid .stat:nth-child(5) {
+        background: rgba(239, 68, 68, 0.05);
+        border-left: 3px solid #ef4444;
+      }
+
+      /* =========================================================
+         8. COMPANY ROADMAP PANEL
+         ========================================================= */
+      .roadmap-panel {
+        padding: 24px;
+        border-radius: var(--radius-lg);
+        background: var(--glass-bg);
+        backdrop-filter: blur(var(--blur)) saturate(150%);
+        -webkit-backdrop-filter: blur(var(--blur)) saturate(150%);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow), var(--card-inset);
+      }
+
+      .roadmap-panel.hidden {
+        display: none;
+      }
+
+      .roadmap-panel.hidden ~ .table-wrap {
+        display: block;
+      }
+
+      .roadmap-panel:not(.hidden) ~ .table-wrap {
+        display: none;
+      }
+
+      .roadmap-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .roadmap-head > div:nth-child(2) {
+        flex: 1;
+      }
+
+      .roadmap-head p {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .roadmap-close {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        color: var(--muted);
+        font-size: 14px;
+        cursor: pointer;
+        padding: 0;
+      }
+      .roadmap-close:hover {
+        color: var(--ink);
+        border-color: rgba(99, 102, 241, 0.4);
+      }
+
+      .roadmap-chip {
+        display: inline-flex;
+        align-items: center;
+        border-radius: var(--radius-pill);
+        background: var(--accent-light);
+        border: 1px solid var(--accent-border);
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 600;
+        padding: 6px 14px;
+      }
+
+      .roadmap-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.4fr;
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .roadmap-block {
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.45);
+        border: 1px solid var(--glass-border);
+        padding: 16px 18px;
+      }
+      body.dark-mode .roadmap-block {
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .roadmap-block h4 {
+        margin: 0 0 10px;
+        font-size: 11.5px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+      }
+
+      .roadmap-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .roadmap-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .roadmap-step {
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid var(--line);
+      }
+      body.dark-mode .roadmap-step {
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .roadmap-step strong {
+        display: block;
+        font-size: 13.5px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .roadmap-step span {
+        display: block;
+        font-size: 12.5px;
+        color: var(--muted);
+        margin-top: 2px;
+      }
+
+      /* =========================================================
+         9. QUESTIONS TABLE (Nearly opaque rows, crisp readability)
+         ========================================================= */
+      .table-wrap {
+        border-radius: var(--radius-lg);
+        background: var(--glass-bg);
+        backdrop-filter: blur(var(--blur)) saturate(150%);
+        -webkit-backdrop-filter: blur(var(--blur)) saturate(150%);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow), var(--card-inset);
+        overflow: hidden;
+      }
+
+      .table-title {
+        padding: 18px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .table-title p {
+        margin: 3px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .clear-button {
+        height: 36px;
+        padding: 0 16px;
+        border-radius: var(--radius-pill);
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .clear-button:hover {
+        transform: translateY(-1px);
+        border-color: rgba(99, 102, 241, 0.4);
+        color: var(--accent);
+      }
+
+      .table-scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        min-width: 1100px;
+      }
+
+      thead {
+        position: sticky;
+        top: 64px;
+        z-index: 10;
+      }
+
+      th {
+        background: rgba(245, 247, 251, 0.92);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 11.5px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding: 14px 16px;
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      body.dark-mode th {
+        background: rgba(11, 16, 32, 0.92);
+        border-bottom-color: var(--line);
+      }
+
+      tbody tr {
+        background-color: var(--row-bg);
+        height: 62px;
+        transition: background-color var(--transition);
+      }
+
+      tbody tr:hover {
+        background-color: var(--row-hover-bg);
+      }
+
+      tbody tr.row-solved {
+        opacity: 0.6;
+      }
+      tbody tr.row-solved .problem-link {
+        text-decoration: line-through;
+        color: var(--muted);
+      }
+
+      td {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+        color: var(--ink);
+        font-size: 14px;
+        vertical-align: middle;
+      }
+
+      .id-cell {
+        font-variant-numeric: tabular-nums;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .problem-link {
+        color: var(--accent);
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+      .problem-link:hover {
+        text-decoration: underline;
+        color: var(--accent-hover);
+      }
+
+      .meta-cell {
+        color: var(--ink-secondary);
+        font-size: 13.5px;
+        max-width: 220px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .notes-cell {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+        max-width: 260px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .empty {
+        padding: 48px 18px;
+        color: var(--muted);
+        text-align: center;
+        font-weight: 500;
+      }
+
+      /* Inline Metric Progress Bar */
+      .metric-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 72px;
+      }
+
+      .metric-num {
+        font-size: 13px;
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+        color: var(--ink-secondary);
+      }
+
+      .metric-track {
+        height: 4px;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.06);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+
+      body.dark-mode .metric-track {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .metric-bar {
+        height: 100%;
+        border-radius: inherit;
+        background: var(--accent);
+      }
+
+      /* Custom Checkbox: rounded 6px, indigo fill with animated checkmark */
+      .solve-check {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 6px;
+        border: 1.5px solid var(--muted);
+        background-color: var(--glass-bg);
+        cursor: pointer;
+        display: inline-grid;
+        place-content: center;
+        transition: var(--transition);
+        position: relative;
+        outline: none;
+      }
+      .solve-check:hover {
+        border-color: var(--accent);
+      }
+      .solve-check:checked {
+        background-color: var(--accent);
+        border-color: var(--accent);
+      }
+      .solve-check:checked::after {
+        content: "";
+        width: 5px;
+        height: 9px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg) translate(-1px, -1px);
+        animation: checkPop 0.18s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      }
+      @keyframes checkPop {
+        from { transform: scale(0) rotate(45deg) translate(-1px, -1px); opacity: 0; }
+        to { transform: scale(1) rotate(45deg) translate(-1px, -1px); opacity: 1; }
+      }
+
+      /* Badges (Difficulty & Priority) */
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3px 10px;
+        border-radius: var(--radius-pill);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+        border: 1px solid transparent;
+      }
+      .tag.easy,
+      .priority-low {
+        color: var(--easy);
+        background-color: var(--easy-bg);
+        border-color: var(--easy-border);
+      }
+      .tag.medium,
+      .priority-medium {
+        color: var(--medium);
+        background-color: var(--medium-bg);
+        border-color: var(--medium-border);
+      }
+      .tag.hard,
+      .priority-high {
+        color: var(--hard);
+        background-color: var(--hard-bg);
+        border-color: var(--hard-border);
+      }
+
+      /* =========================================================
+         10. MUST SOLVE SECTION
+         ========================================================= */
+      .must-solve-section {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .must-solve-section.hidden,
+      .company-mode-content.hidden {
+        display: none;
+      }
+
+      .must-back-link {
+        align-self: flex-start;
+        height: 38px;
+        padding: 0 16px;
+        border-radius: var(--radius-pill);
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        color: var(--ink);
+        font-size: 13.5px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+      }
+      .must-back-link:hover {
+        transform: translateY(-1px);
+        border-color: rgba(99, 102, 241, 0.4);
+        color: var(--accent);
+      }
+
+      .must-hero {
+        padding: 32px 36px;
+        border-radius: var(--radius-lg);
+        background: var(--glass-bg);
+        backdrop-filter: blur(var(--blur)) saturate(150%);
+        -webkit-backdrop-filter: blur(var(--blur)) saturate(150%);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow), var(--card-inset);
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .must-kicker {
+        margin: 0 0 8px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent);
+      }
+
+      .must-hero h2 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+      }
+
+      .must-subtitle {
+        margin: 8px 0 0;
+        font-size: 15px;
+        color: var(--ink-secondary);
+        max-width: 680px;
+      }
+
+      .must-small {
+        margin: 6px 0 0;
+        font-size: 13.5px;
+        color: var(--muted);
+        max-width: 640px;
+      }
+
+      .must-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .must-primary {
+        height: 40px;
+        padding: 0 20px;
+        border-radius: var(--radius-pill);
+        background: var(--accent);
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 600;
+        border: none;
+        box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+      }
+      .must-primary:hover {
+        background: var(--accent-hover);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
+      }
+
+      .must-secondary {
+        height: 40px;
+        padding: 0 18px;
+        border-radius: var(--radius-pill);
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .must-secondary:hover {
+        transform: translateY(-1px);
+        border-color: rgba(99, 102, 241, 0.4);
+      }
+
+      .must-progress-card {
+        padding: 24px;
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid var(--glass-border);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        text-align: center;
+      }
+      body.dark-mode .must-progress-card {
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .must-progress-card span {
+        font-size: 11.5px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+
+      .must-progress-card strong {
+        font-size: 32px;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        color: var(--ink);
+      }
+
+      .must-progress-track {
+        height: 6px;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.06);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      body.dark-mode .must-progress-track {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .must-progress-fill {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #6366f1, #10b981);
+        transition: width 0.3s ease;
+      }
+
+      .must-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+
+      .must-stat {
+        padding: 16px 20px;
+        border-radius: var(--radius-md);
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow);
+      }
+
+      .must-stat span {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+
+      .must-stat strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .must-info-card {
+        padding: 24px;
+        border-radius: var(--radius-lg);
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow);
+      }
+
+      .must-info-card h3 {
+        margin: 0 0 12px;
+      }
+
+      .must-info-card p {
+        margin: 8px 0 0;
+        color: var(--ink-secondary);
+        line-height: 1.6;
+      }
+
+      .must-section-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .must-section-head p {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .must-reset {
+        height: 36px;
+        padding: 0 16px;
+        border-radius: var(--radius-pill);
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .must-reset:hover {
+        transform: translateY(-1px);
+        border-color: rgba(99, 102, 241, 0.4);
+        color: var(--accent);
+      }
+
+      .must-pattern-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .must-pattern-card {
+        padding: 20px;
+        border-radius: var(--radius-lg);
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow);
+      }
+
+      .must-pattern-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .must-pattern-header h4 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .must-why {
+        color: var(--muted);
+        font-size: 13px;
+        margin: 4px 0 0;
+      }
+
+      .must-question-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .must-question {
+        display: grid;
+        grid-template-columns: 24px 60px 1fr auto auto;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.45);
+        border: 1px solid var(--line);
+        transition: background-color var(--transition);
+      }
+      body.dark-mode .must-question {
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .must-question:hover {
+        background: var(--row-hover-bg);
+      }
+
+      .must-question.is-complete {
+        opacity: 0.6;
+      }
+      .must-question.is-complete .must-name {
+        text-decoration: line-through;
+        color: var(--muted);
+      }
+
+      .must-number {
+        color: var(--muted);
+        font-size: 12.5px;
+        font-weight: 500;
+      }
+
+      .must-name {
+        font-size: 13.5px;
+        font-weight: 500;
+        color: var(--ink);
+      }
+
+      .must-open-link {
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .must-open-link:hover {
+        text-decoration: underline;
+      }
+
+      /* =========================================================
+         11. MOTION & ENTRANCE ANIMATIONS
+         ========================================================= */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-up-1 {
+        animation: fadeUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+      }
+      .fade-up-2 {
+        animation: fadeUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.06s both;
+      }
+      .fade-up-3 {
+        animation: fadeUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.12s both;
+      }
+      .fade-up-4 {
+        animation: fadeUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.18s both;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      /* =========================================================
+         12. RESPONSIVE & BROWSER FALLBACKS
+         ========================================================= */
+      @supports not (backdrop-filter: blur(1px)) {
+        .topbar,
+        .toolbar,
+        .popular-strip,
+        .stats-grid .stat,
+        .table-wrap,
+        .roadmap-panel,
+        .must-hero,
+        .must-stat,
+        .must-info-card,
+        .must-pattern-card {
+          background-color: rgba(255, 255, 255, 0.95);
+        }
+        body.dark-mode .topbar,
+        body.dark-mode .toolbar,
+        body.dark-mode .popular-strip,
+        body.dark-mode .stats-grid .stat,
+        body.dark-mode .table-wrap,
+        body.dark-mode .roadmap-panel,
+        body.dark-mode .must-hero,
+        body.dark-mode .must-stat,
+        body.dark-mode .must-info-card,
+        body.dark-mode .must-pattern-card {
+          background-color: #111827;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .controls {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .brand p {
+          display: none;
+        }
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .stats-grid .stat:first-child {
+          grid-column: span 2;
+        }
+        .roadmap-grid {
+          grid-template-columns: 1fr;
+        }
+        .must-hero {
+          grid-template-columns: 1fr;
+        }
+        .must-stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        /* Sticky Problem column on mobile horizontal scroll */
+        th:nth-child(3),
+        td:nth-child(3) {
+          position: sticky;
+          left: 0;
+          z-index: 4;
+          background: #ffffff;
+          box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04);
+        }
+        th:nth-child(3) {
+          z-index: 15;
+          background: #f5f7fb;
+        }
+        body.dark-mode td:nth-child(3) {
+          background: #111827;
+        }
+        body.dark-mode th:nth-child(3) {
+          background: #0b1020;
+        }
+        tbody tr:hover td:nth-child(3) {
+          background: #f0f3fd;
+        }
+        body.dark-mode tbody tr:hover td:nth-child(3) {
+          background: #19223e;
+        }
+      }
+
+      @media (max-width: 680px) {
+        main {
+          padding: 20px 16px 48px;
+        }
+        .brand p {
+          display: none;
+        }
+        .controls {
+          grid-template-columns: 1fr;
+        }
+        .popular-strip {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+          padding: 16px;
+        }
+        .popular-strip-header {
+          min-width: 0;
+        }
+        .popular-strip .quick-list {
+          width: 100%;
+        }
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .stats-grid .stat:first-child {
+          grid-column: span 2;
+        }
+        .topbar-inner {
+          padding: 0 16px;
+        }
+        .github-link-text {
+          display: none;
+        }
+        .github-link {
+          padding: 0 12px;
+        }
+      }
+
+      .footer-note {
+        margin-top: 24px;
+        color: var(--muted);
+        text-align: center;
+        font-size: 13px;
+      }
+      .footer-note a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .footer-note a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="noise-overlay" aria-hidden="true"></div>
+      <div class="glass-orb glass-orb-1" aria-hidden="true"></div>
+      <div class="glass-orb glass-orb-2" aria-hidden="true"></div>
+      <div class="glass-orb glass-orb-3" aria-hidden="true"></div>
+      <div class="glass-orb glass-orb-4" aria-hidden="true"></div>
+      <header class="topbar">
+        <div class="topbar-inner">
+          <div class="brand">
+            <a class="brand-mark" href="index.html" aria-label="DSA Doctor home"
+              ><img src="assets/dsa-doctor-logo.svg" alt="DSA Doctor"
+            /></a>
+            <div>
+              <h1 class="sr-only">DSA Doctor</h1>
+              <p>
+                Diagnose company-wise DSA prep with smart filters, roadmaps, and
+                revision signals.
+              </p>
+            </div>
+          </div>
+
+          <!-- Must solve -->
+          <a href="#must-solve" class="must-solve-btn" id="mustSolveNav">
+            Must Solve
+          </a>
+
+          <!-- ------------------------------- -->
+
+          <div class="topbar-actions">
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              type="button"
+              aria-label="Toggle dark mode"
+              title="Toggle dark mode"
+            >
+              🌙
+            </button>
+            <a
+              class="github-link"
+              href="https://github.com/Kali-Prem"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
+            >
+              <svg
+                viewBox="0 0 16 16"
+                aria-hidden="true"
+                focusable="false"
+                role="img"
+              >
+                <path
+                  fill="currentColor"
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.1 0 0 .67-.21 2.2.82a7.68 7.68 0 0 1 4.01 0c1.53-1.04 2.2-.82 2.2-.82.44 1.09.16 1.9.08 2.1.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"
+                />
+              </svg>
+              <span class="github-link-text">GitHub Profile</span></a
+            >
+          </div>
+        </div>
+      </header>
+
+      <main id="pageMain">
+        <div class="company-mode-content" id="companyModeContent">
+        <section class="toolbar fade-up-1" aria-labelledby="filters-title">
+          <h3 id="filters-title">Filters</h3>
+          <div class="controls">
+            <label>
+              Company
+              <select id="companySelect"></select>
+            </label>
+            <label>
+              Dataset
+              <select id="fileSelect"></select>
+            </label>
+            <label>
+              Difficulty
+              <select id="difficultySelect">
+                <option value="all">All difficulties</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+              </select>
+            </label>
+            <label>
+              Topic
+              <select id="topicSelect">
+                <option value="all">All topics</option>
+              </select>
+            </label>
+            <label>
+              Priority
+              <select id="prioritySelect">
+                <option value="all">All priorities</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </label>
+            <label>
+              Search problems
+              <input
+                id="problemSearch"
+                type="search"
+                placeholder="Two Sum, graph, cache..."
+              />
+            </label>
+          </div>
+        </section>
+
+        <section class="popular-strip fade-up-2" aria-labelledby="popular-title">
+          <div class="popular-strip-header">
+            <h3 id="popular-title">Popular Companies</h3>
+          </div>
+          <div class="quick-list" id="quickList"></div>
+        </section>
+
+        <section class="stats-grid fade-up-3" aria-label="Current dataset stats">
+          <button
+            class="stat roadmap-stat"
+            id="roadmapCard"
+            type="button"
+            aria-expanded="false"
+            aria-label="View Company Roadmap"
+          >
+            <span>Roadmap</span><strong id="roadmapStatus">View</strong>
+          </button>
+          <div class="stat">
+            <span>Visible</span><strong id="visibleCount">0</strong>
+          </div>
+          <div class="stat">
+            <span>Easy</span><strong id="easyCount">0</strong>
+          </div>
+          <div class="stat">
+            <span>Medium</span><strong id="mediumCount">0</strong>
+          </div>
+          <div class="stat">
+            <span>Hard</span><strong id="hardCount">0</strong>
+          </div>
+        </section>
+
+        <section
+          class="roadmap-panel hidden"
+          id="roadmapPanel"
+          aria-labelledby="roadmapTitle"
+        >
+          <div class="roadmap-head">
+            <button
+              class="roadmap-close"
+              id="roadmapClose"
+              type="button"
+              aria-label="Close roadmap"
+            >
+              ✕
+            </button>
+            <div>
+              <h3 id="roadmapTitle">Company Roadmap</h3>
+              <p id="roadmapSubtitle">
+                Data-driven topic and pattern focus for the selected company.
+              </p>
+            </div>
+            <span class="roadmap-chip" id="roadmapPriority"
+              >High-priority first</span
+            >
+          </div>
+          <div class="roadmap-grid">
+            <div class="roadmap-block">
+              <h4>Top Topics</h4>
+              <div class="roadmap-tags" id="roadmapTopics"></div>
+            </div>
+            <div class="roadmap-block">
+              <h4>Top Patterns</h4>
+              <div class="roadmap-tags" id="roadmapPatterns"></div>
+            </div>
+            <div class="roadmap-block">
+              <h4>Study Flow</h4>
+              <div class="roadmap-steps" id="roadmapSteps"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="table-wrap fade-up-4" aria-labelledby="table-heading">
+          <div class="table-title">
+            <div>
+              <h3 id="table-heading">Questions</h3>
+              <p id="tableSubtitle">Choose a company to load questions.</p>
+            </div>
+            <button class="clear-button" id="clearProgress" type="button">
+              Reset Progress
+            </button>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Done</th>
+                  <th>ID</th>
+                  <th>Problem</th>
+                  <th>Difficulty</th>
+                  <th>Topic</th>
+                  <th>Pattern</th>
+                  <th>Priority</th>
+                  <th>Acceptance</th>
+                  <th>Frequency</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody id="problemBody">
+                <tr>
+                  <td class="empty" colspan="10">Loading dashboard...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        </div>
+
+        <section
+          class="must-solve-section hidden"
+          id="mustSolveSection"
+          aria-labelledby="mustSolveTitle"
+        >
+          <button class="must-back-link" id="mustSolveBackTop" type="button">
+            ← Company Questions
+          </button>
+
+          <div class="must-hero">
+            <div>
+              <p class="must-kicker">Must Solve</p>
+              <h2 id="mustSolveTitle">Must Solve Interview Roadmap</h2>
+              <p class="must-subtitle">
+                The highest-impact interview roadmap for students with limited preparation time.
+              </p>
+              <p class="must-small">
+                Master these carefully selected questions to build strong pattern recognition for coding interviews.
+              </p>
+              <div class="must-actions">
+                <button class="must-primary" id="mustStartSolving" type="button">
+                  Start Solving →
+                </button>
+                <button class="must-secondary" id="mustSolveBackHero" type="button">
+                  Back to Company Questions
+                </button>
+              </div>
+            </div>
+            <div class="must-progress-card" aria-live="polite">
+              <span>Completed</span>
+              <strong><span id="mustCompletedCount">0</span> / 33</strong>
+              <div class="must-progress-track">
+                <div class="must-progress-fill" id="mustProgressFill"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="must-stats" aria-label="Must solve roadmap stats">
+            <div class="must-stat"><span>Patterns</span><strong>8</strong></div>
+            <div class="must-stat"><span>Questions</span><strong>33</strong></div>
+            <div class="must-stat"><span>Estimated Time</span><strong>20–25 Hours</strong></div>
+            <div class="must-stat"><span>Interview Focus</span><strong>High</strong></div>
+          </div>
+
+          <div class="must-info-card">
+            <h3>Why this roadmap?</h3>
+            <p>
+              This roadmap contains carefully selected LeetCode problems that teach the most important coding interview patterns.
+            </p>
+            <p>
+              Instead of solving hundreds of random questions, focus on mastering these core concepts first.
+            </p>
+            <p>
+              These patterns appear repeatedly in interviews conducted by companies like Amazon, Google, Microsoft, Meta, Apple, Adobe, Uber and many others.
+            </p>
+            <p>
+              This roadmap is intended to maximize interview preparation efficiency. While no fixed list can guarantee success, mastering these problems provides excellent coverage of common interview patterns.
+            </p>
+          </div>
+
+          <div class="must-section-head">
+            <div>
+              <h3>Core Pattern Sections</h3>
+              <p>Track each problem as you build interview-ready pattern recognition.</p>
+            </div>
+            <button class="must-reset" id="mustResetProgress" type="button">
+              Reset Progress
+            </button>
+          </div>
+
+          <div class="must-pattern-grid" id="mustPatternGrid"></div>
+        </section>
+        <p class="footer-note">
+          © 2026 DSA Doctor • Founded by
+          <a href="/founder">Prem Kumar</a>
+        </p>
+        <p class="footer-note">
+          Made for focused interview preparation. Progress is stored locally in
+          your browser.
+        </p>
+      </main>
+    </div>
+
+    <script>
+      const themeToggle = document.getElementById("themeToggle");
+      const applyTheme = (theme) => {
+        document.body.classList.toggle("dark-mode", theme === "dark");
+        if (themeToggle) {
+          themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+          themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+        }
+      };
+
+      const initialTheme = "light";
+      applyTheme(initialTheme);
+
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          const isDark = document.body.classList.contains("dark-mode");
+          const nextTheme = isDark ? "light" : "dark";
+          localStorage.setItem("dsa-doctor-theme", nextTheme);
+          applyTheme(nextTheme);
+        });
+      }
+
+      const state = {
+        companies: [],
+        roadmaps: new Map(),
+        currentCompany: null,
+        rows: [],
+        filteredRows: [],
+      };
+
+      const companySelect = document.getElementById("companySelect");
+      const fileSelect = document.getElementById("fileSelect");
+      const difficultySelect = document.getElementById("difficultySelect");
+      const topicSelect = document.getElementById("topicSelect");
+      const prioritySelect = document.getElementById("prioritySelect");
+      const problemSearch = document.getElementById("problemSearch");
+      const problemBody = document.getElementById("problemBody");
+      const tableSubtitle = document.getElementById("tableSubtitle");
+      const quickList = document.getElementById("quickList");
+      const visibleCount = document.getElementById("visibleCount");
+      const easyCount = document.getElementById("easyCount");
+      const mediumCount = document.getElementById("mediumCount");
+      const hardCount = document.getElementById("hardCount");
+      const clearProgress = document.getElementById("clearProgress");
+      const roadmapSubtitle = document.getElementById("roadmapSubtitle");
+      const roadmapPriority = document.getElementById("roadmapPriority");
+      const roadmapTopics = document.getElementById("roadmapTopics");
+      const roadmapPatterns = document.getElementById("roadmapPatterns");
+      const roadmapSteps = document.getElementById("roadmapSteps");
+      const roadmapCard = document.getElementById("roadmapCard");
+      const roadmapPanel = document.getElementById("roadmapPanel");
+      const roadmapClose = document.getElementById("roadmapClose");
+      const roadmapStatus = document.getElementById("roadmapStatus");
+      const pageMain = document.getElementById("pageMain");
+      const companyModeContent = document.getElementById("companyModeContent");
+      const mustSolveNav = document.getElementById("mustSolveNav");
+      const mustSolveSection = document.getElementById("mustSolveSection");
+      const mustSolveBackTop = document.getElementById("mustSolveBackTop");
+      const mustSolveBackHero = document.getElementById("mustSolveBackHero");
+      const mustStartSolving = document.getElementById("mustStartSolving");
+      const mustResetProgress = document.getElementById("mustResetProgress");
+      const mustPatternGrid = document.getElementById("mustPatternGrid");
+      const mustCompletedCount = document.getElementById("mustCompletedCount");
+      const mustProgressFill = document.getElementById("mustProgressFill");
+      let companyScrollY = 0;
+      const datasetOrder = [
+        "thirty-days.csv",
+        "three-months.csv",
+        "six-months.csv",
+        "all.csv",
+        "more-than-six-months.csv",
+      ];
+
+      const datasetLabels = {
+        "thirty-days.csv": "Last 30 days",
+        "three-months.csv": "Last 3 months",
+        "six-months.csv": "Last 6 months",
+        "all.csv": "All questions",
+        "more-than-six-months.csv": "Older than 6 months",
+      };
+
+
+      const mustSolveStoragePrefix = "dsa-doctor:must-solve:";
+      const mustSolvePatterns = [
+        {
+          name: "Two Pointer",
+          description: "Use two moving indexes to compare, shrink, or build answers in linear time.",
+          why: "It turns many array and string problems from nested loops into clean O(n) scans.",
+          questions: [
+            { id: "283", title: "Move Zeroes", difficulty: "Easy", slug: "move-zeroes" },
+            { id: "167", title: "Two Sum II", difficulty: "Medium", slug: "two-sum-ii-input-array-is-sorted" },
+            { id: "15", title: "3Sum", difficulty: "Medium", slug: "3sum" },
+            { id: "11", title: "Container With Most Water", difficulty: "Medium", slug: "container-with-most-water" },
+          ],
+        },
+        {
+          name: "Sliding Window",
+          description: "Track a changing range while maintaining just enough state to update answers fast.",
+          why: "It is a core interview pattern for substrings, subarrays, and constraint-based optimization.",
+          questions: [
+            { id: "643", title: "Maximum Average Subarray I", difficulty: "Easy", slug: "maximum-average-subarray-i" },
+            { id: "3", title: "Longest Substring Without Repeating Characters", difficulty: "Medium", slug: "longest-substring-without-repeating-characters" },
+            { id: "424", title: "Longest Repeating Character Replacement", difficulty: "Medium", slug: "longest-repeating-character-replacement" },
+            { id: "76", title: "Minimum Window Substring", difficulty: "Hard", slug: "minimum-window-substring" },
+          ],
+        },
+        {
+          name: "Binary Search on Answer",
+          description: "Search a valid answer space instead of searching only an array index.",
+          why: "It unlocks scheduling, capacity, speed, and minimum-feasible-value interview problems.",
+          questions: [
+            { id: "33", title: "Search in Rotated Sorted Array", difficulty: "Medium", slug: "search-in-rotated-sorted-array" },
+            { id: "875", title: "Koko Eating Bananas", difficulty: "Medium", slug: "koko-eating-bananas" },
+            { id: "74", title: "Search a 2D Matrix", difficulty: "Medium", slug: "search-a-2d-matrix" },
+            { id: "1011", title: "Capacity To Ship Packages Within D Days", difficulty: "Medium", slug: "capacity-to-ship-packages-within-d-days" },
+          ],
+        },
+        {
+          name: "HashMap / HashSet",
+          description: "Store seen values, counts, groups, and constant-time lookups as you scan data.",
+          why: "Hashing is one of the fastest ways to simplify frequency, duplicate, and grouping questions.",
+          questions: [
+            { id: "1", title: "Two Sum", difficulty: "Easy", slug: "two-sum" },
+            { id: "169", title: "Majority Element", difficulty: "Easy", slug: "majority-element" },
+            { id: "49", title: "Group Anagrams", difficulty: "Medium", slug: "group-anagrams" },
+            { id: "128", title: "Longest Consecutive Sequence", difficulty: "Medium", slug: "longest-consecutive-sequence" },
+          ],
+        },
+        {
+          name: "Stack / Monotonic Stack",
+          description: "Use stack state to remember previous candidates, boundaries, and next greater values.",
+          why: "It appears in parsing, ranges, daily temperatures, prefix logic, and contribution-style problems.",
+          questions: [
+            { id: "724", title: "Find Pivot Index", difficulty: "Easy", slug: "find-pivot-index" },
+            { id: "560", title: "Subarray Sum Equals K", difficulty: "Medium", slug: "subarray-sum-equals-k" },
+            { id: "303", title: "Range Sum Query - Immutable", difficulty: "Easy", slug: "range-sum-query-immutable" },
+            { id: "739", title: "Daily Temperatures", difficulty: "Medium", slug: "daily-temperatures" },
+          ],
+        },
+        {
+          name: "BFS / DFS",
+          description: "Traverse trees, graphs, and grids layer by layer or depth first with visited state.",
+          why: "Traversal fluency is essential for graph reachability, connected components, and tree views.",
+          questions: [
+            { id: "104", title: "Maximum Depth of Binary Tree", difficulty: "Easy", slug: "maximum-depth-of-binary-tree" },
+            { id: "200", title: "Number of Islands", difficulty: "Medium", slug: "number-of-islands" },
+            { id: "127", title: "Word Ladder", difficulty: "Hard", slug: "word-ladder" },
+            { id: "417", title: "Pacific Atlantic Water Flow", difficulty: "Medium", slug: "pacific-atlantic-water-flow" },
+            { id: "199", title: "Binary Tree Right Side View", difficulty: "Medium", slug: "binary-tree-right-side-view" },
+          ],
+        },
+        {
+          name: "Recursion + Memoization",
+          description: "Break problems into overlapping subproblems and cache results before optimizing further.",
+          why: "It builds the mental bridge to dynamic programming questions interviewers love to vary.",
+          questions: [
+            { id: "70", title: "Climbing Stairs", difficulty: "Easy", slug: "climbing-stairs" },
+            { id: "322", title: "Coin Change", difficulty: "Medium", slug: "coin-change" },
+            { id: "1143", title: "Longest Common Subsequence", difficulty: "Medium", slug: "longest-common-subsequence" },
+            { id: "198", title: "House Robber", difficulty: "Medium", slug: "house-robber" },
+          ],
+        },
+        {
+          name: "Heap / Priority Queue",
+          description: "Keep the most important item available while streaming, ranking, or merging data.",
+          why: "Heaps make top-k, kth element, and live ranking problems efficient and interview-friendly.",
+          questions: [
+            { id: "1046", title: "Last Stone Weight", difficulty: "Easy", slug: "last-stone-weight" },
+            { id: "215", title: "Kth Largest Element in an Array", difficulty: "Medium", slug: "kth-largest-element-in-an-array" },
+            { id: "347", title: "Top K Frequent Elements", difficulty: "Medium", slug: "top-k-frequent-elements" },
+            { id: "703", title: "Kth Largest Element in a Stream", difficulty: "Easy", slug: "kth-largest-element-in-a-stream" },
+          ],
+        },
+      ];
+
+      const mustSolveQuestions = mustSolvePatterns.flatMap((pattern) =>
+        pattern.questions.map((question) => ({ ...question, pattern: pattern.name })),
+      );
+
+      function mustSolveKey(id) {
+        return `${mustSolveStoragePrefix}${id}`;
+      }
+
+      function isMustSolved(id) {
+        return localStorage.getItem(mustSolveKey(id)) === "1";
+      }
+
+      function setMustSolved(id, solved) {
+        if (solved) {
+          localStorage.setItem(mustSolveKey(id), "1");
+        } else {
+          localStorage.removeItem(mustSolveKey(id));
+        }
+      }
+
+      function updateMustProgress() {
+        const completed = mustSolveQuestions.filter((question) => isMustSolved(question.id)).length;
+        const total = mustSolveQuestions.length;
+        mustCompletedCount.textContent = completed;
+        mustProgressFill.style.width = `${(completed / total) * 100}%`;
+        mustPatternGrid.querySelectorAll(".must-question").forEach((item) => {
+          item.classList.toggle("is-complete", isMustSolved(item.dataset.id));
+        });
+      }
+
+      function renderMustSolveRoadmap() {
+        mustPatternGrid.innerHTML = mustSolvePatterns
+          .map(
+            (pattern) => `
+        <article class="must-pattern-card">
+          <div class="must-pattern-header">
+            <div>
+              <h4>${escapeHTML(pattern.name)}</h4>
+              <p>${escapeHTML(pattern.description)}</p>
+            </div>
+            <div class="must-why">${escapeHTML(pattern.why)}</div>
+          </div>
+          <div class="must-question-list">
+            ${pattern.questions
+              .map(
+                (question) => `
+            <div class="must-question" data-id="${escapeHTML(question.id)}">
+              <input class="must-check" type="checkbox" data-id="${escapeHTML(question.id)}" ${isMustSolved(question.id) ? "checked" : ""} aria-label="Mark ${escapeHTML(question.title)} complete" />
+              <span class="must-number">LC ${escapeHTML(question.id)}</span>
+              <span class="must-name">${escapeHTML(question.title)}</span>
+              <span class="tag ${escapeHTML(question.difficulty.toLowerCase())}">${escapeHTML(question.difficulty)}</span>
+              <a class="must-open-link" href="https://leetcode.com/problems/${escapeHTML(question.slug)}/" target="_blank" rel="noopener noreferrer">Open LeetCode</a>
+            </div>`,
+              )
+              .join("")}
+          </div>
+        </article>`,
+          )
+          .join("");
+        updateMustProgress();
+      }
+
+      function showMustSolveMode() {
+        companyScrollY = window.scrollY;
+        pageMain.scrollIntoView({ behavior: "smooth", block: "start" });
+        companyModeContent.classList.add("mode-fade-out");
+        mustSolveNav.classList.add("active");
+
+        window.setTimeout(() => {
+          companyModeContent.classList.add("hidden");
+          companyModeContent.classList.remove("mode-fade-out", "mode-fade-in");
+          mustSolveSection.classList.remove("hidden", "mode-fade-out");
+          mustSolveSection.classList.add("mode-fade-in");
+          document.body.classList.add("must-solve-mode");
+          mustSolveSection.setAttribute("aria-hidden", "false");
+        }, 280);
+      }
+
+      function showCompanyMode() {
+        mustSolveSection.classList.add("mode-fade-out");
+        mustSolveNav.classList.remove("active");
+
+        window.setTimeout(() => {
+          mustSolveSection.classList.add("hidden");
+          mustSolveSection.classList.remove("mode-fade-out", "mode-fade-in");
+          companyModeContent.classList.remove("hidden", "mode-fade-out");
+          companyModeContent.classList.add("mode-fade-in");
+          document.body.classList.remove("must-solve-mode");
+          mustSolveSection.setAttribute("aria-hidden", "true");
+          window.scrollTo({ top: companyScrollY, behavior: "smooth" });
+        }, 280);
+      }
+      function titleCase(slug) {
+        return slug
+          .split("-")
+          .filter(Boolean)
+          .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+          .join(" ");
+      }
+
+      function parseCSV(text) {
+        const rows = [];
+        let row = [];
+        let cell = "";
+        let inQuotes = false;
+
+        for (let i = 0; i < text.length; i += 1) {
+          const char = text[i];
+          const next = text[i + 1];
+
+          if (char === '"' && inQuotes && next === '"') {
+            cell += '"';
+            i += 1;
+          } else if (char === '"') {
+            inQuotes = !inQuotes;
+          } else if (char === "," && !inQuotes) {
+            row.push(cell);
+            cell = "";
+          } else if ((char === "\n" || char === "\r") && !inQuotes) {
+            if (char === "\r" && next === "\n") i += 1;
+            row.push(cell);
+            if (row.some((value) => value.trim() !== "")) rows.push(row);
+            row = [];
+            cell = "";
+          } else {
+            cell += char;
+          }
+        }
+
+        if (cell || row.length) {
+          row.push(cell);
+          rows.push(row);
+        }
+
+        const headers = rows.shift() || [];
+        return rows.map((values) =>
+          headers.reduce((item, header, index) => {
+            item[header] = values[index] || "";
+            return item;
+          }, {}),
+        );
+      }
+
+      function sortFiles(files) {
+        return [...files].sort((a, b) => {
+          const aIndex = datasetOrder.indexOf(a);
+          const bIndex = datasetOrder.indexOf(b);
+          return (
+            (aIndex === -1 ? 99 : aIndex) - (bIndex === -1 ? 99 : bIndex) ||
+            a.localeCompare(b)
+          );
+        });
+      }
+
+      function progressKey(row) {
+        const company = state.currentCompany
+          ? state.currentCompany.slug
+          : "unknown";
+        return `lc-progress:${company}:${row.ID}`;
+      }
+
+      function isSolved(row) {
+        return localStorage.getItem(progressKey(row)) === "1";
+      }
+
+      function setSolved(row, solved) {
+        if (solved) {
+          localStorage.setItem(progressKey(row), "1");
+        } else {
+          localStorage.removeItem(progressKey(row));
+        }
+      }
+
+      function priorityClass(priority) {
+        return `priority-${String(priority || "Low").toLowerCase()}`;
+      }
+
+      function renderTopicOptions(rows) {
+        const selected = topicSelect.value;
+        const topics = [
+          ...new Set(
+            rows.flatMap((row) =>
+              String(row["Topic Tags"] || "")
+                .split(";")
+                .map((topic) => topic.trim())
+                .filter(Boolean),
+            ),
+          ),
+        ].sort();
+        topicSelect.innerHTML =
+          '<option value="all">All topics</option>' +
+          topics
+            .map(
+              (topic) =>
+                `<option value="${escapeHTML(topic)}">${escapeHTML(topic)}</option>`,
+            )
+            .join("");
+        topicSelect.value = topics.includes(selected) ? selected : "all";
+      }
+
+      function asArray(value) {
+        if (!value) return [];
+        return Array.isArray(value) ? value : [value];
+      }
+
+      function renderChips(target, items) {
+        target.innerHTML =
+          asArray(items)
+            .filter(Boolean)
+            .map((item) => {
+              const name = typeof item === "string" ? item : item.name;
+              return `<span class="roadmap-chip">${escapeHTML(name)}</span>`;
+            })
+            .join("") || '<span class="roadmap-chip">Not enough data</span>';
+      }
+
+      function renderRoadmap(company) {
+        const roadmap = state.roadmaps.get(company.slug);
+        if (!roadmap) {
+          roadmapSubtitle.textContent = `${company.name || titleCase(company.slug)} roadmap will appear when data is available.`;
+          roadmapPriority.textContent = "Roadmap pending";
+          renderChips(roadmapTopics, []);
+          renderChips(roadmapPatterns, []);
+          roadmapSteps.innerHTML =
+            '<div class="roadmap-step"><strong>No roadmap yet</strong><span>Use the table filters to build a manual plan.</span></div>';
+          return;
+        }
+
+        roadmapSubtitle.textContent = `${roadmap.name || titleCase(company.slug)} focus areas are ranked from current CSV frequency, difficulty, and recency.`;
+        const counts = roadmap.priorityCounts || {};
+        roadmapPriority.textContent = `${counts.high || 0} High priority problems`;
+        renderChips(roadmapTopics, roadmap.topTopics);
+        renderChips(roadmapPatterns, roadmap.topPatterns);
+        roadmapSteps.innerHTML = asArray(roadmap.roadmap)
+          .map(
+            (step) => `
+        <div class="roadmap-step">
+          <strong>${escapeHTML(step.phase)}</strong>
+          <span>${escapeHTML(asArray(step.focus).join(", ") || "Mixed practice")} • ${escapeHTML(step.action)}</span>
+        </div>`,
+          )
+          .join("");
+      }
+      function renderStats(rows) {
+        visibleCount.textContent = rows.length;
+        easyCount.textContent = rows.filter(
+          (row) => row.Difficulty === "Easy",
+        ).length;
+        mediumCount.textContent = rows.filter(
+          (row) => row.Difficulty === "Medium",
+        ).length;
+        hardCount.textContent = rows.filter(
+          (row) => row.Difficulty === "Hard",
+        ).length;
+      }
+
+      function renderRows(rows) {
+        renderStats(rows);
+
+        if (!rows.length) {
+          problemBody.innerHTML =
+            '<tr><td class="empty" colspan="10">No questions match the current filters.</td></tr>';
+          return;
+        }
+
+        function formatMetric(val) {
+          if (val == null || val === "") return '<span class="metric-num">-</span>';
+          const num = parseFloat(String(val).replace("%", ""));
+          if (isNaN(num)) return `<span class="metric-num">${escapeHTML(val)}</span>`;
+          const pct = Math.min(100, Math.max(0, num));
+          return `
+            <div class="metric-wrap">
+              <span class="metric-num">${pct.toFixed(0)}%</span>
+              <div class="metric-track"><div class="metric-bar" style="width:${pct}%"></div></div>
+            </div>`;
+        }
+
+        problemBody.innerHTML = rows
+          .map((row) => {
+            const difficultyClass = (row.Difficulty || "").toLowerCase();
+            const solved = isSolved(row);
+            const rowClass = solved ? "row-solved" : "";
+            const checked = solved ? "checked" : "";
+            return `
+          <tr class="${rowClass}">
+            <td><input class="solve-check" type="checkbox" data-id="${row.ID}" ${checked} aria-label="Mark ${escapeHTML(row.Title)} solved" /></td>
+            <td><span class="id-cell">${escapeHTML(row.ID)}</span></td>
+            <td><a class="problem-link" href="${escapeHTML(row.URL)}" target="_blank" rel="noopener noreferrer">${escapeHTML(row.Title)}</a></td>
+            <td><span class="tag ${difficultyClass}">${escapeHTML(row.Difficulty)}</span></td>
+            <td class="meta-cell">${escapeHTML(row["Topic Tags"])}</td>
+            <td class="meta-cell">${escapeHTML(row.Pattern)}</td>
+            <td><span class="tag ${priorityClass(row["Revision Priority"])}">${escapeHTML(row["Revision Priority"])}</span></td>
+            <td>${formatMetric(row["Acceptance %"])}</td>
+            <td>${formatMetric(row["Frequency %"])}</td>
+            <td class="notes-cell">${escapeHTML(row.Notes)}</td>
+          </tr>`;
+          })
+          .join("");
+      }
+
+      function escapeHTML(value) {
+        return String(value || "").replace(
+          /[&<>"]/g,
+          (char) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+            })[char],
+        );
+      }
+
+      function applyFilters() {
+        const difficulty = difficultySelect.value;
+        const topic = topicSelect.value;
+        const priority = prioritySelect.value;
+        const query = problemSearch.value.trim().toLowerCase();
+
+        state.filteredRows = state.rows.filter((row) => {
+          const difficultyMatch =
+            difficulty === "all" || row.Difficulty === difficulty;
+          const topicMatch =
+            topic === "all" ||
+            String(row["Topic Tags"] || "")
+              .split(";")
+              .map((item) => item.trim())
+              .includes(topic);
+          const priorityMatch =
+            priority === "all" || row["Revision Priority"] === priority;
+          const searchable =
+            `${row.ID} ${row.Title} ${row["Topic Tags"]} ${row.Pattern} ${row.Notes}`.toLowerCase();
+          const queryMatch = !query || searchable.includes(query);
+          return difficultyMatch && topicMatch && priorityMatch && queryMatch;
+        });
+
+        renderRows(state.filteredRows);
+      }
+
+      async function loadCompany(slug, preferredFile) {
+        const company =
+          state.companies.find((item) => item.slug === slug) ||
+          state.companies[0];
+        if (!company) return;
+
+        state.currentCompany = company;
+        companySelect.value = company.slug;
+        document.querySelectorAll(".quick-company").forEach((btn) => {
+          const isSelected = btn.dataset.company === company.slug;
+          btn.classList.toggle("active", isSelected);
+          btn.classList.toggle("glass-active", isSelected);
+        });
+        renderRoadmap(company);
+
+        const files = sortFiles(company.files || []);
+        fileSelect.innerHTML = files
+          .map(
+            (file) =>
+              `<option value="${escapeHTML(file)}">${escapeHTML(datasetLabels[file] || file)}</option>`,
+          )
+          .join("");
+        fileSelect.value =
+          preferredFile && files.includes(preferredFile)
+            ? preferredFile
+            : files.includes("all.csv")
+              ? "all.csv"
+              : files.includes("thirty-days.csv")
+                ? "thirty-days.csv"
+                : files[0];
+
+        await loadDataset();
+      }
+
+      async function loadDataset() {
+        const file = fileSelect.value;
+        const company = state.currentCompany;
+        if (!company || !file) return;
+
+        problemBody.innerHTML =
+          '<tr><td class="empty" colspan="10">Loading questions...</td></tr>';
+        tableSubtitle.textContent = `${company.name || titleCase(company.slug)} • ${datasetLabels[file] || file}`;
+
+        try {
+          const response = await fetch(`${company.slug}/${file}`);
+          if (!response.ok) throw new Error(`Could not load ${file}`);
+          const text = await response.text();
+          state.rows = parseCSV(text);
+          renderTopicOptions(state.rows);
+          applyFilters();
+        } catch (error) {
+          state.rows = [];
+          renderStats([]);
+          problemBody.innerHTML = `<tr><td class="empty" colspan="10">${escapeHTML(error.message)}. If you opened this file directly, run it through GitHub Pages or a local server.</td></tr>`;
+        }
+      }
+
+      const companyLogoDomains = {
+        amazon: "amazon.com",
+        google: "google.com",
+        microsoft: "microsoft.com",
+        meta: "meta.com",
+        apple: "apple.com",
+        adobe: "adobe.com",
+        flipkart: "flipkart.com",
+        netflix: "netflix.com",
+        uber: "uber.com",
+        salesforce: "salesforce.com",
+        oracle: "oracle.com",
+        "walmart-labs": "walmart.com",
+        "goldman-sachs": "goldmansachs.com",
+        "morgan-stanley": "morganstanley.com",
+        paytm: "paytm.com",
+        razorpay: "razorpay.com",
+        swiggy: "swiggy.com",
+        zomato: "zomato.com",
+        phonepe: "phonepe.com",
+        atlassian: "atlassian.com",
+      };
+
+      function logoForCompany(company) {
+        const fallback = escapeHTML(
+          (company.name || company.slug || "?").charAt(0).toUpperCase(),
+        );
+        const domain = companyLogoDomains[company.slug];
+        if (!domain)
+          return `<span class="company-logo-fallback" style="display:inline-flex">${fallback}</span>`;
+        return `<img class="company-logo" src="https://www.google.com/s2/favicons?domain=${escapeHTML(domain)}&sz=64" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';" /><span class="company-logo-fallback">${fallback}</span>`;
+      }
+
+      function renderCompanies() {
+        companySelect.innerHTML = state.companies
+          .map(
+            (company) =>
+              `<option value="${escapeHTML(company.slug)}">${escapeHTML(company.name || titleCase(company.slug))}</option>`,
+          )
+          .join("");
+
+        const preferred = [
+          "amazon",
+          "google",
+          "microsoft",
+          "meta",
+          "apple",
+          "adobe",
+          "flipkart",
+          "netflix",
+          "uber",
+          "salesforce",
+          "oracle",
+          "walmart-labs",
+          "goldman-sachs",
+          "morgan-stanley",
+          "paytm",
+          "razorpay",
+          "swiggy",
+          "zomato",
+          "phonepe",
+          "atlassian",
+        ];
+        const quickCompanies = preferred
+          .map((slug) =>
+            state.companies.find((company) => company.slug === slug),
+          )
+          .filter(Boolean);
+
+        quickList.innerHTML = quickCompanies
+          .map(
+            (company) => `
+        <button class="quick-company" type="button" data-company="${escapeHTML(company.slug)}">
+          ${logoForCompany(company)}
+          <span class="company-name">${escapeHTML(company.name || titleCase(company.slug))}</span>
+        </button>`,
+          )
+          .join("");
+      }
+
+      async function boot() {
+        try {
+          const response = await fetch("companies.json");
+          if (!response.ok) throw new Error("companies.json not found");
+          state.companies = await response.json();
+          try {
+            const roadmapResponse = await fetch("roadmaps.json");
+            if (roadmapResponse.ok) {
+              const roadmapData = await roadmapResponse.json();
+              state.roadmaps = new Map(
+                asArray(roadmapData).map((item) => [item.slug, item]),
+              );
+            }
+          } catch (roadmapError) {
+            state.roadmaps = new Map();
+          }
+          renderCompanies();
+          await loadCompany(
+            state.companies.some((company) => company.slug === "amazon")
+              ? "amazon"
+              : state.companies[0].slug,
+          );
+        } catch (error) {
+          problemBody.innerHTML = `<tr><td class="empty" colspan="10">${escapeHTML(error.message)}. Publish this repository with GitHub Pages to use the dashboard.</td></tr>`;
+        }
+      }
+
+      companySelect.addEventListener("change", () =>
+        loadCompany(companySelect.value),
+      );
+      fileSelect.addEventListener("change", loadDataset);
+      difficultySelect.addEventListener("change", applyFilters);
+      topicSelect.addEventListener("change", applyFilters);
+      prioritySelect.addEventListener("change", applyFilters);
+      problemSearch.addEventListener("input", applyFilters);
+
+      // Roadmap card toggle
+      function toggleRoadmap(show) {
+        if (show) {
+          roadmapPanel.classList.remove("hidden");
+          roadmapCard.classList.add("active");
+          roadmapCard.setAttribute("aria-expanded", "true");
+          roadmapStatus.textContent = "Close";
+        } else {
+          roadmapPanel.classList.add("hidden");
+          roadmapCard.classList.remove("active");
+          roadmapCard.setAttribute("aria-expanded", "false");
+          roadmapStatus.textContent = "View";
+        }
+      }
+
+      roadmapCard.addEventListener("click", () => {
+        const isOpen = !roadmapPanel.classList.contains("hidden");
+        toggleRoadmap(!isOpen);
+      });
+
+      roadmapClose.addEventListener("click", () => {
+        toggleRoadmap(false);
+      });
+
+      quickList.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-company]");
+        if (button) loadCompany(button.dataset.company);
+      });
+
+      problemBody.addEventListener("change", (event) => {
+        if (!event.target.matches(".solve-check")) return;
+        const row = state.rows.find(
+          (item) => item.ID === event.target.dataset.id,
+        );
+        if (row) {
+          setSolved(row, event.target.checked);
+          const tr = event.target.closest("tr");
+          if (tr) tr.classList.toggle("row-solved", event.target.checked);
+        }
+      });
+
+      clearProgress.addEventListener("click", () => {
+        if (!state.currentCompany) return;
+        state.rows.forEach((row) => localStorage.removeItem(progressKey(row)));
+        renderRows(state.filteredRows);
+      });
+
+      renderMustSolveRoadmap();
+      mustSolveSection.setAttribute("aria-hidden", "true");
+
+      mustSolveNav.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (!mustSolveSection.classList.contains("hidden")) {
+          mustSolveSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
+        showMustSolveMode();
+      });
+
+      [mustSolveBackTop, mustSolveBackHero].forEach((button) => {
+        button.addEventListener("click", showCompanyMode);
+      });
+
+      mustStartSolving.addEventListener("click", () => {
+        mustPatternGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+
+      mustPatternGrid.addEventListener("change", (event) => {
+        if (!event.target.matches(".must-check")) return;
+        setMustSolved(event.target.dataset.id, event.target.checked);
+        updateMustProgress();
+      });
+
+      mustResetProgress.addEventListener("click", () => {
+        mustSolveQuestions.forEach((question) => setMustSolved(question.id, false));
+        mustPatternGrid.querySelectorAll(".must-check").forEach((checkbox) => {
+          checkbox.checked = false;
+        });
+        updateMustProgress();
+      });
+      boot();
+    </script>
+  </body>
+</html>
