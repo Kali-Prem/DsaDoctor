@@ -8,13 +8,14 @@
 
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=00FF00&center=true&vCenter=true&width=940&lines=%E2%96%B6+Official+Platform%3A+dsadoctor.com+%E2%80%A2+Crack+Interviews+with+Data!;%E2%96%B6+Search+%22dsa+doctor%22+or+%22dsadoctor%22+for+Company-Wise+LeetCode+Prep!;%E2%96%B6+650%2B+Companies+%E2%80%A2+1%2C600%2B+CSV+Datasets+%E2%80%A2+17%2C600%2B+Problems;%E2%96%B6+Filtered+by+Recency%3A+30-Days+%7C+3-Months+%7C+6-Months+%7C+All-Time;%E2%96%B6+Frequency-Ranked+%2B+Pattern-Tagged+%2B+Revision-Prioritized" alt="DSA Doctor Typing SVG Banner - dsadoctor.com" />
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=00FF00&center=true&vCenter=true&width=940&lines=%E2%96%B6+Official+Platform%3A+dsadoctor.com+%E2%80%A2+Crack+Interviews+with+Data!;%E2%96%B6+NEW%3A+DSA+Logic+Building+Playbook+%E2%80%A2+Live+Dry-Run+%2B+Pattern+Wizard!;%E2%96%B6+650%2B+Companies+%E2%80%A2+1%2C600%2B+CSV+Datasets+%E2%80%A2+17%2C600%2B+Problems;%E2%96%B6+Multi-Language+Templates%3A+Java+%7C+C%2B%2B+%7C+Python;%E2%96%B6+Frequency-Ranked+%2B+Pattern-Tagged+%2B+Revision-Prioritized" alt="DSA Doctor Typing SVG Banner - dsadoctor.com" />
   </a>
 </p>
 
 <!-- Core Badges -->
 <p align="center">
   <a href="https://dsadoctor.com"><img src="https://img.shields.io/badge/🌐%20Official%20Site-dsadoctor.com-2563eb?style=for-the-badge" alt="DSA Doctor Official Website dsadoctor.com" /></a>
+  <a href="https://dsadoctor.com/dsa-logic.html"><img src="https://img.shields.io/badge/🧠%20DSA%20Logic%20Playbook-Interactive%20Guide-7928ca?style=for-the-badge" alt="DSA Logic Building Playbook dsadoctor.com/dsa-logic.html" /></a>
   <a href="#-target-company-directory"><img src="https://img.shields.io/badge/🏢%20Companies-650%2B-0f172a?style=for-the-badge" alt="Companies Count" /></a>
   <a href="#-repository-at-a-glance"><img src="https://img.shields.io/badge/🧩%20Problems-17K%2B-16a34a?style=for-the-badge" alt="Problems Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/⚖️%20License-All%20Rights%20Reserved-red?style=for-the-badge" alt="License: Proprietary" /></a>
@@ -23,8 +24,8 @@
 <!-- Quick Navigation Bar -->
 <p align="center">
   <a href="https://dsadoctor.com">🌐 <b>dsadoctor.com</b></a> •
+  <a href="#-the-dsa-logic-building-playbook-master-problem-solving-step-by-step">🧠 <b>DSA Logic Playbook</b></a> •
   <a href="#-core-philosophy">💡 <b>Philosophy</b></a> •
-  <a href="#-repository-at-a-glance">📊 <b>Metrics</b></a> •
   <a href="#-visual-diagnostic-pipeline">🗺️ <b>Diagnostic Flow</b></a> •
   <a href="#-target-company-directory">🏢 <b>Companies</b></a> •
   <a href="#-dataset-anatomy--schema">📑 <b>Schema</b></a> •
@@ -79,6 +80,68 @@
 <p align="right"><a href="#-dsa-doctor--dsadoctorcom"><img src="https://img.shields.io/badge/⬆️%20Back%20To%20Top-0d1117?style=flat-square&color=00f5ff&labelColor=0d1117" alt="Back to Top" /></a></p>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:00f5ff,50:2563eb,100:7928ca&height=4&width=100%" width="100%" />
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:00f5ff,50:2563eb,100:7928ca&height=4&width=100%" width="100%" />
+
+## 🧠 The DSA Logic Building Playbook (Master Problem-Solving Step-by-Step)
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:00f5ff,50:2563eb,100:7928ca&height=2&width=100%" width="100%" />
+
+### 🎯 The #1 Struggle in Coding Interviews is NOT Syntax — It Is Logic Building.
+
+> [!TIP]
+> **"Most engineers get stuck in DSA not because they don't know programming syntax, but because they don't have a structured mental model to extract logic from unseen problem descriptions."**  
+> — **Prem Kumar**, Founder of DSA Doctor
+
+To permanently solve this hurdle, **DSA Doctor** has launched the **DSA Logic Building Playbook**, available live directly at:  
+👉 **[dsadoctor.com/dsa-logic.html](https://dsadoctor.com/dsa-logic.html)** *(Also accessible via the [GitHub Repository](https://github.com/Kali-Prem/dsa-logic-building-playbook))*.
+
+This playbook breaks down problem-solving into a repeatable, scientific framework equipped with interactive simulators, pattern matching engines, and multi-language production code.
+
+---
+
+### 🌟 What Makes the DSA Logic Building Playbook the Ultimate Preparation Guide?
+
+<div align="center">
+
+| Module | Core Capability | Candidate Transformation |
+| :--- | :--- | :--- |
+| **🪜 7-Step Universal Blueprint** | Scientific 7-stage thought pipeline | Eliminates blank-screen anxiety; guarantees progress on unseen problems |
+| **🔬 Live Algorithm Dry-Run Visualizer** | Interactive paper trace simulator for Two Pointers, Sliding Window & Kadane's | Teaches how manual pointer movements eliminate redundant search iterations |
+| **🧭 DSA Pattern Finder Wizard** | 3-step instant diagnostic matcher (Input Type ➔ Goal ➔ Constraints) | Pinpoints the exact algorithm and target time complexity in under 10 seconds |
+| **⏱️ Big-O Complexity Budget Radar** | Real-time threshold calculator mapping constraint $N$ to allowed $O(...)$ | Stops candidates from writing code that inevitably fails with TLE (Time Limit Exceeded) |
+| **🔑 Keyword-to-Pattern Cheat Sheet** | Instant keyword trigger lookup with interactive search & filters | Maps words like *"contiguous subarray"* ➔ Sliding Window, *"monotonic"* ➔ Binary Search |
+| **🧱 10 Production Multi-Language Templates** | Production-ready boilerplate in **Java, C++, and Python** | Persistent language switching with 1-click clipboard copy |
+| **💡 8 Deep-Dive Worked Examples** | Test case to optimal code walkthroughs with waste analysis | Demonstrates how brute force $O(N^2)$ waste is surgically converted to $O(N)$ |
+| **🆘 Emergency Protocol & 9-Point Checklist** | What to do when stuck + edge case validation with celebratory confetti | Ensures null pointers, integer overflows, and off-by-one errors are caught before submitting |
+
+</div>
+
+<br />
+
+#### 🔬 1. Interactive Live Dry-Run Trace Visualizer
+Practice Step 3 of the blueprint (*"Solve on Paper First"*) with our dynamic simulator:
+- **Two Pointers Trace**: Visualizes `left` and `right` pointer convergence on sorted arrays, showing real-time boundary shrinkage when `sum > target`.
+- **Sliding Window Trace**: Dynamic window boundaries tracking contiguous elements, showing how elements are added and evicted in $O(1)$ amortized time.
+- **Kadane's Algorithm Simulation**: Step-by-step visual tracking of running sum resets vs. global maximum subarray updates.
+- **Full Playback Controls**: Step forward, step backward, auto-play animation, and instant reset.
+
+#### 🧭 2. Diagnostic Pattern Finder Wizard
+Never wonder *"Which data structure should I use?"* again:
+1. **Input Type**: Array/String, Sorted Array, 2D Grid/Matrix, Binary Tree, Graph, or Data Stream.
+2. **Target Condition**: Contiguous Subarray, Pair/Triplet Sum, Monotonic Min/Max, Next Greater Element, Shortest Path, Overlapping Subproblems, or Combinations.
+3. **Constraint Size ($N$)**: $N \le 20$ (Backtracking), $N \le 5,000$ (DP/Quadratic), $N \le 10^5$ (Linearithmic), $N \ge 10^9$ (Logarithmic Binary Search).
+- **Output**: Instant pattern verdict, intuition rationale, optimal time/space complexity, and direct links to classic LeetCode benchmark problems.
+
+#### ☕ ⚡ 🐍 3. Multi-Language Production Templates
+Every core pattern includes battle-tested, syntax-highlighted templates in:
+- **☕ Java 17** (Idiomatic Collections, `HashMap`, `PriorityQueue`, `StringBuilder`)
+- **⚡ C++ 20** (Modern STL, `std::vector`, `std::unordered_map`, `std::priority_queue`)
+- **🐍 Python 3** (Clean list comprehensions, `collections.defaultdict`, `heapq`, `deque`)
+
+👉 **Experience the Playbook Live:** **[dsadoctor.com/dsa-logic.html](https://dsadoctor.com/dsa-logic.html)**
+
+<p align="right"><a href="#-dsa-doctor--dsadoctorcom"><img src="https://img.shields.io/badge/⬆️%20Back%20To%20Top-0d1117?style=flat-square&color=00f5ff&labelColor=0d1117" alt="Back to Top" /></a></p>
 
 ## 🗺️ Visual Diagnostic Pipeline
 
@@ -385,6 +448,14 @@ Build your own customized `progress.md` file in your personal branch to monitor 
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:00f5ff,50:2563eb,100:7928ca&height=2&width=100%" width="100%" />
 
+### 🧠 What is the DSA Logic Building Playbook on dsadoctor.com?
+The **DSA Logic Building Playbook** (accessible at **[dsadoctor.com/dsa-logic.html](https://dsadoctor.com/dsa-logic.html)**) is an interactive, step-by-step mental training system created by **Prem Kumar**. It solves the biggest issue faced by software engineering candidates: **how to build logic for unseen algorithmic problems**. It features:
+1. **The 7-Step Universal Blueprint**: A reliable sequence to transition from problem reading to optimized code without blanking out.
+2. **Live Algorithm Dry-Run Trace Visualizer**: Live animated simulations of Two Pointers, Sliding Window, and Kadane's algorithm.
+3. **DSA Pattern Finder Wizard**: A 3-step diagnostic selector that identifies the exact algorithmic pattern and complexity target for any problem.
+4. **Multi-Language Support**: Complete production templates in **Java, C++, and Python** with 1-click clipboard copy.
+5. **Pre-Submission Edge Case Checklist**: A 9-point verification system to catch null inputs, overflows, and boundary conditions.
+
 ### 🔍 What is DSA Doctor (dsadoctor.com)?
 **DSA Doctor** (also searched as **DSADoctor**, **dsa doctor**, **dsa-doctor**, or **dsadoctor.com**) is a proprietary algorithmic diagnostic engine and interview preparation platform created by **Prem Kumar**. It organizes and curates over 17,640+ verified coding interview questions across 650+ tech companies into structured, recency-aware problem banks.
 
@@ -472,6 +543,9 @@ To help developers, students, and engineers easily discover this platform on Goo
 
 - **👨‍💻 Founder & Creator Search Terms**:  
   `prem kumar dsadoctor` • `prem kumar dsa doctor` • `kali-prem dsadoctor` • `kali-prem dsa doctor` • `dsadoctor prem kumar` • `dsa doctor prem kumar` • `dsadoctor founder` • `dsa doctor creator`
+
+- **🧠 DSA Logic Building & Pattern Recognition Keywords**:  
+  `dsa logic building` • `dsa logic building playbook` • `how to build logic in dsa` • `how to solve unseen dsa problems` • `dsa problem solving framework` • `dsa pattern finder` • `dsa pattern finder wizard` • `algorithm dry run visualizer` • `leetcode pattern recognition` • `two pointers visualizer` • `sliding window visualizer` • `kadane algorithm visualizer` • `dsa doctor logic playbook` • `dsadoctor dsa logic` • `dsa logic step by step` • `coding interview logic framework` • `how to approach leetcode problems` • `dsa logic for beginners` • `dsa logic building hindi` • `dsa mental models`
 
 - **📚 DSA Sheet & Preparation Keywords**:  
   `dsadoctor sheet` • `dsa doctor sheet` • `dsadoctor dsa sheet` • `dsa doctor dsa sheet` • `dsadoctor roadmap` • `dsa doctor roadmap` • `dsadoctor leetcode` • `dsa doctor leetcode` • `dsadoctor company wise` • `dsa doctor company wise` • `dsadoctor company wise questions` • `dsa doctor interview prep` • `dsadoctor 7 day sprint` • `dsadoctor 30 day blueprint` • `dsadoctor study plans` • `dsa doctor frequency list` • `dsadoctor must solve`
