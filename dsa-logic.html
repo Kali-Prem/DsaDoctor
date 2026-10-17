@@ -1362,25 +1362,273 @@
         transform: translateY(-4px) scale(1.08);
       }
 
-      /* FOOTER */
+      /* =========================================================
+         ENTERPRISE PROFESSIONAL FOOTER
+         ========================================================= */
       .site-footer {
         border-top: 1px solid var(--line);
-        background: var(--surface);
-        padding: 40px 24px;
-        text-align: center;
-        margin-top: auto;
+        background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+        padding: 56px 24px 28px;
+        margin-top: 60px;
+        position: relative;
+        overflow: hidden;
       }
 
-      .footer-note {
-        margin: 6px 0;
+      .site-footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        max-width: 1100px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--blue), var(--purple), transparent);
+      }
+
+      .footer-inner {
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+
+      .footer-top-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 32px;
+        flex-wrap: wrap;
+        margin-bottom: 36px;
+      }
+
+      .footer-brand-wrap {
+        max-width: 460px;
+      }
+
+      .footer-logo-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        margin-bottom: 12px;
+      }
+
+      .footer-logo-img {
+        width: 155px;
+        height: auto;
+        display: block;
+      }
+
+      body.dark-mode .footer-logo-img {
+        filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.75)) drop-shadow(0 0 10px rgba(59, 130, 246, 0.4));
+      }
+
+      .footer-brand-title {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+      }
+
+      .footer-mission-text {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--muted);
+        margin: 0 0 16px;
+      }
+
+      .footer-status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--surface-3);
+        border: 1px solid var(--line);
+        padding: 6px 14px;
+        border-radius: var(--radius-pill);
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .status-pulse-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #10b981;
+        box-shadow: 0 0 8px #10b981;
+        animation: pulse 2s infinite ease-in-out;
+      }
+
+      .footer-metric-cards {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .footer-metric-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        padding: 12px 18px;
+        border-radius: var(--radius);
+        min-width: 105px;
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+
+      .footer-metric-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--blue);
+      }
+
+      .metric-val {
+        display: block;
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--blue);
+        line-height: 1.2;
+      }
+
+      .metric-lbl {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-top: 4px;
+      }
+
+      .footer-divider {
+        height: 1px;
+        background: var(--line);
+        margin-bottom: 36px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        margin-bottom: 40px;
+      }
+
+      .footer-col-title {
+        margin: 0 0 16px;
         font-size: 13.5px;
+        font-weight: 800;
+        color: var(--ink);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-links a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 13.5px;
+        font-weight: 600;
+        transition: color 0.15s ease, transform 0.15s ease;
+        display: inline-block;
+      }
+
+      .footer-links a:hover {
+        color: var(--blue);
+        transform: translateX(3px);
+      }
+
+      .footer-bottom-row {
+        border-top: 1px solid var(--line);
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .footer-copyright {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-size: 13px;
         color: var(--muted);
       }
 
-      .footer-note a {
+      .footer-copyright a {
         color: var(--blue);
         text-decoration: none;
         font-weight: 700;
+      }
+
+      .footer-sub-legal {
+        font-size: 12px;
+        color: var(--muted);
+        opacity: 0.85;
+      }
+
+      .footer-social-icons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer-social-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--ink);
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .footer-social-btn:hover {
+        background: var(--blue);
+        color: #ffffff;
+        border-color: var(--blue);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px var(--blue-glow);
+      }
+
+      @media (max-width: 900px) {
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 28px;
+        }
+      }
+
+      @media (max-width: 580px) {
+        .site-footer {
+          padding: 36px 16px 20px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .footer-metric-cards {
+          width: 100%;
+          justify-content: space-between;
+        }
+        .footer-metric-card {
+          flex: 1 1 calc(33.333% - 10px);
+          min-width: 85px;
+          padding: 10px 6px;
+        }
+        .footer-bottom-row {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+        }
       }
 
       /* =========================================================
@@ -2846,12 +3094,114 @@
 
       <!-- FOOTER -->
       <footer class="site-footer">
-        <p class="footer-note">
-          <strong>DSA Logic Building Playbook</strong> • Companion to <a href="index.html">DSA Doctor</a>
-        </p>
-        <p class="footer-note">
-          Crafted with ❤️ by <a href="https://github.com/Kali-Prem" target="_blank" rel="noopener noreferrer">Prem Kumar</a> • Open Source on <a href="https://github.com/Kali-Prem/dsa-logic-building-playbook" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </p>
+        <div class="footer-inner">
+          <!-- TOP ROW: BRAND & PLATFORM STATUS -->
+          <div class="footer-top-row">
+            <div class="footer-brand-wrap">
+              <a href="index.html" class="footer-logo-link">
+                <img src="assets/dsa-doctor-logo.svg" alt="DSA Doctor" class="footer-logo-img" />
+              </a>
+              <p class="footer-mission-text">
+                Data-driven algorithmic diagnostic engine & step-by-step logic building playbook. Practice with surgical precision for top-tier product engineering interviews.
+              </p>
+              <div class="footer-status-pill">
+                <span class="status-pulse-dot"></span>
+                <span>dsadoctor.com • Production Live</span>
+              </div>
+            </div>
+
+            <div class="footer-metric-cards">
+              <div class="footer-metric-card">
+                <span class="metric-val">650+</span>
+                <span class="metric-lbl">Companies</span>
+              </div>
+              <div class="footer-metric-card">
+                <span class="metric-val">17K+</span>
+                <span class="metric-lbl">Problems</span>
+              </div>
+              <div class="footer-metric-card">
+                <span class="metric-val">10</span>
+                <span class="metric-lbl">Core Patterns</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-divider"></div>
+
+          <!-- 4-COLUMN DIRECTORY GRID -->
+          <div class="footer-grid">
+            <div class="footer-col">
+              <h4 class="footer-col-title">🧠 Logic Playbook</h4>
+              <ul class="footer-links">
+                <li><a href="#seven-steps">🪜 7-Step Blueprint</a></li>
+                <li><a href="#dry-run-visualizer">🔬 Dry-Run Visualizer</a></li>
+                <li><a href="#pattern-wizard">🧭 Pattern Finder Wizard</a></li>
+                <li><a href="#complexity-radar">⏱️ Big-O Complexity Radar</a></li>
+                <li><a href="#keyword-cheat">🔑 Keyword Cheat Sheet</a></li>
+                <li><a href="#core-patterns">🧱 10 Core Patterns</a></li>
+                <li><a href="#emergency-guide">🆘 Emergency & Checklist</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4 class="footer-col-title">🎯 Interview Vault</h4>
+              <ul class="footer-links">
+                <li><a href="index.html">🏢 Company-Wise Questions</a></li>
+                <li><a href="index.html#must-solve">🔥 Must-Solve Problem Pool</a></li>
+                <li><a href="https://github.com/Kali-Prem/DsaDoctor#amazon" target="_blank" rel="noopener noreferrer">📦 Amazon OA Recent Pool</a></li>
+                <li><a href="https://github.com/Kali-Prem/DsaDoctor#google" target="_blank" rel="noopener noreferrer">🔍 Google High-Frequency Sets</a></li>
+                <li><a href="https://github.com/Kali-Prem/DsaDoctor#-battle-tested-study-sprints" target="_blank" rel="noopener noreferrer">⚡ 7-Day & 30-Day Sprints</a></li>
+                <li><a href="https://github.com/Kali-Prem/DsaDoctor" target="_blank" rel="noopener noreferrer">📑 1,600+ CSV Datasets</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4 class="footer-col-title">💻 Code Templates</h4>
+              <ul class="footer-links">
+                <li><a href="#core-patterns" onclick="setLang('java')">☕ Java 17 Idiomatic</a></li>
+                <li><a href="#core-patterns" onclick="setLang('cpp')">⚡ C++ 20 Modern STL</a></li>
+                <li><a href="#core-patterns" onclick="setLang('py')">🐍 Python 3 Algorithms</a></li>
+                <li><a href="#worked-examples">💡 8 Deep-Dive Walkthroughs</a></li>
+                <li><a href="javascript:window.print()">🖨️ Print Cheatsheet (PDF)</a></li>
+                <li><a href="https://github.com/Kali-Prem/dsa-logic-building-playbook" target="_blank" rel="noopener noreferrer">📂 Playbook GitHub Repo</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4 class="footer-col-title">👤 Founder & Connect</h4>
+              <ul class="footer-links">
+                <li><a href="founder/">📖 Prem Kumar (Founder Story)</a></li>
+                <li><a href="https://github.com/Kali-Prem" target="_blank" rel="noopener noreferrer">🐙 GitHub (@Kali-Prem)</a></li>
+                <li><a href="https://www.linkedin.com/in/kali-prem/" target="_blank" rel="noopener noreferrer">💼 LinkedIn Profile</a></li>
+                <li><a href="https://leetcode.com/u/Prem_Kumar01" target="_blank" rel="noopener noreferrer">🧩 LeetCode Profile</a></li>
+                <li><a href="https://github.com/Kali-Prem/DsaDoctor" target="_blank" rel="noopener noreferrer">⭐ Star DsaDoctor Repo</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- BOTTOM COPYRIGHT & SOCIAL ICONS ROW -->
+          <div class="footer-bottom-row">
+            <div class="footer-copyright">
+              <span>© 2026 <strong>DSA Doctor</strong> (<a href="https://dsadoctor.com">dsadoctor.com</a>). All rights reserved.</span>
+              <span class="footer-sub-legal">Engineered by Prem Kumar • Independent coding interview intelligence platform.</span>
+            </div>
+
+            <div class="footer-social-icons">
+              <a href="https://github.com/Kali-Prem/DsaDoctor" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="GitHub Repository">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/kali-prem/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
+              <a href="https://leetcode.com/u/Prem_Kumar01" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="LeetCode Profile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.874 5.874 0 0 0 .349 1.017 5.938 5.938 0 0 0 .481.823l.003.007.004.004 3.491 3.491a5.962 5.962 0 0 0 4.214 1.744 5.98 5.98 0 0 0 4.226-1.752l3.855-4.127a1.375 1.375 0 0 0-1.879-2.004l-3.855 4.127a3.218 3.218 0 0 1-2.274.945 3.218 3.218 0 0 1-2.274-.945l-3.48-3.48a3.242 3.242 0 0 1-.945-2.284 3.22 3.22 0 0 1 .945-2.274l3.855-4.127 5.405-5.788A1.361 1.361 0 0 0 13.483 0zm.019 7.682a1.38 1.38 0 0 0-1.375 1.375 1.38 1.38 0 0 0 1.375 1.375h6.883a1.38 1.38 0 0 0 1.375-1.375 1.38 1.38 0 0 0-1.375-1.375z"/></svg>
+              </a>
+              <a href="https://dsadoctor.com" class="footer-social-btn" title="Official Website">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
 
