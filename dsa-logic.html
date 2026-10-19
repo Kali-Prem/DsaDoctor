@@ -3253,9 +3253,8 @@
         }
       };
 
-      const urlParams = new URLSearchParams(window.location.search);
-      const savedTheme = urlParams.get("theme") || localStorage.getItem("dsa-doctor-theme") || "light";
-      applyTheme(savedTheme);
+      const initialTheme = "light";
+      applyTheme(initialTheme);
 
       if (themeToggle) {
         themeToggle.addEventListener("click", () => {
