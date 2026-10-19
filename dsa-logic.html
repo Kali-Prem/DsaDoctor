@@ -412,27 +412,6 @@
         color: var(--muted);
       }
 
-      .sidebar-print-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        background: var(--surface-2);
-        border: 1px solid var(--line);
-        color: var(--ink);
-        padding: 5px 9px;
-        border-radius: var(--radius-sm);
-        font-size: 12px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all 0.15s ease;
-      }
-
-      .sidebar-print-btn:hover {
-        background: var(--blue-light);
-        color: var(--blue);
-        border-color: var(--blue);
-      }
-
       /* TOC NAV */
       .toc-nav {
         display: flex;
@@ -1347,7 +1326,7 @@
       }
 
       /* =========================================================
-         PRINT-FRIENDLY CSS (@media print)
+         PRINT ONLY THE WORKSHEET (Section 16)
          ========================================================= */
       @media print {
         #scrollProgressBar,
@@ -1356,62 +1335,50 @@
         .mobile-toc-toggle,
         #backToTopBtn,
         .copy-code-btn,
-        .sidebar-print-btn,
         .doc-quick-actions,
-        .site-footer {
+        .doc-cover,
+        #section-1, #section-2, #section-3, #section-4,
+        #section-5, #section-6, #section-7, #section-8,
+        #section-9, #section-10, #section-11, #section-12,
+        #section-13, #section-14, #section-15,
+        .site-footer,
+        .worksheet-card button {
           display: none !important;
         }
 
         body {
           background: #ffffff !important;
           color: #000000 !important;
-          font-size: 11pt;
+          font-size: 10.5pt;
         }
 
-        .doc-layout {
+        .doc-layout, .doc-main, .doc-paper {
           padding: 0 !important;
-          max-width: 100% !important;
           margin: 0 !important;
-        }
-
-        .doc-main {
           max-width: 100% !important;
           width: 100% !important;
-        }
-
-        .doc-paper {
           border: none !important;
           box-shadow: none !important;
+        }
+
+        #section-16 {
+          border: none !important;
           padding: 0 !important;
+          margin: 0 !important;
+          page-break-before: avoid !important;
         }
 
-        .doc-chapter {
-          page-break-before: always;
-          padding-top: 1cm;
+        .worksheet-card {
+          border: 2px dashed #000000 !important;
+          background: #ffffff !important;
+          padding: 20px !important;
+          margin: 0 !important;
+          page-break-inside: avoid !important;
         }
 
-        .doc-chapter:first-of-type {
-          page-break-before: avoid;
-        }
-
-        .code-block-wrap {
-          border: 1px solid #ccc !important;
-          background: #f8f9fa !important;
-          color: #000000 !important;
-          page-break-inside: avoid;
-        }
-
-        pre.code-content {
-          color: #000000 !important;
-        }
-
-        .doc-table-wrap {
-          page-break-inside: avoid;
-        }
-
-        .doc-table th {
-          background: #eaeaea !important;
-          color: #000000 !important;
+        .ws-grid-box {
+          border: 1px solid #999999 !important;
+          background: #fafafa !important;
         }
       }
     
@@ -1482,9 +1449,6 @@
 
           <div class="sidebar-header">
             <span class="sidebar-title">16 Chapters</span>
-            <button class="sidebar-print-btn" onclick="window.print()" type="button" title="Print document">
-              🖨️ Print / PDF
-            </button>
           </div>
 
           <nav class="toc-nav" id="tocNav">
@@ -1566,7 +1530,7 @@
         
           <a href="#section-16" class="toc-link" data-target="section-16">
             <span class="toc-num">16</span>
-            <span class="toc-text">Worksheet (Printout)</span>
+            <span class="toc-text">Worksheet (photocopy)</span>
           </a>
         
           </nav>
@@ -1577,7 +1541,7 @@
           <article class="doc-paper">
             <!-- COVER CARD -->
             <header class="doc-cover">
-              <span class="doc-cover-pill">📖 Printable Master Edition</span>
+              <span class="doc-cover-pill">📖 Master Diagnostic Edition</span>
               <h1 class="doc-main-title">DSA Logic Building Playbook</h1>
               <p class="doc-main-subtitle">Code nahi, logic banana seekho — Test case se optimal code tak</p>
               
@@ -1591,7 +1555,7 @@
                   <a href="https://github.com/Kali-Prem/dsa-logic-building-playbook" target="_blank" rel="noopener noreferrer">github.com/Kali-Prem/dsa-logic-building-playbook</a>
                   <span>(MIT License)</span>
                 </span>
-                <span>Print ke liye compile kiya gaya &bull; A4 Friendly</span>
+                <span>Official Logic Playbook</span>
               </div>
 
               <div class="doc-quick-actions">
@@ -1602,8 +1566,7 @@
                 <a href="#section-9" class="quick-btn">🧱 11 Patterns</a>
                 <a href="#section-10" class="quick-btn">🪜 Thinking Ladder</a>
                 <a href="#section-13" class="quick-btn">💡 8 Worked Examples</a>
-                <a href="#section-16" class="quick-btn">📝 Worksheet</a>
-                <button class="quick-btn" onclick="window.print()" style="cursor: pointer; background: var(--blue-light); color: var(--blue); border-color: var(--blue);">🖨️ Print / PDF</button>
+                <a href="#section-16" class="quick-btn">📝 Worksheet (photocopy)</a>
               </div>
             </header>
 
@@ -2968,8 +2931,8 @@ private void go(int[] nums, int start, List&lt;Integer&gt; path, List&lt;List&lt
         </p>
 
         <div style="margin-top: 24px; text-align: center;">
-          <button class="btn-must-solve" type="button" onclick="window.print()" style="cursor: pointer; border: none; font-size: 14px; height: 40px; padding: 0 20px;">
-            🖨️ Print Worksheet / Playbook
+          <button class="btn-must-solve" type="button" onclick="window.print()" style="cursor: pointer; border: none; font-size: 14px; height: 42px; padding: 0 24px;">
+            🖨️ Print Worksheet (Photocopy)
           </button>
         </div>
       </div>
