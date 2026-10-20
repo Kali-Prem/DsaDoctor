@@ -425,26 +425,29 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        padding: 8px 12px;
+        padding: 9px 12px;
         border-radius: var(--radius-sm);
         text-decoration: none;
         color: var(--ink-secondary);
         font-size: 13.5px;
         font-weight: 600;
         line-height: 1.4;
-        transition: all 0.15s ease;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        border-left: 3px solid transparent;
       }
 
       .toc-link:hover {
         background: var(--surface-2);
         color: var(--blue);
+        transform: translateX(3px);
       }
 
       .toc-link.active {
-        background: var(--blue-light);
+        background: linear-gradient(90deg, var(--blue-light) 0%, rgba(21, 84, 232, 0.02) 100%);
         color: var(--blue);
         font-weight: 700;
         border-left: 3px solid var(--blue);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
       }
 
       .toc-num {
@@ -460,11 +463,13 @@
         background: var(--surface-2);
         color: var(--muted);
         flex-shrink: 0;
+        transition: all 0.2s ease;
       }
 
       .toc-link.active .toc-num {
         background: var(--blue);
         color: #ffffff;
+        box-shadow: 0 2px 6px var(--blue-glow);
       }
 
       /* =========================================================
@@ -530,41 +535,73 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
       }
 
-      .doc-cover-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--blue);
-        background: var(--surface);
-        padding: 6px 14px;
-        border-radius: var(--radius-pill);
-        margin-bottom: 16px;
-        border: 1px solid var(--line);
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      .doc-cover-header {
+        text-align: center;
+        margin-bottom: 26px;
         position: relative;
         z-index: 1;
       }
 
       .doc-main-title {
-        font-size: 38px;
+        font-size: clamp(32px, 4.2vw, 42px);
         font-weight: 900;
         letter-spacing: -0.035em;
-        line-height: 1.25;
-        margin: 0 0 10px;
+        line-height: 1.22;
+        margin: 0 auto 14px;
+        text-align: center;
         color: var(--ink);
         position: relative;
         z-index: 1;
       }
 
-      .doc-main-subtitle {
-        font-size: 18.5px;
-        font-weight: 600;
-        color: var(--muted);
-        margin: 0 0 22px;
+      .doc-cover-pill-wrap {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 14px;
         position: relative;
         z-index: 1;
+      }
+
+      .doc-cover-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: var(--blue);
+        background: var(--surface);
+        padding: 6px 18px;
+        border-radius: var(--radius-pill);
+        margin: 0;
+        border: 1px solid rgba(21, 84, 232, 0.22);
+        box-shadow: 0 2px 10px rgba(21, 84, 232, 0.08);
+        position: relative;
+        z-index: 1;
+        transition: all 0.25s ease;
+      }
+
+      .doc-cover-pill:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(21, 84, 232, 0.16);
+      }
+
+      body.dark-mode .doc-cover-pill {
+        background: rgba(30, 41, 59, 0.85);
+        border-color: rgba(59, 130, 246, 0.35);
+        color: #93c5fd;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .doc-main-subtitle {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--muted);
+        text-align: center;
+        max-width: 680px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        line-height: 1.5;
       }
 
       .doc-abstract {
@@ -756,54 +793,67 @@
       .step-sequence {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-        gap: 10px;
-        margin: 22px 0;
+        gap: 12px;
+        margin: 26px 0 30px;
       }
 
       .step-seq-item {
         background: var(--surface-2);
         border: 1px solid var(--line);
         border-radius: var(--radius-sm);
-        padding: 12px 10px;
+        padding: 14px 10px;
         text-align: center;
-        transition: all 0.2s ease;
+        transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        cursor: default;
+      }
+
+      .step-seq-item:hover {
+        transform: translateY(-3px);
+        border-color: var(--blue);
+        box-shadow: 0 8px 20px var(--blue-glow);
+        background: var(--surface);
       }
 
       .step-seq-num {
-        display: inline-block;
-        width: 22px;
-        height: 22px;
-        line-height: 22px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
         border-radius: 50%;
-        background: var(--blue);
-        color: #fff;
-        font-size: 11.5px;
+        background: linear-gradient(135deg, var(--blue) 0%, #0e3eb8 100%);
+        color: #ffffff;
+        font-size: 12px;
         font-weight: 800;
-        margin-bottom: 5px;
+        margin-bottom: 6px;
+        box-shadow: 0 2px 8px var(--blue-glow);
       }
 
       .step-seq-title {
-        font-size: 12px;
+        font-size: 12.5px;
         font-weight: 700;
         color: var(--ink);
         display: block;
-        line-height: 1.3;
+        line-height: 1.35;
       }
 
       .step-seq-time {
         font-size: 11px;
+        font-weight: 600;
         color: var(--muted);
         display: block;
-        margin-top: 3px;
+        margin-top: 4px;
       }
 
       /* TABLES */
       .doc-table-wrap {
         overflow-x: auto;
-        margin: 20px 0 26px;
+        margin: 24px 0 30px;
         border: 1px solid var(--line);
-        border-radius: var(--radius-sm);
+        border-radius: var(--radius);
         background: var(--surface);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
       }
 
       .doc-table {
@@ -816,20 +866,23 @@
       .doc-table th {
         background: var(--surface-2);
         color: var(--ink);
-        font-weight: 700;
-        padding: 12px 16px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 14px 18px;
         border-bottom: 1px solid var(--line);
         white-space: nowrap;
-        font-size: 14px;
+        font-size: 12.5px;
       }
 
       .doc-table td {
-        padding: 12px 16px;
+        padding: 14px 18px;
         border-bottom: 1px solid var(--line);
         color: var(--ink-secondary);
         vertical-align: top;
-        line-height: 1.6;
-        font-size: 14.5px;
+        line-height: 1.65;
+        font-size: 14px;
+        transition: background 0.15s ease;
       }
 
       .doc-table tr:last-child td {
@@ -840,25 +893,34 @@
         background: rgba(0, 0, 0, 0.015);
       }
 
+      .doc-table tr:hover td {
+        background: rgba(21, 84, 232, 0.04) !important;
+      }
+
       body.dark-mode .doc-table tr:nth-child(even) td {
-        background: rgba(255, 255, 255, 0.02);
+        background: rgba(255, 255, 255, 0.015);
+      }
+
+      body.dark-mode .doc-table tr:hover td {
+        background: rgba(59, 130, 246, 0.08) !important;
       }
 
       /* CODE BLOCKS */
       .code-block-wrap {
         position: relative;
-        margin: 20px 0 24px;
-        border-radius: var(--radius-sm);
+        margin: 24px 0 28px;
+        border-radius: var(--radius);
         border: 1px solid var(--line-strong);
         overflow: hidden;
         background: #0d1117;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
       }
 
       .code-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 9px 16px;
+        padding: 10px 18px;
         background: #161b22;
         border-bottom: 1px solid #30363d;
         color: #8b949e;
@@ -867,30 +929,56 @@
         font-weight: 600;
       }
 
+      .code-header-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .window-dots {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .window-dots .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .window-dots .dot-red { background: #ff5f56; }
+      .window-dots .dot-yellow { background: #ffbd2e; }
+      .window-dots .dot-green { background: #27c93f; }
+
       .code-header .lang-tag {
         display: flex;
         align-items: center;
         gap: 6px;
         color: #c9d1d9;
+        font-weight: 700;
+        letter-spacing: 0.02em;
       }
 
       .copy-code-btn {
         background: rgba(255, 255, 255, 0.08);
         color: #f0f6fc;
         border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 4px;
-        padding: 4px 10px;
+        border-radius: 5px;
+        padding: 4px 11px;
         font-size: 12px;
         font-weight: 600;
         cursor: pointer;
-        transition: all 0.15s ease;
+        transition: all 0.18s ease;
         display: inline-flex;
         align-items: center;
-        gap: 4px;
+        gap: 5px;
       }
 
       .copy-code-btn:hover {
         background: rgba(255, 255, 255, 0.18);
+        transform: translateY(-1px);
       }
 
       .copy-code-btn.copied {
@@ -901,11 +989,11 @@
 
       pre.code-content {
         margin: 0;
-        padding: 18px 20px;
+        padding: 20px 22px;
         overflow-x: auto;
         font-family: "JetBrains Mono", monospace;
         font-size: 14px;
-        line-height: 1.65;
+        line-height: 1.7;
         color: #e6edf3;
       }
 
@@ -916,74 +1004,91 @@
       /* CALLOUT BOXES */
       .doc-callout {
         display: flex;
-        gap: 14px;
-        padding: 16px 20px;
-        border-radius: var(--radius-sm);
-        margin: 20px 0;
-        border-left: 4px solid var(--blue);
-        background: var(--blue-light);
+        gap: 16px;
+        padding: 18px 22px;
+        border-radius: var(--radius);
+        margin: 24px 0;
+        border: 1px solid var(--line);
+        border-left: 5px solid var(--blue);
+        background: linear-gradient(135deg, var(--blue-light) 0%, rgba(21, 84, 232, 0.02) 100%);
         color: var(--ink);
         font-size: 15px;
-        line-height: 1.65;
+        line-height: 1.7;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
       }
 
       .doc-callout.tip {
         border-left-color: var(--green);
-        background: var(--green-bg);
+        background: linear-gradient(135deg, var(--green-bg) 0%, rgba(16, 185, 129, 0.02) 100%);
       }
 
       .doc-callout.warning {
         border-left-color: var(--amber);
-        background: var(--amber-bg);
+        background: linear-gradient(135deg, var(--amber-bg) 0%, rgba(245, 158, 11, 0.02) 100%);
       }
 
       .callout-icon {
-        font-size: 20px;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
         flex-shrink: 0;
-        line-height: 1.3;
+      }
+
+      body.dark-mode .callout-icon {
+        background: rgba(255, 255, 255, 0.12);
       }
 
       .callout-content {
         flex-grow: 1;
+        align-self: center;
       }
 
       /* INTERACTIVE CHECKLISTS */
       .checklist-group {
         display: flex;
         flex-direction: column;
-        gap: 9px;
-        margin: 20px 0;
+        gap: 10px;
+        margin: 22px 0;
       }
 
       .checklist-item {
         display: flex;
         align-items: flex-start;
-        gap: 12px;
-        padding: 12px 16px;
+        gap: 14px;
+        padding: 14px 18px;
         background: var(--surface-2);
         border: 1px solid var(--line);
         border-radius: var(--radius-sm);
         cursor: pointer;
-        transition: all 0.15s ease;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         user-select: none;
       }
 
       .checklist-item:hover {
         border-color: var(--blue);
+        transform: translateX(3px);
+        background: var(--surface);
+        box-shadow: var(--shadow-sm);
       }
 
       .checklist-item input[type="checkbox"] {
         margin-top: 3px;
-        width: 18px;
-        height: 18px;
+        width: 19px;
+        height: 19px;
         cursor: pointer;
-        accent-color: var(--blue);
+        accent-color: var(--green);
         flex-shrink: 0;
       }
 
       .checklist-item.checked {
-        background: var(--blue-light);
-        border-color: var(--blue);
+        background: linear-gradient(90deg, rgba(16, 185, 129, 0.08) 0%, var(--surface-2) 100%);
+        border-color: var(--green);
       }
 
       .checklist-item.checked .checklist-text {
@@ -994,16 +1099,17 @@
       .checklist-text {
         font-size: 14.5px;
         color: var(--ink);
-        line-height: 1.55;
+        line-height: 1.6;
+        font-weight: 500;
       }
 
       /* FILL IN BLANK TEMPLATE (Section 5 & 16) */
       .template-box {
         background: var(--surface-2);
         border: 1px dashed var(--line-strong);
-        border-radius: var(--radius-sm);
-        padding: 22px 26px;
-        margin: 20px 0;
+        border-radius: var(--radius);
+        padding: 24px 28px;
+        margin: 22px 0;
       }
 
       .template-list {
@@ -1171,24 +1277,65 @@
         transform: translateY(-4px) scale(1.08);
       }
 
-      /* MOBILE TOC DRAWER BUTTON */
+      /* MOBILE TOC DRAWER BUTTON (INSIDE TOPBAR) */
       .mobile-toc-toggle {
         display: none;
-        position: fixed;
-        bottom: 28px;
-        left: 20px;
+        align-items: center;
+        gap: 6px;
+        height: 38px;
+        padding: 0 14px;
         background: var(--surface);
         border: 1px solid var(--line);
         color: var(--ink);
-        box-shadow: var(--shadow-md);
-        padding: 10px 18px;
+        box-shadow: var(--shadow-sm);
         border-radius: var(--radius-pill);
         font-size: 13.5px;
         font-weight: 700;
         cursor: pointer;
-        z-index: 99;
+        z-index: 10;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+      }
+
+      .mobile-toc-toggle:hover {
+        border-color: var(--blue);
+        color: var(--blue);
+        background: var(--blue-light);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(21, 84, 232, 0.12);
+      }
+
+      body.dark-mode .mobile-toc-toggle {
+        background: var(--surface-2);
+        border-color: var(--line);
+        color: var(--ink);
+      }
+
+      body.dark-mode .mobile-toc-toggle:hover {
+        background: rgba(59, 130, 246, 0.15);
+        border-color: var(--blue);
+        color: #93c5fd;
+      }
+
+      .sidebar-close-btn {
+        display: none;
         align-items: center;
-        gap: 8px;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        background: var(--surface-2);
+        color: var(--muted);
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .sidebar-close-btn:hover {
+        color: var(--ink);
+        border-color: var(--blue);
+        background: var(--surface);
       }
 
       /* FOOTER */
@@ -1422,8 +1569,43 @@
       }
 
       /* =========================================================
-         RESPONSIVE BREAKPOINTS
+         GLOBAL RESPONSIVE SAFEGUARDS (PREVENT ANY OVERFLOW)
          ========================================================= */
+      html, body {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+
+      .app-shell {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      .doc-main, .doc-paper, .doc-chapter {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .doc-table-wrap {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      pre.code-content {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      img, svg {
+        max-width: 100%;
+      }
+
+      /* =========================================================
+         RESPONSIVE BREAKPOINTS (ALL DEVICES FULLY OPTIMIZED)
+         ========================================================= */
+      /* 1. LAPTOPS & DESKTOPS (<= 1200px) */
       @media (max-width: 1200px) {
         .doc-layout {
           padding: 20px 24px;
@@ -1435,8 +1617,12 @@
         .doc-paper {
           padding: 36px 36px;
         }
+        .step-sequence {
+          grid-template-columns: repeat(4, 1fr);
+        }
       }
 
+      /* 2. TABLETS & SMALL LAPTOPS (<= 900px) - SIDEBAR DRAWER ACTIVE */
       @media (max-width: 900px) {
         .doc-layout {
           padding: 16px;
@@ -1446,12 +1632,12 @@
           left: -330px;
           top: 0;
           bottom: 0;
-          width: 290px;
+          width: 300px;
           max-height: 100vh;
           z-index: 500;
           transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
           border-radius: 0;
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
         }
         .doc-sidebar.open {
           left: 0;
@@ -1459,46 +1645,202 @@
         .mobile-toc-toggle {
           display: inline-flex;
         }
+        .sidebar-close-btn {
+          display: flex;
+        }
+        .brand-badge {
+          display: none;
+        }
         .step-sequence {
           grid-template-columns: repeat(4, 1fr);
         }
         .doc-paper {
-          padding: 28px 20px;
+          padding: 28px 24px;
         }
         .doc-cover {
           padding: 28px 24px;
         }
         .doc-main-title {
-          font-size: 28px;
+          font-size: 30px;
         }
         .footer-grid {
           grid-template-columns: repeat(2, 1fr);
+          gap: 28px;
         }
       }
 
+      /* 3. SMALL TABLETS & LANDSCAPE PHONES (<= 720px) */
+      @media (max-width: 720px) {
+        .step-sequence {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+        }
+        .doc-paper {
+          padding: 24px 18px;
+        }
+        .doc-cover {
+          padding: 24px 18px;
+        }
+      }
+
+      /* 4. STANDARD SMARTPHONES (<= 600px) */
       @media (max-width: 600px) {
         .topbar-inner {
-          padding: 12px 16px;
+          padding: 10px 14px;
+          gap: 8px;
+        }
+        .brand {
+          gap: 8px;
+        }
+        .brand-mark {
+          width: 118px;
+          height: 32px;
+        }
+        .mobile-toc-toggle {
+          height: 34px;
+          padding: 0 10px;
+          font-size: 12.5px;
+          gap: 5px;
+        }
+        .topbar-actions {
+          gap: 6px;
+        }
+        .btn-nav, .btn-must-solve {
+          height: 34px;
+          padding: 0 10px;
+          font-size: 12.5px;
+        }
+        .btn-github {
+          display: none;
+        }
+        .theme-toggle {
+          width: 34px;
+          height: 34px;
+          font-size: 15px;
         }
         .step-sequence {
           grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
+        .step-seq-item {
+          padding: 10px 8px;
+        }
+        .step-seq-num {
+          width: 24px;
+          height: 24px;
+          font-size: 12px;
+        }
+        .step-seq-title {
+          font-size: 12px;
+        }
+        .step-seq-time {
+          font-size: 10.5px;
         }
         .doc-cover {
-          padding: 22px 16px;
+          padding: 20px 14px;
           border-radius: 12px;
+          margin-bottom: 32px;
+        }
+        .doc-cover-header {
+          margin-bottom: 18px;
         }
         .doc-main-title {
           font-size: 24px;
+          line-height: 1.25;
+          margin-bottom: 10px;
+        }
+        .doc-cover-pill {
+          font-size: 12px;
+          padding: 5px 14px;
         }
         .doc-main-subtitle {
-          font-size: 15px;
+          font-size: 14.5px;
+          line-height: 1.5;
         }
         .doc-abstract {
           padding: 14px 16px;
+          font-size: 14px;
+          line-height: 1.65;
+        }
+        .doc-meta-row {
+          font-size: 12px;
+          gap: 8px;
+          padding: 10px 0;
+        }
+        .doc-meta-badge {
+          word-break: break-all;
+        }
+        .quick-btn {
+          padding: 6px 12px;
+          font-size: 12px;
+        }
+        .chapter-header {
+          padding: 14px 14px;
+          gap: 12px;
+          margin: 8px 0 18px;
+        }
+        .chapter-num {
+          font-size: 13px;
+          padding: 5px 10px;
+        }
+        .chapter-title {
+          font-size: 19px;
+          line-height: 1.35;
+        }
+        .sub-heading {
+          font-size: 16px;
+          padding: 7px 12px;
+          margin: 24px 0 12px;
+        }
+        .section-lead {
           font-size: 14.5px;
+          line-height: 1.65;
+          margin-bottom: 18px;
+        }
+        .doc-callout {
+          padding: 14px 16px;
+          gap: 12px;
+          font-size: 14px;
+        }
+        .callout-icon {
+          width: 30px;
+          height: 30px;
+          font-size: 15px;
+        }
+        .code-header {
+          padding: 8px 12px;
+          font-size: 11.5px;
+        }
+        pre.code-content {
+          padding: 14px 14px;
+          font-size: 12.5px;
+          line-height: 1.6;
+        }
+        .doc-table th, .doc-table td {
+          padding: 10px 12px;
+          font-size: 13px;
+        }
+        .checklist-item {
+          padding: 12px 14px;
+          gap: 10px;
+        }
+        .checklist-text {
+          font-size: 13.5px;
+        }
+        .template-box {
+          padding: 16px 18px;
+        }
+        .worksheet-card {
+          padding: 18px 14px;
         }
         .worksheet-header {
           grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .ws-brand-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
         }
         .btn-text-full {
           display: none;
@@ -1511,9 +1853,137 @@
         }
         .footer-grid {
           grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .footer-top-row {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .footer-bottom-row {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
         }
         .doc-paper {
-          padding: 20px 14px;
+          padding: 18px 12px;
+          border-radius: 12px;
+        }
+        #backToTopBtn {
+          bottom: 18px;
+          right: 16px;
+          width: 40px;
+          height: 40px;
+          font-size: 16px;
+        }
+      }
+
+      /* 5. COMPACT SMARTPHONES (<= 480px) */
+      @media (max-width: 480px) {
+        .topbar-inner {
+          padding: 8px 10px;
+          gap: 6px;
+        }
+        .brand {
+          gap: 6px;
+        }
+        .brand-mark {
+          width: 98px;
+          height: 28px;
+        }
+        .mobile-toc-toggle {
+          height: 32px;
+          padding: 0 8px;
+          font-size: 12px;
+          gap: 4px;
+        }
+        .btn-nav {
+          height: 32px;
+          padding: 0 8px;
+          font-size: 12px;
+        }
+        .btn-must-solve .btn-text-mobile {
+          display: none;
+        }
+        .btn-must-solve {
+          height: 32px;
+          padding: 0 8px;
+          font-size: 13px;
+        }
+        .theme-toggle {
+          width: 32px;
+          height: 32px;
+          font-size: 14px;
+        }
+        .chapter-title {
+          font-size: 18px;
+        }
+        .doc-main-title {
+          font-size: 22px;
+        }
+        .doc-paper {
+          padding: 16px 10px;
+        }
+      }
+
+      /* 6. ULTRA-COMPACT SMARTPHONES (<= 360px) */
+      @media (max-width: 360px) {
+        .topbar-inner {
+          padding: 6px 8px;
+          gap: 4px;
+        }
+        .brand-mark {
+          width: 92px;
+          height: 24px;
+        }
+        .mobile-toc-toggle {
+          height: 32px;
+          padding: 0 8px;
+          font-size: 11.5px;
+        }
+        .btn-nav {
+          height: 32px;
+          padding: 0 8px;
+        }
+        .btn-nav .btn-text-mobile {
+          display: none;
+        }
+        .btn-must-solve {
+          height: 32px;
+          padding: 0 8px;
+        }
+        .theme-toggle {
+          width: 32px;
+          height: 32px;
+          font-size: 14px;
+        }
+        .step-sequence {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+        .doc-paper {
+          padding: 14px 8px;
+          border-radius: 8px;
+        }
+        .doc-cover {
+          padding: 16px 10px;
+          border-radius: 8px;
+        }
+        .doc-main-title {
+          font-size: 20px;
+        }
+        .doc-main-subtitle {
+          font-size: 13px;
+        }
+        .chapter-header {
+          padding: 10px 10px;
+          gap: 8px;
+        }
+        .chapter-num {
+          font-size: 12px;
+          padding: 4px 8px;
+        }
+        .chapter-title {
+          font-size: 16.5px;
         }
       }
 
@@ -1752,6 +2222,10 @@
       <header class="topbar">
         <div class="topbar-inner">
           <div class="brand">
+            <button class="mobile-toc-toggle" id="mobileTocToggle" type="button" aria-label="Toggle Table of Contents" title="Table of Contents">
+              <span class="mobile-toc-icon">📑</span>
+              <span class="mobile-toc-text">Contents</span>
+            </button>
             <a class="brand-mark" href="index.html" aria-label="DSA Doctor home">
               <img src="assets/dsa-doctor-logo.svg" alt="DSA Doctor" />
             </a>
@@ -1808,6 +2282,7 @@
 
           <div class="sidebar-header">
             <span class="sidebar-title">16 Chapters</span>
+            <button class="sidebar-close-btn" id="sidebarCloseBtn" type="button" aria-label="Close chapter menu" title="Close menu">✕</button>
           </div>
 
           <nav class="toc-nav" id="tocNav">
@@ -1900,9 +2375,13 @@
           <article class="doc-paper">
             <!-- COVER CARD -->
             <header class="doc-cover">
-              <span class="doc-cover-pill">📖 Master Diagnostic Edition</span>
-              <h1 class="doc-main-title">DSA Logic Building Playbook</h1>
-              <p class="doc-main-subtitle">Code nahi, logic banana seekho — Test case se optimal code tak</p>
+              <div class="doc-cover-header">
+                <h1 class="doc-main-title">DSA Logic Building Playbook</h1>
+                <div class="doc-cover-pill-wrap">
+                  <span class="doc-cover-pill">📖 Master Diagnostic Edition</span>
+                </div>
+                <p class="doc-main-subtitle">Code nahi, logic banana seekho — Test case se optimal code tak</p>
+              </div>
               
               <div class="doc-abstract">
                 Test case se optimized code tak: 7-step framework, Thinking Ladder, constraint &amp; keyword cheat-tables, 11 pattern templates, 8 fully worked examples (Java) aur ek blank worksheet.
@@ -2080,10 +2559,17 @@
   <div class="callout-content"><strong>Pattern nikla:</strong> Agar pichhla running sum negative ho jaye to use chhod do, warna aage jodte jao. Yahi Kadane's Algorithm hai — tumne bina ratte khud derive kar liya!</div>
 </div><div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2260,10 +2746,17 @@
       </ul>
     <div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2290,10 +2783,17 @@ while (l &lt; r) {
       </ul>
     <div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2319,10 +2819,17 @@ for (int r = 0; r &lt; n; r++) {
       </ul>
     <div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2343,10 +2850,17 @@ for (int i = 0; i &lt; n; i++) {
       </ul>
     <div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2368,10 +2882,17 @@ for (int i = 0; i &lt; arr.length; i++) {
       </ul>
     <div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2397,10 +2918,17 @@ return -1;</code></pre>
       </ul>
     <div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2428,10 +2956,17 @@ return stack.isEmpty();</code></pre>
       </ul>
     <div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2479,10 +3014,17 @@ return stack.isEmpty();</code></pre>
       </ul>
     <div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2513,10 +3055,17 @@ while (!q.isEmpty()) {
       </ul>
     <div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2720,10 +3269,17 @@ for (int x : arr) {
   </table>
 </div><div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2778,10 +3334,17 @@ for (int x : arr) {
   </table>
 </div><div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2829,10 +3392,17 @@ for (int x : arr) {
   </table>
 </div><div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2874,10 +3444,17 @@ for (int x : arr) {
   </table>
 </div><div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2933,10 +3510,17 @@ for (int x : arr) {
   </table>
 </div><div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -2992,10 +3576,17 @@ private long hours(int[] piles, int k) {
   </table>
 </div><div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -3035,10 +3626,17 @@ private long hours(int[] piles, int k) {
   </table>
 </div><div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -3087,10 +3685,17 @@ private void dfs(char[][] g, int r, int c) {
   </table>
 </div><div class="code-block-wrap">
   <div class="code-header">
-    <span class="lang-tag">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Java
-    </span>
+    <div class="code-header-left">
+      <div class="window-dots" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="lang-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Java
+      </span>
+    </div>
     <button class="copy-code-btn" type="button" onclick="copyCode(this)" title="Copy code">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
       <span>Copy</span>
@@ -3428,10 +4033,6 @@ private void go(int[] nums, int start, List&lt;Integer&gt; path, List&lt;List&lt
       &uarr;
     </button>
 
-    <!-- MOBILE TOC TOGGLE -->
-    <button class="mobile-toc-toggle" id="mobileTocToggle" type="button" aria-label="Toggle Table of Contents">
-      📑 Contents
-    </button>
 
     <!-- SCRIPTS -->
     <script>
@@ -3572,17 +4173,26 @@ private void go(int[] nums, int start, List&lt;Integer&gt; path, List&lt;List&lt
 
       // 7. MOBILE TOC DRAWER TOGGLE
       const mobileTocToggle = document.getElementById("mobileTocToggle");
+      const sidebarCloseBtn = document.getElementById("sidebarCloseBtn");
       const docSidebar = document.getElementById("docSidebar");
 
-      if (mobileTocToggle && docSidebar) {
-        mobileTocToggle.addEventListener("click", () => {
-          docSidebar.classList.toggle("open");
-        });
+      if (docSidebar) {
+        if (mobileTocToggle) {
+          mobileTocToggle.addEventListener("click", () => {
+            docSidebar.classList.toggle("open");
+          });
+        }
+
+        if (sidebarCloseBtn) {
+          sidebarCloseBtn.addEventListener("click", () => {
+            docSidebar.classList.remove("open");
+          });
+        }
 
         // Close when clicking a link
         tocLinks.forEach(link => {
           link.addEventListener("click", () => {
-            if (window.innerWidth <= 880) {
+            if (window.innerWidth <= 900) {
               docSidebar.classList.remove("open");
             }
           });
@@ -3590,8 +4200,8 @@ private void go(int[] nums, int start, List&lt;Integer&gt; path, List&lt;List&lt
 
         // Close when clicking outside
         document.addEventListener("click", (e) => {
-          if (window.innerWidth <= 880 && docSidebar.classList.contains("open")) {
-            if (!docSidebar.contains(e.target) && !mobileTocToggle.contains(e.target)) {
+          if (window.innerWidth <= 900 && docSidebar.classList.contains("open")) {
+            if (!docSidebar.contains(e.target) && !mobileTocToggle?.contains(e.target)) {
               docSidebar.classList.remove("open");
             }
           }
