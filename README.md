@@ -29,6 +29,7 @@
   <a href="#-visual-diagnostic-pipeline">🗺️ <b>Diagnostic Flow</b></a> •
   <a href="#-target-company-directory">🏢 <b>Companies</b></a> •
   <a href="#-dataset-anatomy--schema">📑 <b>Schema</b></a> •
+  <a href="#-repository-pages--tools">📂 <b>Pages & Tools</b></a> •
   <a href="#-battle-tested-study-sprints">⏱️ <b>Sprints</b></a> •
   <a href="#-frequently-asked-questions-faq">❓ <b>FAQ & SEO</b></a> •
   <a href="#-founder--creator">👨‍💻 <b>Founder</b></a>
@@ -354,6 +355,36 @@ Problem Solved
 <p align="right"><a href="#-dsa-doctor--dsadoctorcom"><img src="https://img.shields.io/badge/⬆️%20Back%20To%20Top-0d1117?style=flat-square&color=00f5ff&labelColor=0d1117" alt="Back to Top" /></a></p>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:00f5ff,50:2563eb,100:7928ca&height=4&width=100%" width="100%" />
+
+## 📂 Repository Pages & Tools
+
+<img src="https://capsule-render.vercel.com/api?type=rect&color=0:00f5ff,50:2563eb,100:7928ca&height=2&width=100%" width="100%" />
+
+This repository ships three standalone, dependency-free HTML pages. Open any of them directly in a browser or serve the folder with any static server (e.g. `python3 -m http.server`).
+
+| Page | File | What It Does |
+|------|------|--------------|
+| 🌐 **Home / Web App** | `index.html` | The main DSA Doctor landing experience — company-wise problem vault, search, and navigation hub linking to the two tools below. |
+| 🧠 **DSA Logic Building Playbook** | `dsa-logic.html` | Interactive problem-solving guide — step-by-step logic frameworks, **live dry-run execution**, and the **Pattern Finder Wizard** for recognizing LeetCode patterns under interview pressure. |
+| 🩺 **DSA Master Sheet** | `dsa-sheet.html` | The complete **502-question, 9-phase DSA sheet** with topic/subtopic grouping, difficulty stars, direct problem links (LeetCode / GeeksForGeeks / HackerRank), per-question **status tracking**, **revisit flags**, and **notes** — all persisted in `localStorage`. |
+
+### 🩺 DSA Master Sheet (`dsa-sheet.html`) Highlights
+
+- **502 curated questions** organized into **9 phases** (e.g. Fundamentals & Linear Data Structures, Arrays, …) with topic-wise separators and progress counts.
+- **Track your progress**: Not Attempted → Not Tried → Solved/Attempted status dropdowns, plus a Revisit flag (None / Revisit / Can Revisit) for spaced revision.
+- **Inline notes** per question, auto-saved to `localStorage` — no backend required.
+- **Search & filter** across questions, topics, and subtopics with a live "X of 502 questions" counter.
+- **Fully responsive layout**: mobile card view (≤768px), fluid table view from 769px up to 1600px+ with adaptive column widths, condensed status/revisit labels, and zero horizontal overflow at any viewport width (verified 360–1600px).
+- **Dark/light theme** toggle and collapsible phase sections.
+
+### 🧠 DSA Logic Playbook (`dsa-logic.html`) Highlights
+
+- **Step-by-step problem-solving framework** — teaches *how to think* instead of memorizing solutions.
+- **Live Dry-Run visualizer** — step through algorithm execution with variable state.
+- **Pattern Wizard** — answer a few hints and get matched to the right LeetCode pattern (two pointers, sliding window, Kadane's, etc.).
+- Multi-language code templates: **Java | C++ | Python**.
+
+<br />
 
 ## ⚡ Quick Start & Usage
 
