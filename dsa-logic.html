@@ -111,7 +111,7 @@
 
       html {
         scroll-behavior: smooth;
-        overflow-x: hidden;
+        overflow-x: clip;
       }
 
       body {
@@ -1573,12 +1573,11 @@
          ========================================================= */
       html, body {
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow-x: clip;
       }
 
       .app-shell {
         max-width: 100%;
-        overflow-x: hidden;
       }
 
       .doc-main, .doc-paper, .doc-chapter {
@@ -4156,8 +4155,15 @@ private void go(int[] nums, int start, List&lt;Integer&gt; path, List&lt;List&lt
             tocLinks.forEach(link => {
               if (link.getAttribute("href") === `#${id}`) {
                 link.classList.add("active");
-                // Scroll sidebar TOC to keep active link in view
-                link.scrollIntoView({ block: "nearest", behavior: "smooth" });
+                // Safely adjust sidebar internal scroll ONLY, NEVER scroll the window!
+                if (docSidebar) {
+                  const sTop = docSidebar.scrollTop;
+                  const sHeight = docSidebar.clientHeight;
+                  const lOffset = link.offsetTop;
+                  if (lOffset < sTop || lOffset > sTop + sHeight - 60) {
+                    docSidebar.scrollTop = Math.max(0, lOffset - 40);
+                  }
+                }
               } else {
                 link.classList.remove("active");
               }
